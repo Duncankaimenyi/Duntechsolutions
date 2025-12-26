@@ -5,72 +5,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services — DUNTECH Solutions</title>
   <link rel="stylesheet" href="mainstyle.css">
+  <link rel="stylesheet" href="service.css">
   <script src="https://kit.fontawesome.com/96da3af5ba.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
-<style>
-  .services {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 50px;
-  font-family: Arial, sans-serif;
-}
-.service-detail-card{
-  margin: 30px;
-  max-width: 1100px auto;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(2, 2, 2, 0.08);
-  padding: 19px;
-}
-.services h2 {
-  text-align: center;
-  font-size: 32px;
-  color: #222;
-  margin-bottom: 20px;
-}
 
-.category-title {
-  margin-top: 30px;
-  font-size: 22px;
-  color: var(--accent);
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.service-card {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(1, 1, 1, 0.08);
-  text-align: center;
-  align-items: center;
-  align-self: center;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s ease;
-  border: 2px solid #f2f2f2;
-}
-.service-card img{
-  
-  width: 30%;
-  height: auto;
-}
-.pdficon i {
-  color: var(--accent);
-  font-size: 25px;
-
-}
-.service-card:hover {
-  transform: translateY(-5px);
-  border-color:var(--accent);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-</style>
 <body>
   <header class="site-header">
     <div class="container">
@@ -99,125 +41,382 @@
   
     </div>
   </header>
-
-  <main class="container">
-    <section class="top-space">
-      <h2>Our Services</h2>
-      <p class="muted">Detailed offerings and typical pricing to help you choose.</p>
-
-      <div class="service-detail-card" id="cyber-services" data-animate>
-        <h3 class="category-title">Online Cyber Services</h3>
-        <div class="card-container">
-          <div class="service-card"><div><img src="webimages/KRAlogo.jpg" alt="" loading="lazy"> </div>
-              <div>KRA PIN </div>
-              <div>Registration</div>
-              <div>NIL Returns</div>
-              <div>Filing & etc</div>
-          </div>
-          <div class="service-card">
-            <div><img src="webimages/helblogo.jpg" alt="HELB" loading="lazy"> </div>
-             
-              <div>HELB</div>
-              <div>Appeal</div>
-              <div>Applications</div>
-              <div>Statement & etc</div>
-            </div>
-            <div class="service-card">
-              <div><img src="webimages/image.png" alt=""> </div> 
-              <div>KUCCPS</div>
-              <div>Revision</div>
-              <div>Applications</div>
-              <div>intertransfer</div><ul>
-               </div>
-            <div class="service-card"><Div><img src="webimages/sha.jpeg" alt="sha"></Div>
-              <div>Change Number</div>
-              <div>Punguza Malipo/</div>
-              <div>Appeal</div>
-              
-              </div>
-          <div class="service-card"><div><img src="webimages/good conduct .jpg" alt="GoodCONDUCT" loading="lazy"> </div>
-          Good Conduct Application</div>
-
-          <div class="service-card"><div><img src="webimages/ecitizen.webp" alt=""></div>Account Creation</div>
-          <div class="service-card"><div><img src="webimages/tsc.jpeg" alt=""></div>NEMIS / TSC Number Support</div>
-          
-          <div class="service-card"><div><img src="webimages/NTSA.jpeg" alt=""></div><span>Renew DL </span><br>
-            <span>Vehicle search</span><br>
-          <span>etc</span></div>
-          <div class="service-card"><div><img src="webimages/passport.png" alt=""></div>Passport Application Support</div>
-          <div class="service-card"><div><img src="webimages/NSSF.jpeg" alt=""></div>
-        <span>Register for NSSF</span><br>
-      <span>lost nssf Card</span></div>
-        </div>
-      </div>
-
-      <div class="service-detail-card" id="web" data-animate>
-        <!-- Graphics Design -->
-        <h3 class="category-title">Graphics Design</h3>
-        <div class="card-container">
-          <div class="service-card">Logo Design</div>
-          <div class="service-card">Social Media Posters</div>
-          <div class="service-card">Business Card Design</div>
-          <div class="service-card">Flyers & Brochure Design</div>
-          <div class="service-card">Banner Design</div>
-          <div class="service-card">Certificate Design</div>
-          <div class="service-card">Branding Kit</div>
-        </div>
+ <main>
+    <section class="services-hero">
+      <h1>Our Premium Services</h1>
+      <p>Comprehensive digital solutions designed to elevate your business. Quality services with transparent pricing.</p>
       
+      <div class="service-tabs" id="serviceTabs">
+        <button class="tab-btn active" data-tab="cyber">Cyber Services</button>
+        <button class="tab-btn" data-tab="design">Design</button>
+        <button class="tab-btn" data-tab="web">Web & Software</button>
+        <button class="tab-btn" data-tab="documents">Documents</button>
+        <button class="tab-btn" data-tab="digital">Digital Support</button>
       </div>
+    </section>
 
-      <div class="service-detail-card" id="typing" data-animate>
-        <!-- Web & Software -->
-        <h3 class="category-title">Web & Software Development</h3>
-        <div class="card-container">
-          <div class="service-card">Portfolio Websites</div>
-          <div class="service-card">Business Websites</div>
-          <div class="service-card">E-commerce Websites</div>
-          <div class="service-card">Web App Development</div>
-          <div class="service-card">Mobile App UI/Design</div>
-          <div class="service-card">Custom Software</div>
+    <section class="services-section">
+      <!-- Online Cyber Services -->
+      <div class="service-category" id="cyber">
+        <div class="category-header">
+          <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h2>Online Cyber & Government Services</h2>
+            <p>Official portals, document submissions and portal support — handled securely and quickly.</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="webimages/KRAlogo.jpg" alt="KRA Services" class="service-img">
+            <h3>KRA / iTax</h3>
+            <ul class="service-features">
+              <li>PIN registration & retrieval</li>
+              <li>NIL & tax return filing (iTax)</li>
+              <li>Tax Compliance Certificates (TCC)</li>
+              <li>VAT registration & status checks</li>
+            </ul>
+            <div class="service-price">From Ksh 500 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/ecitizen.webp" alt="eCitizen Services" class="service-img">
+            <h3>eCitizen & Passport</h3>
+            <ul class="service-features">
+              <li>Passport application & appointment booking</li>
+              <li>Police clearance (Certificate of Good Conduct)</li>
+              <li>Business name & company filing assistance</li>
+              <li>Permit applications & status tracking</li>
+            </ul>
+            <div class="service-price">From Ksh 600 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/NTSA.jpeg" alt="NTSA Services" class="service-img">
+            <h3>NTSA & Vehicle Services</h3>
+            <ul class="service-features">
+              <li>Driving licence renewals & bookings</li>
+              <li>Vehicle search & logbook applications</li>
+              <li>Transfer processing & inspection bookings</li>
+              <li>Roadworthiness assistance</li>
+            </ul>
+            <div class="service-price">From Ksh 1,000 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/helblogo.jpg" alt="HELB Services" class="service-img">
+            <h3>HELB Services</h3>
+            <ul class="service-features">
+              <li>Loan application support</li>
+              <li>Appeal processing & follow-up</li>
+              <li>Loan statements & verification</li>
+              <li>Enrollment guidance</li>
+            </ul>
+            <div class="service-price">From Ksh 800 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/tsc.jpeg" alt="TSC Services" class="service-img">
+            <h3>TSC Services</h3>
+            <ul class="service-features">
+              <li>Teacher registration & license checks</li>
+              <li>Payroll verification & pension queries</li>
+              <li>Certificate verification support</li>
+              <li>Application guidance & tracking</li>
+            </ul>
+            <div class="service-price">From Ksh 700 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/sha.jpeg" alt="SHA / Health Authority Support" class="service-img">
+            <h3>SHA / Health Authority Support</h3>
+            <ul class="service-features">
+              <li>Health-related portal guidance</li>
+              <li>Certificate & permit assistance</li>
+              <li>Facility registration & status checks</li>
+              <li>Claims & verification support</li>
+            </ul>
+            <div class="service-price">From Ksh 500 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/NSSF.jpeg" alt="NHIF / NSSF & Benefits" class="service-img">
+            <h3>NHIF / NSSF & Benefits</h3>
+            <ul class="service-features">
+              <li>Registration checks</li>
+              <li>Contribution & benefit statements</li>
+              <li>Claim guidance & document preparation</li>
+            </ul>
+            <div class="service-price">From Ksh 400 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <h3>County & Land Support</h3>
+            <ul class="service-features">
+              <li>Permit submissions & fee payments</li>
+              <li>Title searches (where available)</li>
+              <li>Forms, applications and follow-up</li>
+            </ul>
+            <div class="service-price">From Ksh 800 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <h3>Other Portal Services</h3>
+            <ul class="service-features">
+              <li>Form filling & application submission</li>
+              <li>Appeals & follow-ups</li>
+              <li>Receipt & reference tracking</li>
+            </ul>
+            <div class="service-price">From Ksh 300 <span>/task</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+        </div>
+
+        <div class="service-details" style="margin-top:20px;padding:18px;background:#fff;border-radius:12px;box-shadow:var(--shadow);">
+          <h3 style="margin-top:0;">How online services work</h3>
+          <ul class="service-features">
+            <li>1) Share scanned documents & consent securely with us.</li>
+            <li>2) We complete the official portal submission and pay any required fees.</li>
+            <li>3) You receive official receipts, transaction references and delivery updates.</li>
+          </ul>
+          <h4 style="margin:10px 0 6px;">Requirements</h4>
+          <p class="muted">Valid ID (national ID/passport), scanned documents, and written consent — some services may need in-person steps (e.g., biometrics).</p>
+          <h4 style="margin:10px 0 6px;">Security & Compliance</h4>
+          <p class="muted">We always use official portals, keep private data secure, and provide transaction receipts and reference numbers for transparency.</p>
         </div>
       </div>
 
-      <div class="service-detail-card" id="printing" data-animate>
-       <!-- Document Services -->
-       <h3 class="category-title">Document Services</h3>
-       <div class="card-container">
-         <div class="service-card"><div><img src="webimages/typying.jpeg" alt=""></div>Typing Services</div>
-         <div class="service-card"><div class="pdficon"><i class="fa-solid fa-file-pdf"></i></div>PDF Editing</div>
-         <div class="service-card"><div><img src="webimages/cvlogo.jpeg" alt=""></div>CV Writing</div>
-         <div class="service-card">Cover Letter Writing</div>
-         <div class="service-card">Certificates Design</div>
-         <div class="service-card">Scanning Services</div>
-       </div>
-       </div>
-
-       <div>
-        <p><i class="fa fa-file-text" aria-hidden="true"></i></p>
-       </div>
-
-       <div class="service-detail-card" id="printing" data-animate>
-        
-        <!-- Digital Support -->
-        <h3 class="category-title">Digital Support Services</h3>
-        <div class="card-container">
-          <div class="service-card">Email Setup</div>
-          <div class="service-card">Social Media Page Setup</div>
-          <div class="service-card">Online Job Applications</div>
-          <div class="service-card">WhatsApp Catalog Setup</div>
+      <!-- Graphics Design -->
+      <div class="service-category" id="design">
+        <div class="category-header">
+          <div class="category-icon"><i class="fas fa-palette"></i></div>
+          <div>
+            <h2>Graphics Design</h2>
+            <p>Professional design solutions for your brand</p>
+          </div>
         </div>
-       </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);"><i class="fas fa-signature"></i></div>
+            <h3>Logo Design</h3>
+            <ul class="service-features">
+              <li>3 Unique Concepts</li>
+              <li>Source Files Included</li>
+              <li>Unlimited Revisions</li>
+              <li>Brand Guidelines</li>
+            </ul>
+            <div class="service-price">From Ksh 3,500 <span>/logo</span></div>
+            <a href="contact.html" class="cta-button">Order Now</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);"><i class="fas fa-share-alt"></i></div>
+            <h3>Social Media Design</h3>
+            <ul class="service-features">
+              <li>Post Designs (10+ posts)</li>
+              <li>Cover Photos</li>
+              <li>Story Templates</li>
+              <li>Brand Consistency</li>
+            </ul>
+            <div class="service-price">From Ksh 5,000 <span>/month</span></div>
+            <a href="contact.html" class="cta-button">Order Now</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);"><i class="fas fa-business-time"></i></div>
+            <h3>Branding Package</h3>
+            <ul class="service-features">
+              <li>Logo Design</li>
+              <li>Business Cards</li>
+              <li>Letterheads</li>
+              <li>Email Signature</li>
+            </ul>
+            <div class="service-price">From Ksh 8,500 <span>/package</span></div>
+            <a href="contact.html" class="cta-button">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web & Software Development -->
+      <div class="service-category" id="web">
+        <div class="category-header">
+          <div class="category-icon"><i class="fas fa-code"></i></div>
+          <div>
+            <h2>Web & Software Development</h2>
+            <p>Custom digital solutions for your business needs</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);"><i class="fas fa-laptop-code"></i></div>
+            <h3>Business Website</h3>
+            <ul class="service-features">
+              <li>5-10 Pages</li>
+              <li>Mobile Responsive</li>
+              <li>Contact Forms</li>
+              <li>1 Year Support</li>
+            </ul>
+            <div class="service-price">From Ksh 15,000 <span>/website</span></div>
+            <a href="contact.html" class="cta-button">Get Quote</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);"><i class="fas fa-shopping-cart"></i></div>
+            <h3>E-commerce Store</h3>
+            <ul class="service-features">
+              <li>Product Management</li>
+              <li>Payment Integration</li>
+              <li>Order Processing</li>
+              <li>Admin Dashboard</li>
+            </ul>
+            <div class="service-price">From Ksh 25,000 <span>/store</span></div>
+            <a href="contact.html" class="cta-button">Get Quote</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Mobile App Design</h3>
+            <ul class="service-features">
+              <li>UI/UX Design</li>
+              <li>Wireframes</li>
+              <li>Interactive Prototypes</li>
+              <li>User Testing</li>
+            </ul>
+            <div class="service-price">From Ksh 12,000 <span>/project</span></div>
+            <a href="contact.html" class="cta-button">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Document Services -->
+      <div class="service-category" id="documents">
+        <div class="category-header">
+          <div class="category-icon"><i class="fas fa-file-alt"></i></div>
+          <div>
+            <h2>Document Services</h2>
+            <p>Professional document preparation and editing</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="webimages/cvlogo.jpeg" alt="CV Services" class="service-img">
+            <h3>Professional CV Writing</h3>
+            <ul class="service-features">
+              <li>ATS-Friendly Format</li>
+              <li>Cover Letter</li>
+              <li>LinkedIn Profile Update</li>
+              <li>Unlimited Revisions</li>
+            </ul>
+            <div class="service-price">Ksh 1,500 <span>/package</span></div>
+            <a href="contact.html" class="cta-button">Order Now</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #34495e, #2c3e50);"><i class="fas fa-file-pdf"></i></div>
+            <h3>PDF Editing</h3>
+            <ul class="service-features">
+              <li>Text Editing</li>
+              <li>Format Conversion</li>
+              <li>Form Creation</li>
+              <li>Secure Encryption</li>
+            </ul>
+            <div class="service-price">From Ksh 300 <span>/page</span></div>
+            <a href="contact.html" class="cta-button">Order Now</a>
+          </div>
+
+          <div class="service-card">
+            <img src="webimages/typying.jpeg" alt="Typing Services" class="service-img">
+            <h3>Typing & Formatting</h3>
+            <ul class="service-features">
+              <li>Document Typing</li>
+              <li>Thesis Formatting</li>
+              <li>Report Preparation</li>
+              <li>Proofreading</li>
+            </ul>
+            <div class="service-price">From Ksh 200 <span>/page</span></div>
+            <a href="contact.html" class="cta-button">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Support Services -->
+      <div class="service-category" id="digital">
+        <div class="category-header">
+          <div class="category-icon"><i class="fas fa-headset"></i></div>
+          <div>
+            <h2>Digital Support Services</h2>
+            <p>Setup and management of your digital presence</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);"><i class="fas fa-envelope"></i></div>
+            <h3>Email Setup</h3>
+            <ul class="service-features">
+              <li>Custom Email Address</li>
+              <li>Mail Client Configuration</li>
+              <li>Spam Protection</li>
+              <li>1 Month Support</li>
+            </ul>
+            <div class="service-price">Ksh 1,200 <span>/setup</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #1abc9c, #16a085);"><i class="fab fa-whatsapp"></i></div>
+            <h3>WhatsApp Business</h3>
+            <ul class="service-features">
+              <li>Catalog Setup</li>
+              <li>Automated Messages</li>
+              <li>Quick Replies Setup</li>
+              <li>Business Profile</li>
+            </ul>
+            <div class="service-price">Ksh 800 <span>/setup</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <div class="category-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);"><i class="fas fa-briefcase"></i></div>
+            <h3>Job Application Support</h3>
+            <ul class="service-features">
+              <li>Online Form Filling</li>
+              <li>Document Upload</li>
+              <li>Application Tracking</li>
+              <li>Follow-up Support</li>
+            </ul>
+            <div class="service-price">From Ksh 500 <span>/application</span></div>
+            <a href="contact.html" class="cta-button">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-note">
+        <h3>📢 Need Something Special?</h3>
+        <p>We understand that every business has unique needs. If you don't see exactly what you're looking for, contact us for a custom solution tailored to your specific requirements. We're here to help you succeed in the digital world!</p>
+        <a href="contact.html" class="cta-button" style="max-width: 300px; margin-top: 25px;">Request Custom Service</a>
+      </div>
+
+      <div class="contact-cta">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Get in touch today for a free consultation and let's discuss how we can help you achieve your digital goals</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="cta-button">Get a Free Quote</a>
+          <a href="tel:+254700000000" class="cta-button btn-secondary"><i class="fas fa-phone"></i> Call Now</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><h4>OneStop Digital Hub</h4></div>
-      <div><h4>Contact</h4><p class="muted">+254 700 000 000<br>hello@onestop.co.ke</p></div>
-    </div>
-  </footer>
+          
 
+  <script  src="service.js"> </script>
   <script src="mainscript.js"></script>
 </body>
 </html>
