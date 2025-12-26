@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Duntech solutions — Home</title>
+  <link rel="stylesheet" href="mainstyle.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "yjQhIy1Er-KAY9kgh",
+      });
+   })();
+</script>
+<script src="https://kit.fontawesome.com/96da3af5ba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+  <header class="site-header">
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="brand-logo"><img src="webimages/logo.png" alt=""><a href="mainindex.html"></a></div>
+          <div>
+            <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Digital • Design • Development•Graphics</p></div>
+           
+          </div>
+        </div><div id="menu-btn">☰</div>
+       
+    <ul>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">Why  Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html" class="btn btn-quote">Get a Quote</a></li>
+    </ul>
+  </nav>
+  
+  <div id="mobile-menu">
+    <a href="services.html">Services</a>
+    <a href="about.html">Why  Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html" class="btn btn-quote">Get a Quote</a> <button id="BACK-btn">Back</button>
+   
+  </div>
+  
+    </div>
+  </header>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h2 class="eyebrow">Local • Fast • Affordable</h2>
+          <h1>All your digital & cyber services in one place</h1>
+          <p class="lead">Logos, websites, typing, printing, CVs, and more — we deliver quality quickly and accept M-Pesa.</p>
+          <div class="hero-ctas">
+            <a href="contact.html" class="btn ">Place an Order</a>
+            <a href="services.html" class="btn ">Explore Services</a>
+          </div>
+
+          <div class="trust">
+            <div class="statscontainer">
+              <script src="minidashboard.js"></script>
+              <div class="stats">
+              <div class="stat-item">
+                  <h3>0+</h3> <!-- Animated Number -->
+                  <p>Years of Experience</p>
+              </div>
+              <div class="stat-item">
+                  <h3>0+</h3> <!-- Animated Number -->
+                  <p>Successful Projects</p>
+              </div>
+              <div class="stat-item">
+                  <h3>0+</h3> <!-- Animated Number -->
+                  <p>Satisfied Clients</p>
+              </div>
+              </div>
+              <div class="progressbar"><span></span></div>
+          </div>
+          
+          </div> 
+          <div class="trust-wrapper" id="mobiletrust-wrapper">
+
+            <div class="trust-header">
+              <h2>Trusted by Local Businesses</h2>
+              <p>Serving clients across Kenya & beyond</p>
+            </div>
+          
+            <div class="badges">
+              <div class="badge">
+                <div class="icon local">KE</div>
+                <div class="badge-text">
+                  <strong>Local Business</strong>
+                  <span>Kenya-based service</span>
+                </div>
+              </div>
+          
+              <div class="badge">
+                <div class="icon verified">✔</div>
+                <div class="badge-text">
+                  <strong>Verified Provider</strong>
+                  <span>Trusted & compliant</span>
+                </div>
+              </div>
+          
+              <div class="badge">
+                <div class="icon secure">🔒</div>
+                <div class="badge-text">
+                  <strong>Secure Payments</strong>
+                  <span>Protected transactions</span>
+                </div>
+              </div>
+          
+              <div class="badge">
+                <div class="icon support">24/7</div>
+                <div class="badge-text">
+                  <strong>Always Available</strong>
+                  <span>Fast local support</span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="payments">
+              <h4>Accepted Payment Methods</h4>
+              <div class="payment-methods">
+                <div class="pay mpesa">M-PESA</div>
+                <div class="pay paypal">PayPal</div>
+              </div>
+            </div>
+          
+            <div class="trusted-strip">
+              <span class="pulse"></span>
+              Trusted • Secure • Local
+            </div>
+          
+          </div>
+        </div>
+        <div class="hero-right card">
+          <h3>Quick Order</h3>
+          <form id="quickOrder" class="form">
+            <input name="from_name" type="text" placeholder="Full name" required>
+            <input name="reply_to" type="email" placeholder="Your email">
+            <select name="service" required>
+              <option value="">Choose service</option>
+              <option>Logo Design</option>
+              <option>Business Website</option>
+              <option>Poster / Flyer</option>
+              <option>Typing & CV</option>
+              <option>Printing / Scanning</option>
+            </select>
+            <textarea name="message" rows="4" placeholder="Job details..."></textarea>
+            <div class="row">
+              <button class="btn btn-primary" type="submit"onclick="openPopup()">Send Request</button>
+              <a id="waQuick" class="btn btn-ghost" href="#" role="button">WhatsApp</a>
+            </div>
+             <p class="small muted">We’ll email you payment & delivery details. (Email powered by EmailJS)</p>
+          
+            </form>
+            <body>
+              
+              <script src="minidashboard.js"></script>
+           
+            </body>
+            </div>
+        </div>
+        
+      </div>
+      
+      </div>
+    </section>
+
+    <!-- Services preview -->
+    <section class="container services-preview">
+      <h2>Our Services</h2>
+      <div class="grid cards">
+        <article class="card service-card" data-animate>
+          <div class="icon">🎨</div>
+          <h3>Graphics & Branding</h3>
+          <p>Logos, brand kits, posters, social templates. Vector files included.</p>
+          <a href="services.html#graphics" class="link">See details →</a>
+          
+        </article>
+
+        <article class="card service-card" data-animate>
+          <div class="icon">💻</div>
+          <h3>Web Design & Dev</h3>
+          <p>Responsive business websites, e-commerce & portfolios with hosting setup.</p>
+          <a href="services.html#web" class="link">See details →</a>
+        </article>
+
+        <article class="card service-card" data-animate>
+          <div class="icon">📝</div>
+          <h3>Typing & CVs</h3>
+          <p>Fast accurate typing, ATS-friendly CVs and application assistance.</p>
+          <a href="services.html#typing" class="link">See details →</a>
+        </article>
+
+        <article class="card service-card" data-animate>
+          <div class="icon">🖨️</div>
+          <h3>Printing & Cyber</h3>
+          <p>Scanning, printing, passport photos, photocopying, and document submission.</p>
+          <a href="services.html#printing" class="link">See details →</a>
+        </article>
+      </div>
+    </section>
+  </section><!-- PORTFOLIO --><section id="portfolio" class="container">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-sub">Some selected projects we’ve worked on.</p> <div class="portfolio">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/600x400?text=Project+1" />
+        <div class="info"><strong>Banking Landing Page</strong><br><span style="font-size:12px;color:#6b7280;">Web</span></div>
+      </div><div class="portfolio-item">
+    <img src="https://via.placeholder.com/600x400?text=Project+2" />
+    <div class="info"><strong>websites</strong><br><span style="font-size:12px;color:#6b7280;">Web</span></div>
+  </div>
+  
+  <div class="portfolio-item">
+    <img src="https://via.placeholder.com/600x400?text=Project+3" />
+    <div class="info"><strong>social media flyer & Poster</strong><br><span style="font-size:12px;color:#6b7280;">Design</span></div>
+  </div>
+  
+  <div class="portfolio-item">
+    <img src="https://via.placeholder.com/600x400?text=Project+4" />
+    <div class="info"><strong>Graphics & logos</strong><br><span style="font-size:12px;color:#6b7280;">Design</span></div>
+  </div>
+  
+    </div>
+  </section><!-- PRICING -->
+    <!-- Packages teaser -->
+    <section class="container packages-teaser">
+      <h2>Popular Packages</h2>
+      <div class="grid">
+        <div class="card package-highlight" data-animate>
+          <h3>Business Starter</h3>
+          <p>Logo, one-page site, business card & flyer</p>
+          <div class="price">Ksh 30,000</div>
+        </div>
+        <div class="card" data-animate>
+          <h3>Social Boost</h3>
+          <p>3 social post templates + banner</p>
+          <div class="price">Ksh 5,000</div>
+        </div>
+        <div class="card" data-animate>
+          <h3>Student Pack</h3>
+          <p>CV + typed application + cover letter</p>
+          <div class="price">Ksh 1,500</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:18px"><a href="packages.html" class="btn btn-ghost">See all packages</a></div>
+    </section>
+
+    <!-- Testimonials (simple slider) -->
+    <section class="container testimonials" id="testimonials">
+      <h2>What clients say</h2>
+      <div class="testimonial-slider card">
+        <blockquote>"They created my website quickly and at a great price. Highly recommend."</blockquote>
+            <img src="image.png"> 
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+  
+        <cite>— Aisha, Nairobi</cite>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <div class="brand-logo"><img src="webimages/logo.png" alt=""><a href="index.html"></a></div>
+          <div>
+            <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Building the future of kenyan Business,One line of code at a Time</p></div>
+           
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p class="muted">+254 700 000 000<br>hello@onestop.co.ke</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <p class="muted">Facebook • Instagram • TikTok</p>
+      </div>
+    </div>
+    <div class="container"
+     style="text-align:left;
+     justify-content:space-between;
+      display: flex;">
+      <small class="muted">© 2025 Duntech 
+      <span style="color: var(--accent);">solutions .</span>
+       All rights reserved</small>
+      <div class="socialmedia">
+        
+        <i class="fa-solid fa-tiktok"></i>
+        <i class="fa-solid fa-instargram"></i>
+        <i class="fa-solid fa-youtube"></i>
+        <i class="fa-solid fa-facebook"></i>
+      </div>
+    </div>
+  </footer>
+
+  
+   <!-- chatbot -->
+  <section class="chatbot">
+     <link rel="stylesheet" href="chatbot.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Professional Chatbot Container -->
+    <div class="duntech-chatbot" id="duntechChatbot">
+        <!-- Chat Window -->
+        <div class="chatbot-window" id="chatWindow">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-info">
+                        <h3>Duntech AI Assistant</h3>
+                        <p>Professional • Online Now</p>
+                    </div>
+                </div>
+                <div class="chatbot-actions">
+                    <button class="chatbot-btn" id="minimizeBtn" title="Minimize">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="chatbot-btn" id="closeBtn" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Messages Container -->
+            <div class="chatbot-messages" id="messagesContainer">
+                <!-- Messages will be added here -->
+            </div>
+            
+            <!-- Input Area -->
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatInput" 
+                       placeholder="Type your message here..." 
+                       maxlength="500"
+                       aria-label="Chat input">
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <!-- Footer -->
+            <div class="chatbot-footer">
+                <span><i class="fas fa-shield-alt"></i> Secure Connection</span>
+                <span>Powered by Duntech AI</span>
+                <span><i class="fas fa-clock"></i> 24/7</span>
+            </div>
+        </div>
+        
+        <!-- Toggle Button -->
+        <div class="chatbot-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+            <div class="notification-badge" id="notificationBadge" style="display: none;">3</div>
+        </div>
+    </div>
+<script src="chatbot.js"></script>
+</section>
+<script src="mainscript.js"></script>
+</body>
+</html>

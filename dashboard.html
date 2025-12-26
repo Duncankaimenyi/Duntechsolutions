@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<script>// Function to animate numbers
+function animateNumbers(element, start, end, duration) {
+    let range = end - start;
+    let current = start;
+    let increment = range / (duration / 10);
+    
+    let timer = setInterval(() => {
+        current += increment;
+        element.textContent = Math.floor(current) + "+";
+        if (current >= end) {
+            element.textContent = end + "+";
+            clearInterval(timer);
+        }
+    }, 10);
+}
+
+// Detect when section is visible
+function startCounting() {
+    let stats = document.querySelectorAll(".stat-item h3");
+    let section = document.querySelector(".stats");
+    
+    let options = { root: null, threshold: 0.6 };
+    
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers(stats[0], 0, 10, 1500);
+                animateNumbers(stats[1], 0, 500, 2000);
+                animateNumbers(stats[2], 0, 300, 1800);
+                observer.disconnect();
+            }
+        });
+    }, options);
+    
+    observer.observe(section);
+}
+
+// Run animation when page loads
+document.addEventListener("DOMContentLoaded", startCounting);
+
+// Slide-in effect when section appears
+const slideInElements = document.querySelectorAll('.slide-in');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, { threshold: 0.6 });
+
+slideInElements.forEach(element => observer.observe(element));
+// Example auto-popup after scroll or event
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.querySelector(".home-content").classList.add("show-text");
+    }, 500); // Delay  animation for better effect
+});
+
+
+</script>
+<style>
+.stats {
+    position: relative;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    background: blue;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+}
+
+.stat-item h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+}</style>
+<body>
+    <div class="stats">
+                <div class="stat-item">
+                    <h3>0+</h3> <!-- Animated Number -->
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0+</h3> <!-- Animated Number -->
+                    <p>Successful Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0+</h3> <!-- Animated Number -->
+                    <p>Satisfied Clients</p>
+                </div>
+            </div>
+</body>
+
+</html>

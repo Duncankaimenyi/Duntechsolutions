@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portiflio-duntech solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="Portfolio.css">
+</head>
+<header class="site-header">
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="brand-logo"><img src="webimages/logo.png" alt=""><a href="index.html"></a></div>
+          <div>
+            <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Digital • Design • Development•Graphics</p></div>
+           
+          </div>
+        </div><div id="menu-btn">☰</div>
+       
+    <ul>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">Why  Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html" class="btn btn-quote">Get a Quote</a></li>
+    </ul>
+  </nav>
+  
+  <div id="mobile-menu">
+    <a href="services.html">Services</a>
+    <a href="why.html">Why  Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html" class="btn btn-quote">Get a Quote</a> <button id="BACK-btn">Back</button>
+   
+  </div>
+  
+    </div>
+  </header>
+<body>
+ 
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Innovative Digital <span>Solutions</span></h1>
+                <p class="hero-subtitle">
+                    Duntech specializes in creating cutting-edge digital experiences, web applications, and software solutions that drive business growth and enhance user engagement.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary btn-lg">
+                        <i class="fas fa-eye"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="projectsCount">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="clientsCount">30+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="experienceCount">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="technologiesCount">15+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Featured Projects</h2>
+                <p>Explore our portfolio of innovative digital solutions and web applications</p>
+            </div>
+
+            <div class="projects-filter" id="projectsFilter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Applications</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="saas">SaaS Platforms</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary" id="loadMoreBtn">
+                    <i class="fas fa-plus-circle"></i> Load More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive digital solutions tailored to your business needs</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Custom web applications and websites built with modern technologies like React, Vue.js, and Node.js for optimal performance and user experience.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Mobile Development</h3>
+                    <p class="service-description">
+                        Native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences and robust functionality.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-commerce Solutions</h3>
+                    <p class="service-description">
+                        Complete online store solutions with secure payment gateways, inventory management, and customer relationship tools.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Scalable cloud infrastructure, migration services, and cloud-native application development for modern business needs.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">
+                        User-centered design services that create intuitive interfaces and engaging user experiences across all digital platforms.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Digital Strategy</h3>
+                    <p class="service-description">
+                        Strategic planning and consulting to help businesses leverage technology for growth, efficiency, and competitive advantage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with Duntech</p>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonials will be loaded dynamically -->
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Dots will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Project?</h2>
+                <p class="cta-description">
+                    Let's collaborate to bring your digital vision to life. Contact us today for a free consultation and project estimate.
+                </p>
+                
+                <div class="cta-highlight">
+                    <i class="fas fa-bolt"></i>
+                    <span>Get 15% Off Your First Project</span>
+                </div>
+                
+                <a href="mailto:contact@duntech.com" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope"></i> Contact Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="logo-text">Dun<span>tech</span></div>
+                    </div>
+                    <p style="color: #94a3b8; margin-bottom: 20px; line-height: 1.7;">
+                        Duntech delivers innovative digital solutions and web applications that drive business growth and enhance user experiences.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Mobile Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> E-commerce Solutions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div style="color: #94a3b8; line-height: 1.7;">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Digital District</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> contact@duntech.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Duntech. All rights reserved. | <a href="#" style="color: #94a3b8;">Privacy Policy</a> | <a href="#" style="color: #94a3b8;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal">
+            <button class="modal-close" id="closeProjectModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="projectModalContent">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+      <script src="Portfolio.js"></script>
+  </body>
+  </html>
+</body>
+</html>
