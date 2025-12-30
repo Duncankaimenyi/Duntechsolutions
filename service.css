@@ -1,5 +1,5 @@
 :root {
-      --primary: #2c3e50;
+      --primary: #534cd4;
       --accent: #4f46e5;
       --accent-hover:#534cd4;
       --light: #f8f9fa;
@@ -16,24 +16,28 @@
     }
 
     .services-hero {
+      position: relative;
       text-align: center;
-      padding: 80px 20px 50px;
-      background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+      padding: 100px 20px 60px;
       color: white;
       margin-bottom: 40px;
       border-radius: 0 0 30px 30px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+      background: var(--accent);
+      overflow: visible;
+      
     }
 
+   
     .services-hero h1 {
       font-family: 'Poppins', sans-serif;
       font-size: 3.5rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-      background: linear-gradient(to right, #ffffff, #b3e0ff);
+      margin-bottom: 5px;
+      font-weight: 600;
+      background:white;
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent;
+      color: white;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -102,13 +106,13 @@
       gap: 15px;
       margin-bottom: 30px;
       padding-bottom: 15px;
-      border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+      border-bottom: 2px solid #4f46e5 ;
     }
 
     .category-icon {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, var(--accent), #2ecc71);
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
       border-radius: 15px;
       display: flex;
       align-items: center;
@@ -161,7 +165,7 @@
       left: 0;
       right: 0;
       height: 6px;
-      background: linear-gradient(90deg, var(--accent), #2ecc71);
+      background: linear-gradient(90deg, var(--accent), #4f46e5);
       opacity: 0;
       transition: var(--transition);
     }
@@ -169,7 +173,7 @@
     .service-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.10);
-      border-color: rgba(52, 152, 219, 0.08);
+      border-color:#4f46e5;
     }
 
     .service-card:hover::before {
@@ -274,7 +278,7 @@
       width: auto;
       text-align: center;
       margin-top: 18px;
-      box-shadow: 0 8px 20px rgba(52, 152, 219, 0.18);
+      box-shadow: 0 8px 20px #4f46e5;
       align-self: center;
     }
 
@@ -308,7 +312,7 @@
     }
 
     .contact-cta {
-      background: linear-gradient(135deg, var(--primary), #34495e);
+      background: linear-gradient(135deg, var(--primary), #4f46e5);
       color: white;
       padding: 60px 40px;
       border-radius: 30px;

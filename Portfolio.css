@@ -438,6 +438,49 @@
             margin-bottom: 50px;
         }
 
+        /* Featured preview strip */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .featured-card {
+            display: flex;
+            gap: 16px;
+            align-items: stretch;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(226,232,240,0.6);
+        }
+
+        .featured-image {
+            width: 120px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content h4 {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .featured-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
         .project-card {
             background: white;
             border-radius: var(--radius-lg);
@@ -487,6 +530,40 @@
 
         .project-card:hover .project-image img {
             transform: scale(1.1);
+        }
+
+        /* Overlay for quick live demo */
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(180deg, rgba(15,23,42,0.45), rgba(37,99,235,0.25));
+            color: white;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            font-weight: 700;
+            z-index: 3;
+        }
+
+        .project-overlay i {
+            font-size: 1.2rem;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.12);
+            border-radius: 50%;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .project-content {

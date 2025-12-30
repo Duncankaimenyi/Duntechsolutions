@@ -113,6 +113,9 @@
                 details: "LearnHub offers course creation tools, video lessons, quizzes, student progress tracking, certification, and a marketplace for instructors to sell their courses."
             }
         ];
+        
+        // Expose projects array to other pages (homepage preview reads window.projects)
+        window.projects = projects;
 
         const testimonials = [
             {
@@ -161,10 +164,12 @@
 
         // ===== DOM ELEMENTS =====
         const header = document.getElementById('header');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        // Fallbacks for different templates: some pages use 'menu-btn' while others use 'mobileMenuBtn'
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn') || document.getElementById('menu-btn');
+        const navMenu = document.getElementById('navMenu') || document.getElementById('mobile-menu') || document.querySelector('nav ul');
         const navLinks = document.querySelectorAll('.nav-link');
         const projectsGrid = document.getElementById('projectsGrid');
+        const featuredGrid = document.getElementById('featuredGrid');
         const filterButtons = document.querySelectorAll('.filter-btn');
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         const testimonialTrack = document.getElementById('testimonialTrack');
@@ -183,6 +188,7 @@
             currentYear.textContent = new Date().getFullYear();
             
             // Render initial content
+            renderFeatured();
             renderProjects();
             renderTestimonials();
             
@@ -198,7 +204,7 @@
         // ===== SETUP FUNCTIONS =====
         function setupEventListeners() {
             // Mobile menu toggle
-            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
             
             // Close mobile menu when clicking outside
             document.addEventListener('click', closeMobileMenuOnClickOutside);
@@ -276,6 +282,12 @@
                     <div class="project-image">
                         <img src="${project.image}" alt="${project.title}" loading="lazy">
                         <div class="project-badge">${project.status}</div>
+                        ${project.link && project.link !== '#' ? `
+                            <a class="project-overlay" href="${project.link}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.title} live demo">
+                                <i class="fas fa-play"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        ` : ''}
                     </div>
                     <div class="project-content">
                         <div class="project-header">
@@ -298,10 +310,12 @@
                             <span style="color: var(--gray); font-size: 0.9rem;">
                                 <i class="far fa-calendar"></i> ${project.year}
                             </span>
-                             
-                            <a href="#" class="project-link" onclick="showProjectDetails(${project.id}); return false;">
-                                View Details <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <div style="display:flex;gap:12px;align-items:center">
+                                ${project.link && project.link !== '#' ? `
+                                    <a href="${project.link}" class="btn btn-sm btn-accent" target="_blank" rel="noopener noreferrer">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                ` : `<span style="color:var(--gray);font-size:0.9rem;">Demo coming</span>`}
+                                <a href="#" class="project-link" onclick="showProjectDetails(${project.id}); return false;">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -313,6 +327,31 @@
                 : projects.filter(p => p.category === currentFilter).length;
             
             loadMoreBtn.style.display = visibleProjects >= totalFilteredProjects ? 'none' : 'block';
+        }
+
+        function renderFeatured() {
+            if (!featuredGrid) return;
+            const featured = projects.filter(p => p.link && p.link !== '#').slice(0, 3);
+            if (featured.length === 0) {
+                featuredGrid.innerHTML = `<p style="color:var(--gray); text-align:center;">No live demos available right now.</p>`;
+                return;
+            }
+
+            featuredGrid.innerHTML = featured.map(p => `
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="${p.image}" alt="${p.title}">
+                    </div>
+                    <div class="featured-content">
+                        <h4>${p.title}</h4>
+                        <p style="color:var(--gray);">${p.description}</p>
+                        <div style="margin-top:12px; display:flex; gap:10px;">
+                            <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-accent">Live Demo</a>
+                            <a href="#" onclick="showProjectDetails(${p.id}); return false;" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
         function renderTestimonials() {
@@ -465,12 +504,18 @@
                         </div>
                         
                         <div class="project-modal-links">
-                            <a href="${project.link}" class="btn btn-primary" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i> 0pen website
-                            </a>
-                            <a href="${project.github}" class="btn btn-secondary" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                            ${project.link && project.link !== '#' ? `
+                                <a href="${project.link}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> Open website
+                                </a>
+                            ` : `
+                                <span style="color: var(--gray); font-weight:600;">Live demo coming soon</span>
+                            `}
+                            ${project.github && project.github !== '#' ? `
+                                <a href="${project.github}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            ` : ''}
                         </div>
                     </div>
                 </div>

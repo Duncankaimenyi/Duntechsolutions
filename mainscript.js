@@ -9,6 +9,20 @@ const BACKbtn = document.getElementById('BACK-btn');
 BACKbtn.onclick = () => {
   mobileMenu.style.display = "none";
 };
+// Add this script if you want hover pause functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const marqueeTrack = document.querySelector('.marquee-track');
+    
+    if (marqueeTrack) {
+        marqueeTrack.addEventListener('mouseenter', () => {
+            marqueeTrack.style.animationPlayState = 'paused';
+        });
+        
+        marqueeTrack.addEventListener('mouseleave', () => {
+            marqueeTrack.style.animationPlayState = 'running';
+        });
+    }
+});
 // contact form popup
 // Simple Contact Form (Front‑end only)
 document.getElementById('contactForm').addEventListener('submit', function(e){
