@@ -30,13 +30,112 @@ nav .brand { display: flex; gap: 12px; align-items: center; }
 nav ul { display: flex; gap: 24px; list-style: none; }
 nav ul li a { text-decoration: none; color: #111827; font-weight: 500; }
 nav ul li a:hover { color: #4f46e5; }
+nav ul li {
+  position: relative; /* ensures dropdown positions relative to parent */
+}
+
+/* Dropdown hidden by default */
+nav ul li .dropdown {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+  position: absolute;
+  top: 100%; /* sits directly below the nav link */
+  left: 0;
+  background: var(--accent-2);
+  color: white;
+  list-style: none;
+  padding: 12px;
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(12px);
+  z-index: 100;
+}
+
+/* Show dropdown on hover */
+nav ul li:hover .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown links */
+nav ul li .dropdown a {
+  display: block;
+  padding: 10px;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on dropdown links */
+nav ul li .dropdown a:hover {
+  color: var(--accent);
+  background-color: white;
+}
 
 /* MOBILE MENU */
 #menu-btn { display: none; cursor: pointer; }
 #BACK-btn { display: none; cursor: pointer; }
-#mobile-menu { display: none; flex-direction: column; gap: 12px; padding: 16px; background: white; border-top: 1px solid #e5e7eb; }
+#mobile-menu { display: none;
+   flex-direction: column; 
+   gap: 12px;
+    padding: 6px;
+     background: white; 
+     border-top: 1px solid #e5e7eb; }
 
 
+/* Dropdown hidden by default */
+#mobile-menu .dropdown {
+  display: none;
+  position: absolute;
+  top: 65%; /* ensures it appears below the parent link */
+  left: 0;
+  background: var(--accent-2);
+  color: white;
+  list-style: none;
+  padding: 10px;
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  z-index: 100;
+}
+
+/* Show dropdown on hover */
+#mobile-menu .headportfolio:hover + .dropdown,
+#mobile-menu .dropdown:hover {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown links */
+#mobile-menu .dropdown a {
+  display: block;
+  padding: 10px;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+#mobile-menu .dropdown a:hover {
+  color: var(--accent);
+  background-color: white;
+  border-radius: 8px;
+}
 
 /* Buttons */
 .btn{display:inline-block;padding:10px 14px;
@@ -838,7 +937,370 @@ border-radius:50%;
     .dashboard { width: 92%; }
     .circle-container { width: 240px; height: 240px; }
   }
-
+  
+       
+ /* Contact Form Container */
+    .contact-form {
+        background:var(--bg);
+        border-radius: var(--radius);
+        padding: clamp(1.5rem, 5vw, 2.5rem);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        max-width: min(100%, 800px);
+        margin: 0 auto;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .contact-form:hover {
+        box-shadow: 0 20px 40px rgba(10, 20, 30, 0.12);
+    }
+    
+    .contact-form h2 {
+        color: var(--accent);
+        text-align: center;
+        margin-bottom: clamp(1.5rem, 4vw, 2rem);
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+    
+    /* Form Layout */
+    .form-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(1rem, 3vw, 1.5rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Form Groups */
+    .form-group {
+        margin-bottom: clamp(1.25rem, 3vw, 1.5rem);
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color:var(--accent);
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    .label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-group.required label:after {
+        content: " *";
+        color: var(--danger);
+    }
+    
+    /* Input Fields */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        border: 2px solid var(--border);
+        border-radius: calc(var(--radius) - 2px);
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.2s ease;
+        background: var(--card);
+        color: var(--text);
+        line-height: 1.5;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: var(--text-light);
+        opacity: 0.7;
+    }
+    
+    /* Styled Select */
+    .select-wrapper {
+        position: relative;
+    }
+    
+    .select-wrapper select {
+        appearance: none;
+        cursor: pointer;
+        padding-right: 3rem;
+    }
+    
+    .select-arrow {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Textarea with Character Counter */
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+        line-height: 1.6;
+    }
+    
+    .char-count {
+        font-size: 0.85rem;
+        color: var(--accent);
+        font-weight: 500;
+    }
+    
+   
+    /* File Upload */
+    .file-upload-area {
+        border: 2px dashed var(--accent);
+        border-radius: calc(var(--radius) - 2px);
+        padding: 2.5rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        background: var(--bg);
+    }
+    
+    .file-upload-area:hover {
+        border-color: var(--accent);
+        background: rgba(79, 70, 229, 0.02);
+    }
+    
+    .file-upload-area.dragover {
+        border-color: var(--accent);
+        background: rgba(79, 70, 229, 0.05);
+        transform: translateY(-2px);
+    }
+    
+    .upload-content {
+        text-align: center;
+        pointer-events: none;
+    }
+    
+    .upload-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .upload-title {
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .upload-subtitle {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .file-upload-area input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    .file-list {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.5rem;
+    }
+    
+    .file-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+        animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .file-icon {
+        color: var(--accent);
+    }
+    
+    .file-name {
+        flex: 1;
+        color: var(--text);
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .file-size {
+        color: var(--text-light);
+        font-size: 0.85rem;
+    }
+    
+    /* Form Actions */
+    .form-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+        .form-actions {
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem;
+        border-radius: calc(var(--radius) - 2px);
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-family: inherit;
+        line-height: 1;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+    }
+    
+    .btn-primary:active {
+        transform: translateY(0);
+    }
+    
+    .btn-secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+    }
+    
+    .btn-secondary:hover {
+        background: rgba(79, 70, 229, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    /* Footer Text */
+    .form-footer {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: var(--text-light);
+        font-size: 0.875rem;
+        line-height: 1.6;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+    }
+    
+    .highlight {
+        color: var(--accent);
+        font-weight: 600;
+    }
+    
+    /* Animation */
+    .fade-in {
+        animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 640px) {
+        .urgency-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+        
+        .contact-form {
+            padding: 1.25rem;
+            margin: 0 -1rem;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .urgency-option {
+            padding: 0.875rem;
+        }
+        
+        .urgency-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .file-upload-area {
+            padding: 1.5rem 1rem;
+        }
+        
+        .btn {
+            padding: 0.875rem 1.25rem;
+            font-size: 0.95rem;
+        }
+    }
+    
+   
+        
+        .contact-form {
+            border-color: var(--border);
+        }
+        
+        .file-upload-area {
+            background: rgba(30, 41, 59, 0.5);
+        }
 /* footer */
 .site-footer{backdrop-filter: blur(6px);position:sticky;z-index:60;background:rgba(255,255,255,0.6);
   border-bottom:1px solid rgba(10,20,30,0.03)}
@@ -856,6 +1318,9 @@ border-radius:50%;
 /* MOBILE */
 @media(max-width: 768px){
   nav ul { display: none; }
+ 
+
+  
   #menu-btn { display: block; }
   #BACK-btn { 
     display: block;
