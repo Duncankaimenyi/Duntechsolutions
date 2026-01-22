@@ -6,33 +6,71 @@
     <title>Graphic Design</title>
 </head>
 <style>
+* {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafb;
+  color: #111;
+}
+
+h1, p {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.graphiccontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 400px ;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 758px) {
+  .card img {
+    width: 100%;
+  height: auto ;
+  object-fit: cover;
+  display: block;
+  }
     
+}
 </style>
 <body>
     <h1>Graphic Design</h1>
     <p>Welcome to the duntech Graphic Design page..</p>
     <main class="graphiccontainer">
-        <div class="card"><img src="graphicimages/bg.jpeg" alt=""></div>
-        <div><img src="graphicimages/headphonegraphics copy.jpg" alt=""></div>
-        <div><img src="graphicimages/graphic.ads.jpg" alt=""></div>
-        <div><img src="graphicimages/Purple Orange and White Graphic Design Instagram Post.png" alt=""></div>
-        <div><img src="graphicimages/headphonegraphics copy.jpg" alt=""></div>
-        <div><img src="graphicimages/musyoki copy.jpg" alt=""></div>
-        <div><img src="graphicimages/OLIVES copy.jpg" alt=""></div>
-        <div><img src="graphicimages/PLANE copy.jpg" alt=""></div>
-        <div><img src="graphicimages/Untitled-1 - Copy.jpg" alt=""></div>
-        <div><img src="graphicimages/KCC 31ST KESHA.png" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
+  <div class="card"><img src="graphicimages/bg.jpeg" alt="Background"></div>
+  <div class="card"><img src="graphicimages/headphonegraphics copy.jpg" alt="Headphones"></div>
+  <div class="card"><img src="graphicimages/graphic.ads.jpg" alt="Ad Design"></div>
+  <div class="card"><img src="graphicimages/Purple Orange and White Graphic Design Instagram Post.png" alt="Instagram Post"></div>
+  <div class="card"><img src="graphicimages/musyoki copy.jpg" alt="Portrait"></div>
+  <div class="card"><img src="graphicimages/OLIVES copy.jpg" alt="Olives"></div>
+  <div class="card"><img src="graphicimages/PLANE copy.jpg" alt="Plane"></div>
+  <div class="card"><img src="graphicimages/Untitled-1 - Copy.jpg" alt="Abstract"></div>
+  <div class="card"><img src="graphicimages/KCC 31ST KESHA.png" alt="Poster"></div>
+</main>
 
-    </main>
 </body>
 </html>

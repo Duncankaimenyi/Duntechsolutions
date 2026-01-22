@@ -34,13 +34,14 @@
       <a href="mainindex.html">Home</a>
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">Why  Us</a></li>
-      <li class="headportfolio"><a href="">portfolio</a>
+      <li class="headportfolio"><a href="">portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
          <ul class="dropdown">
           <li><a href="Portfolio.html">Website Projects</a></li>
           <li><a href="Graphic.html">Graphic Designs</a></li>
           <li><a href="Logo.html">logos Design</a></li>
          </ul>
         </li>
+        <li><a href="blog.html" >News & Blogs</a></li>
       <li><a href="contact.html" >Contact</a></li>
     </ul>
   </nav>
@@ -49,12 +50,13 @@
   <a href="mainindex.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">Why Us</a>
-  <a href="#" class="headportfolio">Portfolio</a>
+  <a href="#" class="headportfolio">Portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
   <ul class="dropdown">
     <li><a href="Portfolio.html">Website Projects</a></li>
     <li><a href="Graphic.html">Graphic Designs</a></li>
-    <li><a href="Logo.html">Logo Designs</a></li>
+    <li><a href="logodesign.html">Logo Designs</a></li>
   </ul>
+  <a href="blog.html" >News & Blogs</a>
   <a href="contact.html">Contact</a>
   <button id="BACK-btn">Back</button>
 </div>
@@ -66,7 +68,6 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-left">
           <h2 class="eyebrow">Local • Fast • Affordable</h2>
           <h1>All your digital & cyber services in one place</h1>
           <p class="lead">Logos, websites, typing, printing, CVs, and more — we deliver quality quickly and accept M-Pesa.</p>
@@ -151,21 +152,13 @@
             </div>
           
           </div>
-        </div>
-        
-        </div>
-        
-      </div>
-      
-      </div>
-      <script src="minidashboard.js"></script>
-      <div class="tech-marquee">
-    <div class="tech-header">
+        <div class="tech-marquee">
+       <div class="tech-header">
         <h3><i class="fas fa-code"></i> Technology Stack</h3>
-    </div>
+        </div>
     
-    <div class="marquee-wrapper">
-        <div class="marquee-track">
+         <div class="marquee-wrapper">
+         <div class="marquee-track">
             <!-- First set -->
             <div class="tech-item">
                 <div class="tech-icon">
@@ -252,12 +245,17 @@
                 <span class="tech-name">AWS</span>
             </div>
         </div>
-    </div>
+       </div>
     
-    <div class="tech-footer">
+       <div class="tech-footer">
         <p>Hover to pause</p>
-    </div>
+      </div>
 </div>
+      </div>
+      
+      
+      <script src="minidashboard.js"></script>
+      
 
     </section>
     
@@ -281,7 +279,7 @@
         </article>
 
         <article class="card service-card" data-animate>
-          <div class="icon">🔐</div>
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
           <h3>Government & Cyber Services</h3>
           <p>KRA (iTax), NTSA, HELB, TSC, eCitizen and other official portal submissions.</p>
           <a href="services.html#cyber" class="link">See details →</a>
@@ -297,7 +295,7 @@
       <div style="text-align:center;margin-top:18px"><a href="services.html" class="btn btn-ghost">See full services</a></div>
     </section> 
   </section><!-- PORTFOLIO -->
-  <section id="portfolio" class="container">
+  <section id="portfolio" class="portfoliocontainer">
     <h2 class="section-title">Portfolio</h2>
     <p class="section-sub">Some selected projects we’ve worked on.</p>
 
@@ -305,211 +303,569 @@
 
     <div style="text-align:center;margin-top:18px"><a href="portfolio.html" class="btn btn-ghost">See full portfolio</a></div>
   </section>
+<section class="experience-section">
+    <div class="section-header">
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">My professional journey and career milestones</p>
+    </div>
 
-  <!-- Load portfolio data and render previews -->
-  <script src="Portfolio.js"></script>
-  <script>
-    (function(){
-      function renderHomeProjects(){
-        if (!window.projects) return;
-        const grid = document.getElementById('homeProjectsGrid');
-        const visible = projects.slice(0, 6); // limit on homepage
-        grid.innerHTML = visible.map(p => `
-          <article class="card project-preview-card">
-            <div class="preview-top">
-              <div class="preview-image"><img src="${p.image}" alt="${p.title}"></div>
-              ${p.link && p.link !== '#' ? `<div class="live-badge">Live</div>` : ''}
-            </div>
-            <div class="info">
-              <div class="project-head">
-                <strong class="project-title">${p.title}</strong>
-                <span class="project-year">${p.year}</span>
-              </div>
-              <p class="project-desc" style="color:var(--muted);font-size:0.95rem;margin:6px 0;">${p.description}</p>
-              <div class="project-tech">
-                ${p.technologies.slice(0,3).map(t => `<span class="tech-tag">${t}</span>`).join('')}
-                ${p.technologies.length > 3 ? `<span class="tech-tag">+${p.technologies.length - 3}</span>` : ''}
-              </div>
-              <div class="project-actions" style="margin-top:12px;display:flex;gap:10px;align-items:center;">
-                ${p.link && p.link !== '#' ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn btn-quote btn-sm">Live Demo</a>` : `<span style="color:var(--muted);font-size:0.9rem;">Demo coming</span>`}
-                ${p.github && p.github !== '#' ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">View Code</a>` : ''}
-                <a href="portfolio.html" class="btn btn-sm">See more</a>
+    <div class="timeline">
+      <!-- Experience 1 -->
+      <div class="experience-card">
+        <div class="timeline-dot"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="job-info">
+              <h3> Website Developement</h3>
+              <div class="company">
+                <span class="company-icon">DT</span>
+                <span class="company-name">Duntech Solutions</span>
               </div>
             </div>
-          </article>
-        `).join('');
-      }
-
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderHomeProjects);
-      else renderHomeProjects();
-    })();
-  </script> 
-
-    
-
-    <!-- Packages teaser -->
-    <section class="container packages-teaser">
-      <h2>Popular Packages</h2>
-      <div class="grid">
-        <div class="card package-highlight" data-animate>
-          <h3>Business Starter</h3>
-          <p>Logo, one-page site, business card & flyer</p>
-          <div class="price">Ksh 30,000</div>
-        </div>
-        <div class="card" data-animate>
-          <h3>Social Boost</h3>
-          <p>3 social post templates + banner</p>
-          <div class="price">Ksh 5,000</div>
-        </div>
-        <div class="card" data-animate>
-          <h3>Student Pack</h3>
-          <p>CV + typed application + cover letter</p>
-          <div class="price">Ksh 1,500</div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:18px"><a href="packages.html" class="btn btn-ghost">See all packages</a></div>
-    </section>
-    <div class="contact-form fade-in" id="quick-order-form">
-    <h2>Quick Order</h2>
-    <form id="quickOrder" class="form">
-        <div class="form-row">
-            <div class="form-group required">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="from_name" placeholder="John Smith" required>
+            <span class="date-badge">2023 - Present</span>
+          </div>
+          
+          <p class="job-description">
+             We specialize in creating modern, responsive websites that deliver exceptional user experiences 
+            and drive business growth. Our websites are built with the latest technologies and best practices.
+          </p>
+          
+          <div class="responsibilities">
+            <h4>Key Responsibilities</h4>
+            <ul>
+              <li>Custom website design and development</li>
+              <li>Responsive mobile-friendly websites</li>
+              <li>E-commerce platforms and online stores</li>
+              <li>Content Management Systems (CMS)</li>
+              <li>Website maintenance and updates</li>
+            </ul>
+          </div>
+          
+          <div class="skills-tags">
+            <span class="skill-tag">HTML5/CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React framework</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">SEO Optimization</span>
+            <span class="skill-tag">figma </span>
+           <span class="skill-tag">Git and Github </span>
+           <span class="skill-tag">CD & CMS</span>
+          </div>
+         
+          <div class="achievements">
+            <h4>Notable Achievements</h4>
+            <div class="achievement-item">
+              <div class="achievement-icon">↑</div>
+              <div class="achievement-text">Developed 50+ websites for businesses across various industries</div>
             </div>
-            <div class="form-group required">
-                <label for="orderEmail">Email Address</label>
-                <input type="email" id="orderEmail" name="reply_to" placeholder="john@example.com" required>
+            <div class="achievement-item">
+              <div class="achievement-icon">+</div>
+              <div class="achievement-text">Increased client satisfaction score from 85% to 96%</div>
             </div>
-        </div>
-        
-        <div class="form-group required">
-            <label for="serviceType">Choose Service</label>
-            <div class="select-wrapper">
-                <select id="serviceType" name="service" required>
-                    <option value="">Select a service</option>
-                    <option value="Logo Design">Logo Design</option>
-                    <option value="Social Media Design">Social Media Design</option>
-                    <option value="Business Website">Business Website</option>
-                    <option value="E-commerce Store">E-commerce Store</option>
-                    <option value="Poster / Flyer">Poster / Flyer</option>
-                    <option value="Printing / Scanning">Printing / Scanning</option>
-                    <option value="KRA / iTax">KRA / iTax (PIN, Returns)</option>
-                    <option value="NTSA Services">NTSA (Licenses, Logbook)</option>
-                    <option value="HELB Services">HELB (Loans, Statements)</option>
-                    <option value="Passport / eCitizen">Passport / eCitizen</option>
-                    <option value="Typing & CV">Typing & CV Services</option>
-                </select>
-                <div class="select-arrow">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <div class="label-row">
-                <label for="jobDetails">Job Details</label>
-                <span class="char-count"><span id="charCounter">0</span>/500</span>
-            </div>
-            <textarea id="jobDetails" name="message" rows="4" placeholder="Please describe your requirements, deadlines, and any specific details..."></textarea>
-        </div>
-        
-        
-        <div class="form-group">
-            <div class="file-upload-area" id="fileDropZone">
-                <div class="upload-content">
-                    <div class="upload-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                            <path d="M28 8L12 24L28 40M40 8H12" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="upload-text">
-                        <p class="upload-title">Drop files here or click to upload</p>
-                        <p class="upload-subtitle">Supports: PDF, JPG, PNG, DOC • Max 10MB</p>
-                    </div>
-                </div>
-                <input type="file" id="fileUpload" name="attachment" multiple>
-                <div id="fileList" class="file-list"></div>
-            </div>
-        </div>
-        
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
-                    <path d="M19 1L9 11M19 1L13 19L9 11M19 1L1 7L9 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Send Order Request
-            </button>
-            <a id="waQuick" class="btn btn-secondary" href="#" target="_blank">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
-                    <path d="M16.8 3.2C15.2 1.6 13.2 0.8 11 0.8C6 0.8 2 4.8 2 9.8C2 11.4 2.4 12.8 3.2 14.2L2 18.2L6 17C7.4 17.8 9 18.2 10.6 18.2C15.6 18.2 19.6 14.2 19.6 9.2C19.6 7 18.8 5 17.2 3.4L16.8 3.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M14.6 11.8C14.2 11.6 13.2 11.2 13 11.2C12.8 11.2 12.6 11.2 12.4 11.4C12.2 11.6 11.6 12.2 11.4 12.4C11.2 12.6 11 12.6 10.8 12.4C10.6 12.2 10 11.6 9.8 11.2C9.6 11 9.6 10.8 9.8 10.6C10 10.4 10.2 10 10.2 9.8C10.2 9.6 10.2 9.4 10 9.2C9.8 9 9 8 8.8 7.6C8.6 7.2 8.4 7.2 8.2 7.2C8 7.2 7.8 7.2 7.6 7.2C7.4 7.2 7.2 7.2 7 7.4C6.8 7.6 6 8.4 6 9.6C6 10.8 6.8 12 7.6 12.8C8.4 13.6 9.6 14.4 11 14.8C11.8 15 12.6 15 13.4 14.8C14.2 14.6 15 14 15.2 13.2C15.4 12.4 15.2 12 15 11.8C14.8 11.6 14.8 11.8 14.6 11.8Z" fill="currentColor"/>
-                </svg>
-                WhatsApp
-            </a>
-        </div>
-        
-        <p class="form-footer">
-            We'll email you payment & delivery details. 
-            <span class="highlight">Email powered by EmailJS</span>
-        </p>
-    </form>
-</div>
-    
-   
-  
-
-    <!-- Testimonials (simple slider) -->
-    <section class="container testimonials" id="testimonials">
-      <h2>What clients say</h2>
-      <div class="testimonial-slider card">
-        <blockquote>"They created my website quickly and at a great price. Highly recommend."</blockquote>
-            <img src="image.png" alt="Client photo"> 
-            <div class="rating">⭐⭐⭐⭐⭐</div>
-  
-        <cite>— Aisha, Nairobi</cite>
-      </div>
-    </section>
-    
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand">
-          <div class="brand-logo"><img src="webimages/logo.png" alt=""><a href="index.html"></a></div>
-          <div>
-            <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Building the future of kenyan Business,One line of code at a Time</p></div>
-           
           </div>
         </div>
       </div>
-      <div>
-        <h4>Contact</h4>
-        <p class="muted">+254 700 000 000<br>hello@onestop.co.ke</p>
+
+      <!-- Experience 2 -->
+      <div class="experience-card">
+        <div class="timeline-dot"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="job-info">
+              <h3>Graphic Design</h3>
+              <div class="company">
+                <span class="company-icon">TC</span>
+                <span class="company-name">TechCorp Inc.</span>
+              </div>
+            </div>
+            <span class="date-badge"> 2022 to date </span>
+          </div>
+          
+          <p class="job-description">
+            Our creative team delivers stunning visual designs that capture your brand essence and 
+            communicate your message effectively. We transform ideas into compelling visual stories.
+          </p>
+          
+          <div class="responsibilities">
+            <h4>Key Responsibilities</h4>
+            <ul>
+              <li> brand identity design</li>
+              <li>Marketing collateral (brochures, flyers, posters)</li>
+              <li>Social media graphics and templates</li>
+              <li>Infographics and data visualization</li>
+              <li>Print-ready artwork preparation</li>
+            </ul>
+          </div>
+          
+          <div class="skills-tags">
+            <span class="skill-tag">Adobe Photoshop</span>
+            <span class="skill-tag">Illustrator</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Brand Identity</span>
+            
+          </div>
+          
+          <div class="achievements">
+            <h4>Notable Achievements</h4>
+            <div class="achievement-item">
+              <div class="achievement-icon">★</div>
+              <div class="achievement-text">Created 100+ successful brand identities for startups and established businesses</div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">⚡</div>
+              <div class="achievement-text">95% client satisfaction rate on design projects</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>Follow</h4>
-        <p class="muted">Facebook • Instagram • TikTok</p>
+
+      <!-- Experience 3 -->
+      <div class="experience-card">
+        <div class="timeline-dot"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="job-info">
+              <h3>Frontend Developer</h3>
+              <div class="company">
+                <span class="company-icon">DC</span>
+                <span class="company-name">Digital Creatives</span>
+              </div>
+            </div>
+            <span class="date-badge">2018 - 2020</span>
+          </div>
+          
+          <p class="job-description">
+            Created pixel-perfect user interfaces, collaborated with design teams, 
+            and contributed to the development of client-facing applications.
+          </p>
+          
+          <div class="responsibilities">
+            <h4>Key Responsibilities</h4>
+            <ul>
+              <li>Converted designs to responsive HTML/CSS</li>
+              <li>Implemented JavaScript functionality</li>
+              <li>Ensured cross-browser compatibility</li>
+              <li>Collaborated with backend developers</li>
+              <li>Maintained and updated existing codebases</li>
+            </ul>
+          </div>
+          
+          <div class="skills-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">SASS</span>
+            <span class="skill-tag">jQuery</span>
+            <span class="skill-tag">Bootstrap</span>
+          </div>
+          
+          <div class="achievements">
+            <h4>Notable Achievements</h4>
+            <div class="achievement-item">
+              <div class="achievement-icon">🎨</div>
+              <div class="achievement-text">Led redesign of company's flagship product</div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🏆</div>
+              <div class="achievement-text">Won internal hackathon for innovative UI solution</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container"
-     style="text-align:left;
-     justify-content:space-between;
-      display: flex;">
-      <small class="muted">© 2025 Duntech 
-      <span style="color: var(--accent);">solutions .</span>
-       All rights reserved</small>
-      <div class="socialmedia">
+
+    <div class="view-all">
+      <a href="#" class="view-all-btn">
+        View Full Resume
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add hover effects and animations
+      const experienceCards = document.querySelectorAll('.experience-card');
+      
+      experienceCards.forEach((card, index) => {
+        // Add data attribute for animation delay
+        card.style.animationDelay = `${index * 0.1 + 0.1}s`;
         
-        <i class="fa-solid fa-tiktok"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-solid fa-youtube"></i>
-        <i class="fa-solid fa-facebook"></i>
+        // Add click to expand functionality on mobile
+        const content = card.querySelector('.card-content');
+        if (window.innerWidth <= 768) {
+          const header = card.querySelector('.card-header');
+          header.addEventListener('click', () => {
+            card.classList.toggle('expanded');
+          });
+        }
+        
+        // Add intersection observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        observer.observe(card);
+      });
+      
+      // Add print functionality
+      const printBtn = document.createElement('button');
+      printBtn.innerHTML = '<i class="fas fa-print"></i> Print Experience';
+      printBtn.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+        font-family: inherit;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      `;
+      
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+      
+      document.body.appendChild(printBtn);
+      
+      // Add smooth scroll for view all button
+      const viewAllBtn = document.querySelector('.view-all-btn');
+      viewAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // In a real implementation, this would link to resume page
+        alert('This would link to the full resume page in a real implementation.');
+      });
+    });
+  </script>
+  
+<section class="faq-section" aria-labelledby="faq-title">
+    <h1 id="faq-title" class="faq-title">Frequently Asked Questions</h1>
+    <p class="faq-subtitle">Get answers to common questions about Duntech Solutions and our services</p>
+
+    <div class="faq-container" role="list">
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="answer-1">
+          <span class="faq-question-text">What services does Duntech Solutions offer?</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </span>
+          <span class="sr-only">Toggle answer</span>
+        </button>
+        <div id="answer-1" class="faq-answer" role="region" aria-labelledby="question-1">
+          <div class="faq-answer-content">
+            <p>
+              Duntech Solutions offers comprehensive digital services including custom website development, 
+              responsive web design, graphics design, logo creation, cybersecurity solutions, government 
+              services assistance, system setup and configuration, and tailored digital solutions for both 
+              businesses and individuals.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="answer-2">
+          <span class="faq-question-text">Do you build responsive websites?</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </span>
+          <span class="sr-only">Toggle answer</span>
+        </button>
+        <div id="answer-2" class="faq-answer" role="region" aria-labelledby="question-2">
+          <div class="faq-answer-content">
+            <p>
+              Absolutely! All our websites are built with a mobile-first approach and are fully responsive. 
+              They automatically adapt to provide optimal viewing experiences across all devices including 
+              smartphones, tablets, laptops, and desktop computers.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="answer-3">
+          <span class="faq-question-text">How long does it take to develop a website?</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </span>
+          <span class="sr-only">Toggle answer</span>
+        </button>
+        <div id="answer-3" class="faq-answer" role="region" aria-labelledby="question-3">
+          <div class="faq-answer-content">
+            <p>
+              Development timelines vary based on project complexity:
+            </p>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+              <li>Basic websites: 3–5 business days</li>
+              <li>Business websites: 1–2 weeks</li>
+              <li>E-commerce platforms: 2–4 weeks</li>
+              <li>Custom web applications: Timeline determined during consultation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="answer-4">
+          <span class="faq-question-text">Do you offer support after project completion?</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </span>
+          <span class="sr-only">Toggle answer</span>
+        </button>
+        <div id="answer-4" class="faq-answer" role="region" aria-labelledby="question-4">
+          <div class="faq-answer-content">
+            <p>
+              Yes, we provide comprehensive post-launch support packages. Our support includes technical 
+              assistance, security updates, performance optimization, content updates, and regular maintenance 
+              to ensure your digital solutions continue to perform optimally.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="answer-5">
+          <span class="faq-question-text">How can I contact Duntech Solutions?</span>
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </span>
+          <span class="sr-only">Toggle answer</span>
+        </button>
+        <div id="answer-5" class="faq-answer" role="region" aria-labelledby="question-5">
+          <div class="faq-answer-content">
+            <p>
+              You can reach us through multiple channels:
+            </p>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+              <li>Phone: Available during business hours</li>
+              <li>WhatsApp: 24/7 messaging support</li>
+              <li>Email: Typically respond within 2 business hours</li>
+              <li>Contact form on our website</li>
+              <li>Social media platforms</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      // Add unique IDs to questions for accessibility
+      faqItems.forEach((item, index) => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        // Set unique IDs if not already set
+        if (!question.id) question.id = `question-${index + 1}`;
+        if (answer && !answer.id) answer.id = `answer-${index + 1}`;
+        
+        // Set aria-controls attribute
+        question.setAttribute('aria-controls', answer.id);
+      });
+
+      // Handle FAQ toggle
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+          const isExpanded = question.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              const otherQuestion = otherItem.querySelector('.faq-question');
+              const otherAnswer = otherItem.querySelector('.faq-answer');
+              
+              otherItem.classList.remove('active');
+              otherQuestion.setAttribute('aria-expanded', 'false');
+              otherAnswer.style.maxHeight = null;
+            }
+          });
+
+          // Toggle current item
+          if (!isExpanded) {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            
+            // Add smooth scrolling for keyboard users
+            if (document.activeElement === question) {
+              setTimeout(() => {
+                question.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'nearest'
+                });
+              }, 300);
+            }
+          } else {
+            item.classList.remove('active');
+            question.setAttribute('aria-expanded', 'false');
+            answer.style.maxHeight = null;
+          }
+        });
+
+        // Handle keyboard navigation
+        question.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            question.click();
+          }
+          
+          // Arrow key navigation between FAQs
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextItem = item.nextElementSibling;
+            if (nextItem && nextItem.classList.contains('faq-item')) {
+              nextItem.querySelector('.faq-question').focus();
+            }
+          }
+          
+          if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevItem = item.previousElementSibling;
+            if (prevItem && prevItem.classList.contains('faq-item')) {
+              prevItem.querySelector('.faq-question').focus();
+            }
+          }
+        });
+      });
+
+      // Close FAQ when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.faq-item')) {
+          faqItems.forEach(item => {
+            item.classList.remove('active');
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            question.setAttribute('aria-expanded', 'false');
+            answer.style.maxHeight = null;
+          });
+        }
+      });
+    });
+  </script>
+
+    
+    
+   <!-- Footer -->
+  <footer>
+      <div class="container">
+          <div class="footer-container">
+              <div class="footer-column">
+                  <div class="brand">
+                    <div class="brand-logo"><img src="webimages/logo.png" alt="">
+                      <a href="mainindex.html"></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                  <h3>Duntech <span>solutions</span></h3>
+                  <ul>
+                      <li><i class="fas fa-map-marker-alt"></i> Narok , Kenya</li>
+                      <li>phone :<i class="fas fa-phone"></i> +254713723639</li>
+                      <li>Email:<i class="fas fa-envelope"></i> info@duntechsolutions.com</li>
+                  </ul>
+              </div><h4>Follow Us <i class="fa-solid fa-circle-chevron-down"></i></h4>
+
+                  <div class="social-icons">
+                      
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-github"></i></a>
+                  </div>
+              </div>
+              <div class="footer-column">
+                  <h3>Quick Links</h3>
+                  <ul class="quicklinks">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">why Us</a></li>
+                      <li><a href="#">Portfolio<i class="fa-solid fa-circle-chevron-down"></i>
+                        <ul class="dropdown">
+                        <li><a href="Portfolio.html">Website Projects</a></li>
+                        <li><a href="Graphic.html">Graphic Designs</a></li>
+                        <li><a href="Logo.html">logos Design</a></li>
+                        </ul> </a>
+                      </li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Services</h3>
+                  <ul>
+                      <li><a href="#">Web Development</a></li>
+                      <li><a href="#">Graphics,logo Designs </a></li>
+                      <li><a href="#">Cyber Services</a></li>
+                      <li><a href="#">Digital Solutions</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3>why choose us</h3>
+                  <ul>
+                      <li><p>Experienced Team</p></li>
+                      <li><p>creative solutions</p></li>
+                      <li><p>Affordable pricing </p></li>
+                      <li><p>Timely Delivering</p></li>
+                      <li><p>Client Satisfaction</p></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Support</h3>
+                  <ul>
+                      <li><a href="#">Help Center</a></li>
+                      <li><a href="#">FAQs</a></li>
+                      <li><a href="#">Terms of Service</a></li>
+                      <li><a href="#">Privacy policy</a></li>
+                      <li><a href="#">Contact Support</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Support</h3>
+                  <ul>
+                      <li><a href="#">Help Center</a></li>
+                      <li><a href="#">FAQs</a></li>
+                      <li><a href="#">Terms of Service</a></li>
+                      <li><a href="#">Privacy policy</a></li>
+                      <li><a href="#">Contact Support</a></li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="copyright">
+              <p>&copy; 2025 Duntech Solutions. All rights reserved.</p>
+          </div>
+      </div>
   </footer>
 
   
@@ -575,6 +931,7 @@
     </div>
 <script src="chatbot.js"></script>
 </section>
+<script src="Portfolio.js"></script>
 <script src="mainscript.js"></script>
 </body>
 </html>
