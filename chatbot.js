@@ -117,18 +117,9 @@
         };
 
         // ============================================
-        // DOM ELEMENTS
+        // DOM ELEMENTS (initialized on DOMContentLoaded)
         // ============================================
-        const elements = {
-            chatWindow: document.getElementById('chatWindow'),
-            chatToggle: document.getElementById('chatToggle'),
-            messagesContainer: document.getElementById('messagesContainer'),
-            chatInput: document.getElementById('chatInput'),
-            sendBtn: document.getElementById('sendBtn'),
-            minimizeBtn: document.getElementById('minimizeBtn'),
-            closeBtn: document.getElementById('closeBtn'),
-            notificationBadge: document.getElementById('notificationBadge')
-        };
+        let elements = {};
 
         // ============================================
         // INITIALIZATION
@@ -138,8 +129,20 @@
                 // Load conversation history
                 loadHistory();
                 
-                // Set up all event listeners
-                setupEventListeners();
+                    // Initialize DOM element references
+                    elements = {
+                        chatWindow: document.getElementById('chatWindow'),
+                        chatToggle: document.getElementById('chatToggle'),
+                        messagesContainer: document.getElementById('messagesContainer'),
+                        chatInput: document.getElementById('chatInput'),
+                        sendBtn: document.getElementById('sendBtn'),
+                        minimizeBtn: document.getElementById('minimizeBtn'),
+                        closeBtn: document.getElementById('closeBtn'),
+                        notificationBadge: document.getElementById('notificationBadge')
+                    };
+
+                    // Set up all event listeners
+                    setupEventListeners();
                 
                 // Auto-open welcome after delay
                 setTimeout(() => {
@@ -165,35 +168,35 @@
         // EVENT LISTENERS
         // ============================================
         function setupEventListeners() {
-            // Toggle chat window
-            elements.chatToggle.addEventListener('click', toggleChat);
-            
-            // Minimize button
-            elements.minimizeBtn.addEventListener('click', toggleChat);
-            
-            // Close button
-            elements.closeBtn.addEventListener('click', closeChat);
-            
-            // Send message on button click
-            elements.sendBtn.addEventListener('click', sendMessage);
-            
-            // Send message on Enter key (with typing check)
-            elements.chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && !state.isTyping) {
-                    e.preventDefault();
-                    sendMessage();
+                // Toggle chat window
+                if (elements.chatToggle) elements.chatToggle.addEventListener('click', toggleChat);
+
+                // Minimize button
+                if (elements.minimizeBtn) elements.minimizeBtn.addEventListener('click', toggleChat);
+
+                // Close button
+                if (elements.closeBtn) elements.closeBtn.addEventListener('click', closeChat);
+
+                // Send message on button click
+                if (elements.sendBtn) elements.sendBtn.addEventListener('click', sendMessage);
+
+                // Send message on Enter key (with typing check)
+                if (elements.chatInput) {
+                    elements.chatInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' && !state.isTyping) {
+                            e.preventDefault();
+                            sendMessage();
+                        }
+                    });
+
+                    // Focus input when chat opens
+                    elements.chatInput.addEventListener('focus', () => {
+                        if (elements.chatWindow) elements.chatWindow.classList.add('active');
+                    });
                 }
-            });
-            
-            // Focus input when chat opens
-            elements.chatInput.addEventListener('focus', () => {
-                elements.chatWindow.classList.add('active');
-            });
-            
-            // Prevent rapid firing
-            elements.sendBtn.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-            });
+
+                // Prevent rapid firing
+                if (elements.sendBtn) elements.sendBtn.addEventListener('mousedown', (e) => { e.preventDefault(); });
         }
 
         // ============================================

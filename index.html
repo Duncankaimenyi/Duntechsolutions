@@ -28,7 +28,12 @@
             <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Digital • Design • Development•Graphics</p></div>
            
           </div>
-        </div><div id="menu-btn">☰</div>
+        </div>
+        <button id="menu-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
        
     <ul>
       <a href="mainindex.html">Home</a>
@@ -58,8 +63,10 @@
   </ul>
   <a href="blog.html" >News & Blogs</a>
   <a href="contact.html">Contact</a>
-  <button id="BACK-btn">Back</button>
+  
 </div>
+<!-- overlay for off-canvas mobile menu -->
+<div id="mobile-overlay" class="mobile-overlay" hidden></div>
 
   
     </div>
@@ -590,41 +597,6 @@
         observer.observe(card);
       });
       
-      // Add print functionality
-      const printBtn = document.createElement('button');
-      printBtn.innerHTML = '<i class="fas fa-print"></i> Print Experience';
-      printBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: var(--shadow-lg);
-        z-index: 1000;
-        font-family: inherit;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      `;
-      
-      printBtn.addEventListener('click', () => {
-        window.print();
-      });
-      
-      document.body.appendChild(printBtn);
-      
-      // Add smooth scroll for view all button
-      const viewAllBtn = document.querySelector('.view-all-btn');
-      viewAllBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        // In a real implementation, this would link to resume page
-        alert('This would link to the full resume page in a real implementation.');
-      });
     });
   </script>
   
@@ -851,7 +823,102 @@
     });
   </script>
 
-    
+    <!-- Quick Order Section -->
+    <section class="quick-order" id="quick-order">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Contact Us</span>
+            </div>
+            
+            <div class="order-container">
+                <div class="order-form-container">
+                    <div class="order-form">
+                        <form id="quickOrderForm">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <select id="service" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="graphics">Graphics & Logo Design</option>
+                                    <option value="website">Website Development</option>
+                                    <option value="security"> online Cyber Services</option>
+                                    <option value="package">Complete Package</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget"></label>
+                                <select id="budget" class="form-control" required>
+                                    <option value="">Select project budget range</option>
+                                    <option value="500-1000">$500 - $1,000</option>
+                                    <option value="1000-3000">$1,000 - $3,000</option>
+                                    <option value="3000-5000">$3,000 - $5,000</option>
+                                    <option value="5000+">$5,000+</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Project Details </label>
+                                <textarea id="message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">
+                                <i class="fas fa-paper-plane"></i> Submit Project Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="order-info-container">
+                    <div class="order-info">
+                        <h3>Why Choose Duntech Solutions?</h3>
+                        <p>We combine creativity with technology to deliver exceptional results for every client.</p>
+                        
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>Expert Team:</strong> Skilled professionals with years of experience </li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Fast Delivery:</strong>  Quick turnaround without compromising quality</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Transparent Pricing:</strong> No hidden fees or surprises</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Dedicated Support:</strong> 24/7 customer support for all clients</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Satisfaction Guarantee:</strong> We ensure you're happy with the results</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Modern Solutions:</strong> Latest technologies and design trends</li>
+                        </ul>
+                        
+                        <div class="contact-info">
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Call Us Now</strong><br>
+                                    <span>+254 712 345 678</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email Us</strong><br>
+                                    <span>hello@duntechsolutions.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Business Hours</strong><br>
+                                    <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     
    <!-- Footer -->
   <footer>
@@ -867,8 +934,8 @@
                   <h3>Duntech <span>solutions</span></h3>
                   <ul>
                       <li><i class="fas fa-map-marker-alt"></i> Narok , Kenya</li>
-                      <li>phone :<i class="fas fa-phone"></i> +254713723639</li>
-                      <li>Email:<i class="fas fa-envelope"></i> info@duntechsolutions.com</li>
+                      <li><i class="fas fa-phone"></i> phone : +254713723639</li>
+                      <li><i class="fas fa-envelope"></i> Email: info@duntechsolutions.com</li>
                   </ul>
               </div><h4>Follow Us <i class="fa-solid fa-circle-chevron-down"></i></h4>
 
@@ -1007,12 +1074,8 @@
     </div>
 
 </section>
-<<<<<<< HEAD:mainindex.html
 <script src="chatbot.js"></script>
 <script src="Portfolio.js"></script>
-<script src="mainscript.js"></script>
-=======
 <script src="script.js"></script>
->>>>>>> 814f3c9f2c76043c58e48301e05e39f95596fdb8:index.html
 </body>
 </html>
