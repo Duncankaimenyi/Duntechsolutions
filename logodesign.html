@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo Gallery</title>
-  <style>
-    body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duntech  Solutins logo designs</title>
+</head>
+<style>
+* {
   font-family: system-ui, sans-serif;
   margin: 0;
   padding: 0;
@@ -18,25 +19,21 @@ h1, p {
   margin: 16px 0;
 }
 
-.logocontainer {
+.graphiccontainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  padding: 10px;
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 10px;
 }
 
 .card {
   background: #fff;
+  padding: 10px;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
 }
 
 .card:hover {
@@ -45,39 +42,32 @@ h1, p {
 }
 
 .card img {
-  max-width: 70%;
-  max-height: 170px;
-  object-fit: contain; /* keeps logos neat */
+  width: 100%;
+  height: 400px ;
+  object-fit: cover;
   display: block;
 }
-
-/* 📱 Mobile view: force one logo per row */
-@media (max-width: 600px) {
-  .logocontainer {
-    grid-template-columns: 1fr; /* one column only */
-  }
-
+@media (max-width: 758px) {
   .card img {
-    max-width: 90%;  /* logos scale nicely */
-    max-height: 140px;
+    width: 100%;
+  height: auto ;
+  object-fit: cover;
+  display: block;
   }
+    
 }
-
-  </style>
-</head>
+</style>
 <body>
-  <h1>Logo Gallery</h1>
-  <p>Explore some of our creative logo designs.</p>
+    <h1>Logo Design</h1>
+    <p>Welcome to the duntech Logo Design page..</p>
+    <main class="graphiccontainer">
+  <div class="card"><img src="graphicimages/BIOSTRENGTH.png" alt="Background"></div>
+  <div class="card"><img src="graphicimages/EAGLE.png" alt="Headphones"></div>
+  <div class="card"><img src="graphicimages/HR.png" alt="Ad Design"></div>
+  <div class="card"><img src="graphicimages/logo design.png" alt="Instagram Post"></div>
+  <div class="card"><img src="" alt="Portrait"></div>
+  
+</main>
 
-  <main class="logocontainer">
-    <div class="card"><img src="graphicimages/BIOSTRENGTH.png" alt="Logo 1"></div>
-    <div class="card"><img src="graphicimages/HR.png" alt="Logo 2"></div>
-    <div class="card"><img src="graphicimages/EAGLE.png" alt="Logo 3"></div>
-    <div class="card"><img src="graphicimages/LOGO4.psd" alt="Logo 4"></div>
-    <div class="card"><img src="graphicimages/LOGO5.psd" alt="Logo 5"></div>
-    <div class="card"><img src="graphicimages/LOGO6.psd" alt="Logo 6"></div>
-    <div class="card"><img src="graphicimages/logo design.png" alt="Logo 7"></div>
-    <div class="card"><img src="logos/logo8.png" alt="Logo 8"></div>
-  </main>
 </body>
 </html>
