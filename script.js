@@ -27,7 +27,27 @@ if(menuBtn){
 }
 
 
-
+ 
+        // Animate service cards on scroll
+        const serviceCards = document.querySelectorAll('.service-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.1 });
+         // Set initial state for animation
+        serviceCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            cardObserver.observe(card);
+        });
+        
 // Add this script if you want hover pause functionality
 document.addEventListener('DOMContentLoaded', function() {
     const marqueeTrack = document.querySelector('.marquee-track');
