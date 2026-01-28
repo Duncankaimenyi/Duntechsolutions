@@ -170,34 +170,103 @@ nav ul li .dropdown a:hover {
 /* Modern animated hamburger */
 .hamburger {
   display: none;
-  place-items: center;
-  width: 40px;
-  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  padding: 8px 12px;
+  height: auto;
   border-radius: 8px;
   background: transparent;
   border: 1px solid transparent;
+  cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease;
 }
-.hamburger span {
+
+.hamburger-icon {
   display: block;
-  width: 18px;
+  width: 20px;
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
   transition: transform 200ms ease, opacity 140ms ease, background 140ms ease;
 }
-.hamburger span + span { margin-top: 4px; }
-.hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.hamburger-text {
+  display: block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hamburger .hamburger-icon + .hamburger-icon { margin-top: 0; }
+
+.hamburger.is-open .hamburger-icon:nth-child(1) { 
+  transform: translateY(6px) rotate(45deg); 
+}
+
+.hamburger.is-open .hamburger-icon:nth-child(2) { 
+  opacity: 0; 
+  transform: scaleX(0); 
+}
+
+.hamburger.is-open .hamburger-icon:nth-child(3) { 
+  transform: translateY(-6px) rotate(-45deg); 
+}
+
+.hamburger:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+}
 
 /* Prevent body scroll when menu open */
 .no-scroll { overflow: hidden; }
 
-/* Show hamburger on narrow screens and hide desktop nav */
-@media (max-width: 768px) {
-  nav ul { display: none; }
-  #menu-btn { display: inline-block; }
+/* Show hamburger only on tablets (768px to 991px) - NOT on mobile or desktop */
+@media (max-width: 991px) {
+  nav ul { 
+    display: none; 
+  }
+  #menu-btn { 
+    display: flex; 
+  }
+}
+
+/* Hide hamburger on very small screens (phones < 480px) */
+@media (max-width: 480px) {
+  #menu-btn { 
+    display: none; 
+  }
+  
+  nav ul { 
+    display: none; 
+  }
+}
+
+/* Show full menu on phones < 480px instead of hamburger */
+@media (max-width: 480px) {
+  #mobile-menu {
+    display: flex !important;
+  }
+}
+
+/* Hide hamburger on large screens (992px+) */
+@media (min-width: 992px) {
+  nav ul { 
+    display: flex; 
+  }
+  #menu-btn { 
+    display: none !important; 
+  }
+  #mobile-menu {
+    display: none !important;
+  }
+  .mobile-overlay {
+    display: none !important;
+  }
+}
   .brand-logo img { width:48px; height:28px; }
 }
 
@@ -2535,5 +2604,242 @@ footer::after {
   .brand-text h1 { font-size: 2.2rem; }
   .section-title { font-size: 2rem; }
   .section-sub { font-size: 1.2rem; }
+}
+
+/* ENHANCED RESPONSIVE IMPROVEMENTS */
+
+/* Mobile Navigation */
+@media (max-width: 992px) {
+  nav ul { 
+    gap: 12px; 
+  }
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+  .brand-text h1 {
+    font-size: 1.5rem;
+  }
+  .brand-text p {
+    font-size: 12px;
+  }
+}
+
+/* Tablet Optimization (768px to 992px) */
+@media (max-width: 768px) {
+  body {
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  nav ul { 
+    display: none; 
+  }
+  
+  nav .brand {
+    gap: 8px;
+  }
+  
+  .brand-logo img {
+    width: 50px;
+    height: 35px;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.3rem;
+  }
+  
+  .brand-text p {
+    font-size: 11px;
+  }
+  
+  #menu-btn { 
+    display: flex;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+  }
+  
+  #mobile-menu {
+    top: 80px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  #mobile-menu a {
+    padding: 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+    display: block;
+  }
+  
+  #mobile-menu a:hover {
+    background: var(--bg-hover);
+    color: var(--accent);
+  }
+  
+  /* Improved hamburger menu */
+  .hamburger {
+    display: inline-flex;
+  }
+}
+
+/* Mobile Optimization (max 480px) */
+@media (max-width: 480px) {
+  body {
+    margin: 30px auto;
+    padding: 0 12px;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  .brand-text h1 {
+    font-size: 1.1rem;
+  }
+  
+  .brand-text p {
+    font-size: 10px;
+  }
+  
+  #mobile-menu {
+    padding: 16px;
+    gap: 8px;
+  }
+  
+  #mobile-menu a {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+  
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { font-size: 0.95rem; }
+}
+
+/* Images Responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 4px;
+  }
+}
+
+/* Responsive Forms */
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
+    width: 100%;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive Flexbox Utilities */
+@media (max-width: 768px) {
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+}
+
+/* Improved Button Responsiveness */
+@media (max-width: 768px) {
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    min-height: 44px; /* Touch target size */
+  }
+  
+  .btn-large {
+    width: 100%;
+  }
+}
+
+/* Touch-friendly spacing on mobile */
+@media (max-width: 768px) {
+  button,
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Optimize padding/margins for small screens */
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 24px 0;
+  }
+  
+  .container-padding {
+    padding: 0 12px;
+  }
+  
+  .gap-large {
+    gap: 12px;
+  }
+}
+
+/* Responsive text alignment */
+@media (max-width: 768px) {
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
 }
 
