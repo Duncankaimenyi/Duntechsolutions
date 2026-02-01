@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-  <meta name="description" content="Duntech Solutions - Expert web development, graphic design, logo design, and cybersecurity services. Transform your digital presence today." />
+  <meta name="description" content="Duntech Solutions - Expert web development, graphic design, logo design, and cyberservices services. Transform your digital presence today." />
   <meta name="keywords" content="web development, graphic design, logo design, cybersecurity, digital solutions, web design agency" />
   <meta name="author" content="Duntech Solutions" />
   <meta name="robots" content="index, follow" />
@@ -14,6 +14,7 @@
   <meta name="theme-color" content="#4f46e5" />
   <title>Duntech Solutions — Web Development, Graphic Design & Cybersecurity Services</title>
   <link rel="stylesheet" href="style.css">
+  
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -29,7 +30,7 @@
 <body>
  
   <header class="site-header">
-    <div class="container">
+    <div class="containerheader">
       <nav>
         <div class="brand">
           <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"><a href="mainindex.html"></a></div>
@@ -46,7 +47,7 @@
         </button>
        
     <ul>
-      <a href="mainindex.html">Home</a>
+      <a href="index.html">Home</a>
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">Why  Us</a></li>
       <li class="headportfolio"><a href="">portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
@@ -57,12 +58,12 @@
          </ul>
         </li>
         <li><a href="blog.html" >News & Blogs</a></li>
-      <li><a href="contact.html" >Contact</a></li>
+      <li><a href="index.html#quick-order" >Contact</a></li>
     </ul>
   </nav>
   
   <div id="mobile-menu">
-  <a href="mainindex.html">Home</a>
+  <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">Why Us</a>
   <a href="#" class="headportfolio">Portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
@@ -72,7 +73,7 @@
     <li><a href="logodesign.html">Logo Designs</a></li>
   </ul>
   <a href="blog.html" >News & Blogs</a>
-  <a href="contact.html">Contact</a>
+  <a href="#quick-order">Contact</a>
   
 </div>
 <!-- overlay for off-canvas mobile menu -->
@@ -94,7 +95,7 @@
                     </h1>
                     <p class="hero-subtitle">
                         We specialize in creating stunning websites, compelling graphics, 
-                        and robust cybersecurity solutions to elevate your business in the digital world.
+                        and online cyber services  to elevate your business in the digital world.
                     </p>
                     
                     <div class="hero-services">
@@ -137,9 +138,9 @@
                           </div>
                           </div>
                           <div class="progressbar"><span></span></div>
-                      </div>
+                        </div>
           
-                  </div>
+                    </div>
                 </div>
                 <div class="hero-visual">
                   <div class="duntechheroimage">
@@ -236,6 +237,7 @@
                         <li>Marketing Materials</li>
                         <li>Social Media Graphics</li>
                     </ul>
+                    <div class="service-cardlink"><a href="services.html#design" class="btn btn-ghost">See more about </a></div>
                 </div>
                 
                 <div class="service-card">
@@ -250,20 +252,26 @@
                         <li>CMS Development</li>
                         <li>SEO Optimization</li>
                     </ul>
+                    <div class="service-cardlink"><a href="services.html#web" class="btn btn-ghost">See more </a></div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Cyber Security Services</h3>
+                    <h3> Online Cyber Services</h3>
                     <p>Protect your business from digital threats with our comprehensive security solutions. We ensure your data and systems are secure and compliant.</p>
                     <ul class="service-features">
-                        <li>Security Audits</li>
-                        <li><i class="fas fa-check"></i> Threat Monitoring</li>
-                        <li><i class="fas fa-check"></i> Data Protection</li>
-                        <li><i class="fas fa-check"></i> 24/7 Security Support</li>
+                        <li>KRAs</li>
+                       <li>HELB</li>
+                       <li>KUCCPS</li>
+                       <li>NSSF</li>
+                       <li>SHA</li>
+                       <li>TSC</li>
+                       <li>Document typying and editing</li>
                     </ul>
+                    <div class="service-cardlink"><a href="services.html#cyber" class="btn btn-ghost">See more cyber services</a></div>
+                   
                 </div>
             </div>
         </div>
@@ -568,7 +576,7 @@
     });
   </script>
   
-<section class="faq-section" aria-labelledby="faq-title">
+<section class="faq-section" aria-labelledby="faq-title" id="faq-section">
     <h1 id="faq-title" class="faq-title">Frequently Asked Questions</h1>
     <p class="faq-subtitle">Get answers to common questions about Duntech Solutions and our services</p>
 
@@ -965,7 +973,7 @@
                   <h3>Support</h3>
                   <ul>
                       <li><a href="#">Help Center</a></li>
-                      <li><a href="#">FAQs</a></li>
+                      <li><a href="index.html#faq-section">FAQs</a></li>
                       <li><a href="#">Terms of Service</a></li>
                       <li><a href="#">Privacy policy</a></li>
                       <li><a href="#">Contact Support</a></li>
@@ -1005,70 +1013,11 @@
   </footer>
 
   
-   <!-- chatbot -->
-  <section class="chatbot">
-     <link rel="stylesheet" href="chatbot.css">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Professional Chatbot Container -->
-    <div class="duntech-chatbot" id="duntechChatbot">
-        <!-- Chat Window -->
-        <div class="chatbot-window" id="chatWindow">
-            <!-- Header -->
-            <div class="chatbot-header">
-                <div class="chatbot-title">
-                    <div class="chatbot-avatar">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="chatbot-info">
-                        <h3>Duntech AI Assistant</h3>
-                        <p>Professional • Online Now</p>
-                    </div>
-                </div>
-                <div class="chatbot-actions">
-                    <button class="chatbot-btn" id="minimizeBtn" title="Minimize">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button class="chatbot-btn" id="closeBtn" title="Close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Messages Container -->
-            <div class="chatbot-messages" id="messagesContainer">
-                <!-- Messages will be added here -->
-            </div>
-            
-            <!-- Input Area -->
-            <div class="chatbot-input-container">
-                <input type="text" class="chatbot-input" id="chatInput" 
-                       placeholder="Type your message here..." 
-                       maxlength="500"
-                       aria-label="Chat input">
-                <button class="send-btn" id="sendBtn">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-            
-            <!-- Footer -->
-            <div class="chatbot-footer">
-                <span><i class="fas fa-shield-alt"></i> Secure Connection</span>
-                <span>Powered by Duntech AI</span>
-                <span><i class="fas fa-clock"></i> 24/7</span>
-            </div>
-        </div>
-        
-        <!-- Toggle Button -->
-        <div class="chatbot-toggle" id="chatToggle">
-            <i class="fas fa-comments"></i>
-            <div class="notification-badge" id="notificationBadge" style="display: none;">3</div>
-        </div>
-    </div>
-
+   
 </section>
-<script src="chatbot.js"></script>
 <script src="Portfolio.js"></script>
 <script src="script.js"></script>
+
+</script>
 </body>
 </html>

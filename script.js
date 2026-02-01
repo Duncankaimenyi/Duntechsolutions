@@ -98,20 +98,25 @@ document.addEventListener('DOMContentLoaded', function() {
       else renderHomeProjects();
     })();
 // contact form popup
-// Simple Contact Form (Front‑end only)
-document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  document.getElementById('msg-status').innerHTML = "sending..............";
-  setTimeout(()=>{
-    document.getElementById('contact-form').reset();
-  }, 3000);
-});
+// Simple Contact Form (Front‑end only) - guard element access to avoid errors
+const contactForm = document.getElementById('contactForm') || document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const statusEl = document.getElementById('msg-status');
+    if (statusEl) statusEl.textContent = "sending..............";
+    setTimeout(()=>{
+      if (typeof contactForm.reset === 'function') contactForm.reset();
+    }, 3000);
+  });
+}
+
 let popup = document.getElementById('popup');
-  function openPopup (){
-    popup.classList.add("open-popup");
-  }
-  function closePopup (){
-    popup.classList.remove("open-popup");
+function openPopup (){
+  if (popup) popup.classList.add("open-popup");
+}
+function closePopup (){
+  if (popup) popup.classList.remove("open-popup");
 }
 
 // Basic site interactions, animations and EmailJS integration
@@ -132,10 +137,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }, {threshold:0.12});
   document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-  
-  
-
 
  
 });

@@ -24,7 +24,7 @@ function startCounting() {
     let observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateNumbers(stats[0], 0, 10, 1500);
+                animateNumbers(stats[0], 0, 3, 1500);
                 animateNumbers(stats[1], 0, 500, 2000);
                 animateNumbers(stats[2], 0, 300, 1800);
                 observer.disconnect();
