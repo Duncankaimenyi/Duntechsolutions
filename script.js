@@ -141,5 +141,32 @@ document.addEventListener('DOMContentLoaded', function(){
  
 });
 
+// Hide navbar on small screens when user scrolls horizontally (to the right)
+(function(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  let lastX = 0;
+  let ticking = false;
+
+  function onScroll() {
+    if (window.innerWidth > 480) return; // only on narrow phones
+    const x = window.scrollX || window.pageXOffset || 0;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (x > 20) header.classList.add('hide-horizontal');
+        else header.classList.remove('hide-horizontal');
+        ticking = false;
+      });
+      ticking = true;
+    }
+    lastX = x;
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // also handle touchmove (some browsers don't update scrollX during touchstart)
+  window.addEventListener('touchmove', onScroll, { passive: true });
+})();
+
         
         

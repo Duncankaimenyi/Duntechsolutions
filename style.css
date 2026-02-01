@@ -284,6 +284,26 @@ nav ul li .dropdown a:hover {
 }
   .brand-logo img { width:48px; height:28px; }
 
+/* Small: hide header when user scrolls horizontally (applies only on narrow phones) */
+@media (max-width: 480px) {
+  .site-header.hide-horizontal {
+    transform: translateX(-110%);
+    transition: transform 220ms ease-in-out;
+  }
+
+  /* Why Us section styles */
+  .why-us { padding: 36px 0; background: #fff; border-top: 1px solid rgba(0,0,0,0.03); }
+  .why-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 18px; }
+  .why-card { background: #f8fafc; padding: 16px; border-radius: 10px; text-align: left; }
+  .why-icon { font-size: 28px; margin-bottom: 8px; }
+}
+
+@media (min-width: 481px) {
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 18px; }
+  .why-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: var(--shadow); }
+  .why-icon { font-size: 32px; margin-bottom: 10px; }
+}
+
 
 
 
