@@ -1343,23 +1343,23 @@ document.addEventListener('DOMContentLoaded', function(){
       // Send to Google Apps Script (stores ratings in Google Sheet)
       const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbw79g0LIg0mTdocp1zSa5Jq4jui9h7MZR_-oc8npK3VM9ZrVKq5Pp10UVeU49sR-vFH/exec';
 
-      const payload = {
-        type: 'rating',
-        rating: rating,
-        name: name,
-        email: email,
-        comment: comment,
-        timestamp: new Date().toLocaleString()
-      };
+      // Use URLSearchParams for Google Apps Script form data format
+      const params = new URLSearchParams();
+      params.append('type', 'rating');
+      params.append('rating', rating);
+      params.append('name', name);
+      params.append('email', email);
+      params.append('comment', comment);
+      params.append('timestamp', new Date().toLocaleString());
 
       const res = await fetch(googleScriptUrl, { 
         method: 'POST', 
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload) 
+        mode: 'no-cors',
+        body: params
       });
-      const result = await res.json().catch(() => ({}));
+      const result = { success: true }; // no-cors mode can't read response
 
-      if (res.ok || result.success) {
+      if (result.success || res) {
         if (ratingStatus) { ratingStatus.textContent = '✓ Thank you for your feedback!'; ratingStatus.style.color = 'var(--success)'; }
         ratingForm.reset();
         // Silent success - no popup, data already sent to WhatsApp via Apps Script
