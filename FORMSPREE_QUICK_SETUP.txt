@@ -1,0 +1,39 @@
+## Quick Formspree Setup Checklist
+
+### 🚀 What You Need To Do:
+
+1. **Sign up at formspree.io**
+   - Use: hello@duntechsolutions.com
+   - Create account
+
+2. **Get Form IDs**
+   - Create "Contact Form" → Copy ID
+   - Create "Newsletter Form" → Copy ID
+
+3. **Update email.js with your Form IDs**
+   - Line 32: Replace `mblrzdel` with your Contact Form ID
+   - Line 65: Replace `xyzxyzxyz` with your Newsletter Form ID
+
+4. **Verify Email**
+   - Check hello@duntechsolutions.com inbox
+   - Click confirmation link for each form
+
+5. **Test**
+   - Fill out contact form
+   - See success popup
+   - Check email for submission
+
+---
+
+## What Changed:
+- ✅ EmailJS removed
+- ✅ Formspree integrated (free, unlimited)
+- ✅ Popup still shows after submission
+- ✅ Form validation still works
+- ✅ Everything looks the same to users
+
+## Files to Update:
+1. `email.js` - Change Form IDs (2 places)
+2. Sign up at formspree.io
+
+That's it! 🎉
