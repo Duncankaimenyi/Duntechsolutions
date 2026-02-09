@@ -1,30 +1,69 @@
-// Mobile Menu Toggle (modern off-canvas)
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileOverlay = document.getElementById('mobile-overlay');
+// Show mobile menu
+        function showMobileMenu() {
+            document.getElementById('mobile-overlay').classList.remove('hidden');
+        }
+        
+        // Hide mobile menu
+        function hideMobileMenu() {
+            document.getElementById('mobile-overlay').classList.add('hidden');
+        }
+        
+        // Toggle dropdown for Portfolio
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const portfolioLink = event.currentTarget;
+            const dropdown = portfolioLink.nextElementSibling;
+            
+            // Toggle active class
+            portfolioLink.classList.toggle('active');
+            dropdown.classList.toggle('active');
+        }
+        
+        // Set active link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!this.classList.contains('headportfolio')) {
+                    // Remove active class from all links
+                    document.querySelectorAll('#mobile-menu a').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Hide menu after clicking a link (optional)
+                    setTimeout(() => {
+                        hideMobileMenu();
+                    }, 300);
+                }
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.getElementById('mobile-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideMobileMenu();
+            }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hideMobileMenu();
+            }
+        });
+        
+        // Demo: Simulate current page is Home
+        window.addEventListener('load', function() {
+            // You can set active class based on current page URL
+            const currentPage = 'index.html'; // Change this based on actual page
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-function openMobileMenu(){
-  if(menuBtn) menuBtn.classList.add('is-open');
-  if(menuBtn) menuBtn.setAttribute('aria-expanded','true');
-  if(mobileMenu) mobileMenu.classList.add('open');
-  if(mobileOverlay) mobileOverlay.classList.add('visible');
-  document.body.classList.add('no-scroll');
-}
-
-function closeMobileMenu(){
-  if(menuBtn) menuBtn.classList.remove('is-open');
-  if(menuBtn) menuBtn.setAttribute('aria-expanded','false');
-  if(mobileMenu) mobileMenu.classList.remove('open');
-  if(mobileOverlay) mobileOverlay.classList.remove('visible');
-  document.body.classList.remove('no-scroll');
-}
-
-if(menuBtn){
-  menuBtn.addEventListener('click', () => {
-    if(menuBtn.classList.contains('is-open')) closeMobileMenu();
-    else openMobileMenu();
-  });
-}
 
 
  

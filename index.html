@@ -12,10 +12,10 @@
   <meta property="og:description" content="Expert web development, graphic design, and cybersecurity services." />
   <meta property="og:url" content="https://duntech-solutions.com" />
   <meta name="theme-color" content="#4f46e5" />
-  <title>Duntech Solutions — Web Development, Graphic Design & Cybersecurity Services</title>
+  <title>Duntech Solutions — Web Development, Graphic Design & Cyber Services</title>
   <link rel="stylesheet" href="style.css">
   
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/96da3af5ba.js" crossorigin="anonymous"></script>
 </head>
@@ -26,17 +26,15 @@
       <nav>
         <div class="brand">
           <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"><a href="mainindex.html"></a></div>
-          <div>
+        
             <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Digital • Design • Development • Graphics</p></div>
-           
-          </div>
+          <button class="demo-button" onclick="showMobileMenu()">
+        <i class="fas fa-bars" style="margin-right: 8px;"></i>
+       <p>menu</p> 
+       </button>
+          
         </div>
-        <button id="menu-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span class="hamburger-icon"></span>
-          <span class="hamburger-icon"></span>
-          <span class="hamburger-icon"></span>
-          <span class="hamburger-text">Menu</span>
-        </button>
+        
        
     <ul>
       <a href="index.html">Home</a>
@@ -54,28 +52,83 @@
     </ul>
   </nav>
   
-  <div id="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="index.html#why-us">Why Us</a>
-  <a href="services.html">Services</a>
-  <a href="#" class="headportfolio">Portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
-  <ul class="dropdown">
-    <li><a href="Portfolio.html">Website Projects</a></li>
-    <li><a href="Graphic.html">Graphic Designs</a></li>
-    <li><a href="logodesign.html">Logo Designs</a></li>
-  </ul>
-  <a href="blog.html" >News & Blogs</a>
-  <a href="#quick-order">Contact</a>
-  
-</div>
-<!-- overlay for off-canvas mobile menu -->
-<div id="mobile-overlay" class="mobile-overlay" hidden></div>
-
+ 
+    
+    <!-- Overlay for off-canvas mobile menu -->
+    <div id="mobile-overlay" class="mobile-overlay hidden">
+        <!-- Your Mobile Menu - Now with Modern Styling -->
+        <div id="mobile-menu">
+            
+            <div class="menu-content">
+              
+                <ul class="menu-list">
+                  <div class="menumobile-header">
+               
+                <button class="close-btn" onclick="hideMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+                    <li class="menu-item">
+                        <a href="index.html" class="active">
+                            <div class="menu-icon"><i class="fas fa-home"></i></div>
+                            <div class="menu-text">Home</div>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a href="index.html#why-us">
+                            <div class="menu-icon"><i class="fas fa-star"></i></div>
+                            <div class="menu-text">Why Us</div>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a href="services.html">
+                            <div class="menu-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="menu-text">Services</div>
+                        </a>
+                    </li>
+                    
+                    <!-- Portfolio with Dropdown -->
+                    <li class="menu-item">
+                        <a href="#" class="headportfolio" onclick="toggleDropdown(event)">
+                            <div class="menu-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="menu-text">Portfolio</div>
+                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="Portfolio.html">Website Projects</a></li>
+                            <li><a href="Graphic.html">Graphic Designs</a></li>
+                            <li><a href="logodesign.html">Logo Designs</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a href="blog.html">
+                            <div class="menu-icon"><i class="fas fa-newspaper"></i></div>
+                            <div class="menu-text">News & Blogs</div>
+                        </a>
+                    </li>
+                    
+                    <!-- Contact Button -->
+                    <li class="menu-item">
+                        <a href="#quick-order">
+                            <div class="menu-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="menu-text">Contact</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
   
     </div>
   </header>
   <main>
     
+   
+</head>
+
     <!-- Hero -->
     <section class="hero">
       <div class="containerhero">
@@ -91,15 +144,25 @@
                     </p>
                     
                     <div class="hero-services">
-                        <div class="service-tag">
-                            <i class="fas fa-paint-brush"></i> Graphics & Logo Design
-                        </div>
+                       <div class="hero-servicesgrid" >
                         <div class="service-tag">
                             <i class="fas fa-code"></i> Website Development
                         </div>
-                        <div class="service-tag">
+                         <div class="service-tag">
                             <i class="fas fa-shield-alt"></i> Online Cyber Services
                         </div>
+                       </div>
+                       <div class="hero-servicesgrid">
+                         <div class="service-tag">
+                            <i class="fas fa-paint-brush"></i> Graphics Design
+                        </div>
+                         <div class="service-tag">
+                            <i class="fas fa-paint-brush"></i> Logo Design
+                        </div>
+                       </div>
+                        
+                        
+                       
                     </div>
                     
                     <div class="hero-actions">
@@ -212,24 +275,37 @@
       <div class="why-uscontainer">
         <div class="section-header">
           <h2 class="section-title">Why Choose Us</h2>
-          <p class="section-sub">We combine creativity, technology and local knowledge to deliver results.</p>
+          <p class="why-ussection-sub"> we are top website development solution in kenya ,We combine creativity, technology and local knowledge to deliver results.</p>
         </div>
         <div class="why-grid">
           <div class="why-card">
-            <div class="why-icon">⭐</div>
+            <div class="why-icon"><i class="fas fa-briefcase"></i></div>
+            <h3>Mission</h3>
+            <p>To design secure , scalable, and visually compelling websites using modern technologies that helps kenyan businesses grow digitally.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-eye"></i></div>
+            <h3>vision</h3>
+            <p>To become  a leading digital solutions partner in kenya by consisently delivering quality ,innovation,and measurable results.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-star"></i></div>
             <h3>Trusted Expertise</h3>
             <p>Years of hands-on experience delivering websites, graphics and cyber services for local businesses.</p>
           </div>
           <div class="why-card">
-            <div class="why-icon">⚡</div>
-            <h3>Fast Delivery</h3>
+            <div class="why-icon"><i class="fas fa-rocket"></i></div>
+            <h3>Fast Delivery & core values</h3>
             <p>Quick turnarounds without compromising on quality — from landing pages to full platforms.</p>
+            <li>Technical Competence</li>
+            <li>Professional Intergrity</li>
+            <li>Ethical Standards</li>
+            <li>Innovation & creativity</li>
+            <li>Team collaboration</li>
+            
           </div>
-          <div class="why-card">
-            <div class="why-icon">💬</div>
-            <h3>Local Support</h3>
-            <p>Kenya-based support and payment options, with friendly customer service when you need it.</p>
-          </div>
+          
+          
         </div>
       </div>
     </section>
