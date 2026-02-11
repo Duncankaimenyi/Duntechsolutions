@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <meta name="description" content="Duntech Solutions - Expert web development, graphic design, logo design, and cyberservices services. Transform your digital presence today." />
-  <meta name="keywords" content="web development, graphic design, logo design, cybersecurity, digital solutions, web design agency" />
+  <meta name="keywords" content="web development, graphic design, logo design, online cyber, digital solutions, web design agency" />
   <meta name="author" content="Duntech Solutions" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Duntech Solutions — Home" />
-  <meta property="og:description" content="Expert web development, graphic design, and cybersecurity services." />
-  <meta property="og:url" content="https://duntech-solutions.com" />
+  <meta property="og:description" content="Expert web development, graphic design, and cyber services." />
+  <meta property="og:url" content="https://duntech-solutions.vercel app" />
   <meta name="theme-color" content="#4f46e5" />
   <title>Duntech Solutions — Web Development, Graphic Design & Cyber Services</title>
   <link rel="stylesheet" href="style.css">
@@ -40,13 +40,18 @@
       <a href="index.html">Home</a>
       <li><a href="index.html#why-us">Why  Us</a></li>
       <li><a href="services.html">Services</a></li>
-      <li class="headportfolio"><a href="">portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
-         <ul class="dropdown">
-          <li><a href="Portfolio.html">Website Projects</a></li>
-          <li><a href="Graphic.html">Graphic Designs</a></li>
-          <li><a href="logodesign.html">logos Design</a></li>
-         </ul>
-        </li>
+      <li class="menu-item">
+                        <a href="#" class="headportfolio" onclick="toggleDropdown(event)">
+                            <div class="menu-text">Portfolio</div>
+                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="Portfolio.html">Website Projects</a></li>
+                            <li><a href="Graphic.html">Graphic Designs</a></li>
+                            <li><a href="logodesign.html">Logo Designs</a></li>
+                        </ul>
+                    </li>
+        <li><a href="index.html#pricing"></a>pricing</li>
         <li><a href="blog.html" >News & Blogs</a></li>
       <li><a href="index.html#quick-order" >Contact</a></li>
     </ul>
@@ -102,7 +107,9 @@
                             <li><a href="logodesign.html">Logo Designs</a></li>
                         </ul>
                     </li>
-                    
+                    <li class="menu-item"> 
+                      <a href="index.html#pricing">pricing</a>
+                    </li>
                     <li class="menu-item">
                         <a href="blog.html">
                             <div class="menu-icon"><i class="fas fa-newspaper"></i></div>
@@ -130,7 +137,7 @@
 </head>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="containerhero">
           <div class="hero-content">
                 <div class="hero-text">
@@ -275,7 +282,7 @@
       <div class="why-uscontainer">
         <div class="section-header">
           <h2 class="section-title">Why Choose Us</h2>
-          <p class="why-ussection-sub"> we are top website development solution in kenya ,We combine creativity, technology and local knowledge to deliver results.</p>
+          <p class="section-subtitle"> we are top website development solution in kenya ,We combine creativity, technology and local knowledge to deliver results.</p>
         </div>
         <div class="why-grid">
           <div class="why-card">
@@ -384,7 +391,7 @@
 <section class="experience-section">
     <div class="section-header">
       <h2 class="section-title">Work Experience</h2>
-      <p class="section-subtitle">My professional journey and career milestones</p>
+      <p class="section-subtitle">our  professional journey and achieved milestones</p>
     </div>
 
     <div class="timeline">
@@ -670,7 +677,75 @@
       
     });
   </script>
-  
+ <section class="pricing" id="pricing">
+<div class="pricingcontainer">
+            <div class="section-title">
+                <span class="subtitle">our Pricing</span>
+                <h2><span>choose one of our affordable pricing plans</span></h2>
+            </div>
+            
+            <div class="pricing-plans">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter Package</h3>
+                        <div class="price"><span class="kshs">kshs</span>19,999<span>/project</span></div>
+                        <p>Perfect for small businesses</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Custom Logo Design</li>
+                        <li><i class="fas fa-check"></i> 5-Page Website</li>
+                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                        <li><i class="fas fa-check"></i> 1 Month Support</li>
+                        <li><i class="fas fa-check"></i> 10% discount</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Advanced Security</li>
+                        <li class="disabled"><i class="fas fa-times"></i> E-commerce Functionality</li>
+                    </ul>
+                    <a href="index.html#quick-order" class="btn-pricing" style="width: 100%; text-align: center;">Select Plan</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Professional Package</h3>
+                        <div class="price"><span class="kshs">kshs</span>25,000<span>/project</span></div>
+                        <p>Most popular for growing businesses</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Complete Brand Identity</li>
+                        <li><i class="fas fa-check"></i> 10-Page Website</li>
+                        <li><i class="fas fa-check"></i> Advanced Mobile Optimization</li>
+                        <li><i class="fas fa-check"></i> Full SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> 3 Months Support</li>
+                        <li><i class="fas fa-check"></i> Basic Security Setup</li>
+                        <li><i class="fas fa-check"></i> E-commerce Ready</li>
+                    </ul>
+                    <a href="index.html#quick-order" class="btn-pricing" style="width: 100%; text-align: center;">Select Plan</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise Package</h3>
+                        <div class="price">
+              
+                           <span class="kshs">Kshs</span>35,000
+                           <span>/project</span>
+                          </div>
+                        <p>Complete solution for established businesses</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Full Brand Package</li>
+                        <li><i class="fas fa-check"></i> Unlimited Pages Website</li>
+                        <li><i class="fas fa-check"></i> Premium Performance</li>
+                        <li><i class="fas fa-check"></i> Comprehensive SEO</li>
+                        <li><i class="fas fa-check"></i> 6 Months Support</li>
+                        <li><i class="fas fa-check"></i> Advanced Security Suite</li>
+                        <li><i class="fas fa-check"></i> Full E-commerce System</li>
+                    </ul>
+                    <a href="index.html#quick-order" class="btn-pricing" style="width: 100%; text-align: center;">Select Plan</a>
+                </div>
+            </div>
+        </div>
+ </section> 
 <section class="faq-section" aria-labelledby="faq-title" id="faq-section">
     <h1 id="faq-title" class="faq-title">Frequently Asked Questions</h1>
     <p class="faq-subtitle">Get answers to common questions about Duntech Solutions and our services</p>
@@ -1093,16 +1168,24 @@
               <div class="footer-column">
                   <h3>Quick Links</h3>
                   <ul class="quicklinks">
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">why Us</a></li>
-                      <li><a href="#">Portfolio<i class="fa-solid fa-circle-chevron-down"></i>
-                        <ul class="footerdropdown">
-                        <li><a href="Portfolio.html">Website Projects</a></li>
-                        <li><a href="Graphic.html">Graphic Designs</a></li>
-                        <li><a href="Logo.html">logo Design</a></li>
-                        </ul> </a>
-                      </li>
-                      <li><a href="#">Contact</a></li>
+                      <li><a href="index.html#home">Home</a></li>
+                      <li><a href="index.html#why-us">why Us</a></li>
+                      <li><a href="services.html">services</a></li>
+                      <li class="menu-item">
+                        <a href="#" class="headportfolio" onclick="toggleDropdown(event)">
+                          
+                            <div class="menu-text">Portfolio</div>
+                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="Portfolio.html">Website Projects</a></li>
+                            <li><a href="Graphic.html">Graphic Designs</a></li>
+                            <li><a href="logodesign.html">Logo Designs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#pricing"></a></li>
+                    <li><a href="blog.html">News and Blogs</a></li>
+                      <li><a href="index.html#contact">Contact</a></li>
                   </ul>
               </div>
               <div class="footer-column">
@@ -1110,7 +1193,7 @@
                   <ul>
                       <li><a href="#">Web Development</a></li>
                       <li><a href="#">Graphics,logo Designs </a></li>
-                      <li><a href="#">Cyber Services</a></li>
+                      <li><a href="#">online Cyber Services</a></li>
                       <li><a href="#">Digital Solutions</a></li>
                   </ul>
               </div>
@@ -1135,16 +1218,7 @@
                       <li><a href="#">Contact Support</a></li>
                   </ul>
               </div>
-              <div class="footer-column">
-                  <h3>Support</h3>
-                  <ul>
-                      <li><a href="#">Help Center</a></li>
-                      <li><a href="#">FAQs</a></li>
-                      <li><a href="#">Terms of Service</a></li>
-                      <li><a href="#">Privacy policy</a></li>
-                      <li><a href="#">Contact Support</a></li>
-                  </ul>
-              </div>
+              
               <div class="footer-newsletter">
                         <h3>Newsletter</h3>
                         <p>Subscribe to get updates on our latest projects and construction tips.</p>
