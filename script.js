@@ -4,6 +4,7 @@
         // ============================================
         const CONFIG = {
             company: "Duntech Solutions",
+            founder: "Duncan Kaimenyi",
             botName: "Duntech AI Assistant",
             colors: {
                 primary: "#4f46ef",
@@ -16,90 +17,90 @@
             notificationCount: 3,
             welcomeMessages: [
                 "Hello! I'm your Duntech AI Assistant. 👋",
-                "I can help you with information about our services, pricing, portfolio, or connect you with our expert team.",
+                "I'm here to help with information about our web development, graphic design, logo design, and cybersecurity services.",
                 "What would you like to know today?"
             ]
         };
 
         // ============================================
-        // COMPREHENSIVE KNOWLEDGE BASE
+        // COMPREHENSIVE KNOWLEDGE BASE - UPDATED WITH YOUR INFO
         // ============================================
         const KNOWLEDGE = {
             greetings: {
                 patterns: ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "hi there"],
-                response: "Hello there! 👋 I'm your Duntech AI Assistant, ready to help you with all things digital solutions. How can I assist you today?",
+                response: "Hello there! 👋 I'm your Duntech AI Assistant, created by Duncan Kaimenyi. I'm ready to help you with all our digital solutions and services. How can I assist you today?",
                 actions: ["Our Services", "Get a Quote", "View Portfolio", "Contact Team"]
             },
             
             services: {
                 patterns: ["services", "what you do", "offerings", "help", "service", "what do you offer"],
-                response: "**Duntech Solutions Services**\n\nWe provide comprehensive digital solutions across four key areas:\n\n💻 **Web Development**\n• Custom Website Development\n• E-commerce Solutions\n• Web Applications\n• CMS Development\n\n🎨 **Graphics Design**\n• Logo & Brand Identity\n• UI/UX Design\n• Marketing Materials\n• Infographics\n\n🔒 **Cyber Security**\n• Security Audits & Assessments\n• Penetration Testing\n• Network Security\n• 24/7 Monitoring\n\n⚡ **Digital Solutions**\n• Digital Strategy Consulting\n• Automation Solutions\n• Cloud Migration\n• Analytics & Reporting\n\nWhich area interests you the most?",
-                actions: ["Web Development", "Graphics Design", "Cyber Security", "Digital Solutions", "Pricing", "Portfolio"]
+                response: "**Duntech Solutions Services**\n\nWe provide comprehensive digital solutions:\n\n💻 **Web Development**\n• Custom website development\n• E-commerce solutions\n• Responsive design\n• Performance optimization\n\n🎨 **Graphic Design**\n• Logo & brand identity\n• UI/UX design\n• Marketing materials\n• Visual branding\n\n📎 **Logo Design**\n• Professional logo creation\n• Brand identity systems\n• Corporate branding\n• Creative illustrations\n\n🔒 **Cybersecurity Services**\n• Security audits\n• Government portal support\n• Online cyber services\n• Digital security solutions\n\nWhich service interests you?",
+                actions: ["Web Development", "Graphic Design", "Logo Design", "Cybersecurity", "Pricing"]
             },
             
             web: {
-                patterns: ["web development", "website", "e-commerce", "web app", "react", "node", "frontend", "backend", "custom website"],
-                response: "**Web Development Services**\n\n✅ **What We Offer:**\n• Custom Website Design & Development\n• E-commerce Platforms\n• Progressive Web Apps\n• API Integration\n• CMS Development\n• Website Maintenance\n\n🛠️ **Our Tech Stack:**\n• React, Vue.js, Angular\n• Node.js, Python, PHP\n• MongoDB, PostgreSQL\n• AWS, Google Cloud\n\n💰 **Starting Price:** $2,499\n⏱️ **Average Timeline:** 4-8 weeks\n\nWould you like a customized quote or to see our web development portfolio?",
-                actions: ["Get Web Quote", "View Web Portfolio", "Talk to Developer", "Back to Services"]
+                patterns: ["web development", "website", "e-commerce", "web app", "frontend", "backend", "custom website", "web design"],
+                response: "**Web Development Services by Duncan Kaimenyi**\n\n✅ **What We Offer:**\n• Custom website design & development\n• Responsive & mobile-friendly sites\n• E-commerce platforms\n• Web application development\n• Performance optimization\n• Security implementation\n\n🛠️ **Our Approach:**\n• Modern, clean code\n• SEO optimized\n• Fast loading times\n• User-focused design\n• Ongoing support\n\n💰 **Flexible Pricing:**\nContact us for customized quotes based on your project requirements.\n\nReady to discuss your project?",
+                actions: ["Get Web Quote", "View Web Portfolio", "Talk to Duncan", "Back to Services"]
             },
             
             design: {
-                patterns: ["design", "graphics", "logo", "branding", "ui/ux", "photoshop", "figma", "graphic design"],
-                response: "**Graphics Design Services**\n\n✅ **What We Offer:**\n• Logo & Brand Identity Design\n• UI/UX Design & Prototyping\n• Marketing Collateral\n• Infographics & Data Visualization\n• Packaging Design\n• Motion Graphics\n\n🎨 **Our Tools:**\n• Figma, Adobe XD\n• Photoshop, Illustrator\n• After Effects\n• Blender (3D)\n\n💰 **Starting Price:** $1,499\n⏱️ **Average Timeline:** 2-4 weeks\n\nReady to create something amazing together?",
+                patterns: ["design", "graphics", "graphic design", "ui/ux", "branding", "visual"],
+                response: "**Graphic Design Services**\n\n✅ **What We Offer:**\n• Logo & brand identity design\n• UI/UX design & prototyping\n• Marketing collateral\n• Social media graphics\n• Posters & promotional materials\n• Brand guidelines\n\n🎨 **Our Expertise:**\n• Modern design trends\n• Creative solutions\n• Professional quality\n• Fast turnaround\n• Unlimited revisions\n\n💰 **Custom Pricing:**\nStarting at affordable rates. Contact for detailed quotes.\n\nLet's create something amazing!",
                 actions: ["Get Design Quote", "View Design Portfolio", "Talk to Designer", "Back to Services"]
             },
             
-            security: {
-                patterns: ["security", "cyber", "protection", "audit", "vulnerability", "hacking", "cybersecurity", "secure"],
-                response: "**Cyber Security Services**\n\n✅ **What We Offer:**\n• Security Audits & Risk Assessments\n• Penetration Testing\n• Network Security Implementation\n• Data Encryption Solutions\n• Security Awareness Training\n• 24/7 Incident Response\n\n🛡️ **Our Expertise:**\n• ISO 27001 Compliance\n• GDPR & Privacy Regulations\n• Cloud Security\n• Endpoint Protection\n\n💰 **Starting Price:** $3,499\n⏱️ **Immediate Response Available**\n\nSecurity is not an option, it's a necessity. How can we protect your business?",
-                actions: ["Security Assessment", "Get Security Quote", "Emergency Contact", "Back to Services"]
+            logo: {
+                patterns: ["logo", "logo design", "branding", "brand identity", "corporate logo"],
+                response: "**Professional Logo Design Services**\n\n✅ **What We Offer:**\n• Custom logo creation\n• Brand identity systems\n• Logo variations\n• File formats (AI, EPS, PNG, SVG)\n• Brand guidelines document\n• Unlimited revisions\n\n🎯 **Our Process:**\n1. Consultation & brief\n2. Concept development\n3. Design refinement\n4. Final delivery\n5. Brand guidelines\n\n💰 **Affordable Pricing:**\nContact us for quotes tailored to your needs.\n\nMake your brand unforgettable!",
+                actions: ["Get Logo Quote", "View Logo Portfolio", "See Gallery", "Back to Services"]
             },
             
-            digital: {
-                patterns: ["digital", "strategy", "consulting", "automation", "cloud", "transformation", "digital solutions"],
-                response: "**Digital Solutions**\n\n✅ **What We Offer:**\n• Digital Strategy Consulting\n• Business Process Automation\n• Cloud Migration & Management\n• Data Analytics & Business Intelligence\n• Digital Marketing Solutions\n• Full Digital Transformation\n\n🚀 **Our Approach:**\n1. Assessment & Planning\n2. Implementation\n3. Optimization\n4. Continuous Support\n\n💰 **Starting Price:** $4,999\n⏱️ **Ong Partnership Model**\n\nLet's transform your business for the digital age.",
-                actions: ["Digital Consultation", "Get Digital Quote", "View Case Studies", "Back to Services"]
+            security: {
+                patterns: ["security", "cyber", "cybersecurity", "protection", "audit", "government portal"],
+                response: "**Cybersecurity & Online Services**\n\n✅ **What We Offer:**\n• Government portal support\n• Online security solutions\n• Security assessments\n• Data protection\n• Digital services support\n• Government document services\n\n🛡️ **Our Expertise:**\n• Government platforms\n• Official portal navigation\n• Document processing\n• Data security\n• Compliance support\n\n📞 **Contact Information:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\n\nHow can we secure your digital presence?",
+                actions: ["Security Assessment", "Portal Support", "Contact Support", "Back to Services"]
             },
             
             pricing: {
                 patterns: ["price", "cost", "how much", "pricing", "budget", "rates", "quote", "estimate"],
-                response: "**Pricing Overview**\n\n💰 **Service Packages:**\n\n• **Web Development**\n  Basic: $2,499 - $5,000\n  Standard: $5,000 - $15,000\n  Enterprise: $15,000+\n\n• **Graphics Design**\n  Brand Package: $1,499 - $3,000\n  Full Campaign: $3,000 - $8,000\n  Ongoing Retainer: Custom\n\n• **Cyber Security**\n  Basic Audit: $3,499 - $7,000\n  Comprehensive: $7,000 - $20,000\n  Managed Services: Monthly\n\n• **Digital Solutions**\n  Strategy Session: $4,999\n  Implementation: $10,000 - $25,000\n  Full Transformation: $25,000+\n\n*All prices are estimates. Contact us for a detailed quote based on your specific requirements.*",
-                actions: ["Web Quote", "Design Quote", "Security Quote", "Digital Quote", "Contact Sales"]
+                response: "**Pricing Overview**\n\n💰 **Our Services - Custom Pricing:**\n\n• **Web Development**\n  Flexible pricing based on scope\n  \n• **Graphic Design**\n  Affordable rates for all budgets\n  \n• **Logo Design**\n  Professional designs within reach\n  \n• **Cybersecurity Services**\n  Custom quotes\n\n📞 **Best Way to Get Quote:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\nLocation: Narok, Kenya\n\n*Contact us for a detailed, customized quote based on your specific project needs. We offer flexible payment options!*",
+                actions: ["Web Quote", "Design Quote", "Logo Quote", "Contact Sales"]
             },
             
             portfolio: {
                 patterns: ["portfolio", "projects", "work", "examples", "case studies", "showcase", "previous work"],
-                response: "**Our Portfolio Highlights**\n\n🏆 **Recent Success Stories:**\n\n1. **TechGadgets E-commerce Platform**\n   → 40% increase in sales\n   → 2.5s average load time\n   → Mobile-first responsive design\n\n2. **NovaTech Brand Redesign**\n   → 65% boost in brand recognition\n   → Complete brand identity system\n   → Award-winning design\n\n3. **SecureBank Cybersecurity Overhaul**\n   → 100% vulnerabilities identified and fixed\n   → Zero security breaches post-implementation\n   → ISO 27001 certification achieved\n\n4. **LogiFlow Supply Chain Automation**\n   → 35% operational efficiency gain\n   → $500K annual cost savings\n   → Real-time analytics dashboard\n\nView our full portfolio: https://duntechsolutions.com/portfolio",
-                actions: ["View Web Projects", "View Design Work", "View Security Cases", "Contact for Similar"]
+                response: "**Our Portfolio**\n\n🏆 **Duntech Solutions Work:**\n\nWe've completed numerous projects including:\n\n✓ **Website Projects**\n  Professional, modern websites\n  Responsive design\n  \n✓ **Graphic Designs**\n  Creative visual solutions\n  Brand identity systems\n  \n✓ **Logo Designs**\n  Unique, memorable logos\n  Professional branding\n  \n✓ **Digital Solutions**\n  Custom web applications\n  Security implementations\n\n📸 **View Full Portfolio:**\nVisit our Portfolio page to see detailed project showcases\n\nWould you like to see specific projects?",
+                actions: ["View Web Projects", "View Design Work", "View Logos", "Contact for Portfolio"]
             },
             
             contact: {
-                patterns: ["contact", "call", "email", "meeting", "sales", "support", "talk", "reach", "phone", "address"],
-                response: "**Contact Information**\n\n📞 **Phone:**\n• Main: +1 (234) 567-8900\n• Sales: +1 (234) 567-8901\n• Support: +1 (234) 567-8902\n\n📧 **Email:**\n• General: info@duntechsolutions.com\n• Sales: sales@duntechsolutions.com\n• Support: support@duntechsolutions.com\n\n📍 **Office Address:**\n123 Tech Street, Digital City\nTech Valley, TV 12345\nUnited States\n\n🕐 **Business Hours:**\n• Monday-Friday: 9:00 AM - 6:00 PM EST\n• Saturday: 10:00 AM - 4:00 PM EST\n• Sunday: Emergency Support Only\n• 24/7 Support for Existing Clients\n\nHow would you like to connect with us?",
-                actions: ["Schedule Call", "Send Email", "Live Chat", "Visit Office", "Quick Question"]
+                patterns: ["contact", "call", "email", "meeting", "sales", "support", "talk", "reach", "phone", "address", "where", "location"],
+                response: "**Contact Duntech Solutions & Duncan Kaimenyi**\n\n📞 **Phone:**\n+254 713 723 639\n\n📧 **Email:**\nduncamkaimenyi501@gmail.com\n\n📍 **Location:**\nNarok, Kenya\n\n🕐 **Availability:**\nAvailable for consultations\nResponsive digital support\nFlex scheduling\n\n💬 **How to Connect:**\n• WhatsApp: +254 713 723 639\n• Email for detailed inquiries\n• Direct call for urgent matters\n• Schedule a consultation call\n\n🔗 **Connect on Social Media:**\nFind us on your favorite platforms!\n\nWhat's the best way for us to help you?",
+                actions: ["Schedule Call", "Send Email", "WhatsApp", "Live Chat", "More Info"]
             },
             
             about: {
-                patterns: ["about", "company", "who are you", "duntech", "team", "experience", "story", "mission"],
-                response: "**About Duntech Solutions**\n\n🚀 **Our Story:**\nFounded in 2018, Duntech Solutions started as a small web development agency and has grown into a full-service digital solutions provider. Our journey began with a simple mission: to make exceptional digital services accessible to businesses of all sizes.\n\n👥 **Our Team:**\n• 32+ Digital Experts\n• Average 7+ years industry experience\n• Certified Professionals\n• Continuous Learning Culture\n\n📊 **Our Track Record:**\n• 250+ Projects Completed\n• 98% Client Satisfaction Rate\n• 40+ Returning Enterprise Clients\n• 24/7 Support Availability\n\n🎯 **Our Mission:**\nTo empower businesses through innovative digital solutions that drive growth, enhance security, and create exceptional user experiences.\n\nWe're more than just a service provider - we're your digital transformation partner.",
-                actions: ["Our Team", "Our Process", "Client Testimonials", "Contact Us"]
+                patterns: ["about", "company", "who are you", "duntech", "team", "experience", "story", "mission", "duncan"],
+                response: "**About Duntech Solutions**\n\n👨‍💼 **Founder & Lead Developer:**\nDuncan Kaimenyi\n\n🚀 **Our Mission:**\nProviding expert digital solutions including web development, graphic design, logo design, and cybersecurity services to transform your business.\n\n📊 **What We Specialize In:**\n• Web Development\n• Graphic Design\n• Logo & Brand Design\n• Online Security Services\n• Government Portal Support\n• Digital Solutions\n\n🎯 **Why Choose Us:**\n✓ Expert craftsmanship\n✓ Professional quality\n✓ Affordable pricing\n✓ Timely delivery\n✓ Excellent support\n✓ Client satisfaction\n\n📍 **Based In:** Narok, Kenya\n\n🔗 **Contact:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\n\nReady to work together?",
+                actions: ["Our Services", "Our Process", "View Portfolio", "Contact Us"]
             },
             
             thanks: {
                 patterns: ["thanks", "thank you", "thankyou", "appreciate", "grateful", "helpful"],
-                response: "You're most welcome! 😊 It's my pleasure to help. Is there anything else I can assist you with today?",
+                response: "You're very welcome! 😊 I'm happy to help. Is there anything else I can assist you with today?",
                 actions: ["More Questions", "Contact Team", "All Done"]
             },
             
             goodbye: {
                 patterns: ["bye", "goodbye", "see you", "farewell", "exit", "quit", "later"],
-                response: "Goodbye and thank you for chatting with me! 👋 Remember, we're always here to help transform your digital presence. Have a wonderful day!",
+                response: "Goodbye! Thank you for chatting with me. We look forward to working with you! 👋\n\nContact Duncan at +254 713 723 639",
                 actions: []
             },
             
             default: {
-                response: "I understand you're looking for information. I specialize in helping with:\n\n• **Digital Services** - Web development, design, security, digital solutions\n• **Pricing & Quotes** - Custom estimates for your projects\n• **Our Portfolio** - Case studies and success stories\n• **Contact Information** - How to reach our team\n• **About Us** - Our story and expertise\n\nWhat would you like to learn more about?",
-                actions: ["Services", "Pricing", "Portfolio", "Contact", "About Us"]
+                response: "I understand you're looking for information about Duntech Solutions! I can help you with:\n\n• **Our Services** - Web development, graphic design, logo design, cybersecurity\n• **Quotes & Pricing** - Custom estimates for your projects\n• **Our Portfolio** - Examples of our design and development work\n• **Contact Duncan** - Phone: +254 713 723 639 or Email: duncamkaimenyi501@gmail.com\n• **About Us** - Learn about Duncan Kaimenyi and Duntech Solutions\n\nWhat would you like to explore?",
+                actions: ["Services", "Pricing", "Portfolio", "Contact", "About Duncan"]
             }
         };
 
@@ -924,6 +925,124 @@ document.addEventListener('DOMContentLoaded', function(){
   window.addEventListener('scroll', onScroll, { passive: true });
   // also handle touchmove (some browsers don't update scrollX during touchstart)
   window.addEventListener('touchmove', onScroll, { passive: true });
+})();
+
+// ============================================
+// IMAGE VIEWER / GALLERY FUNCTIONALITY
+// ============================================
+(function() {
+  let currentImageIndex = 0;
+  let totalImages = 0;
+  let images = [];
+
+  const modal = document.getElementById('imageViewerModal');
+  const viewerImage = document.getElementById('viewerImage');
+  const closeBtn = document.getElementById('closeImageViewer');
+  const prevBtn = document.getElementById('prevImage');
+  const nextBtn = document.getElementById('nextImage');
+  const currentImageSpan = document.getElementById('currentImage');
+  const totalImagesSpan = document.getElementById('totalImages');
+
+  if (!modal) return; // Exit if modal doesn't exist
+
+  // Initialize gallery
+  function initGallery() {
+    const cards = document.querySelectorAll('.card[data-index]');
+    if (cards.length === 0) return;
+
+    images = Array.from(cards).map(card => {
+      const img = card.querySelector('img');
+      return {
+        src: img.src,
+        alt: img.alt,
+        index: parseInt(card.getAttribute('data-index'))
+      };
+    });
+
+    totalImages = images.length;
+    totalImagesSpan.textContent = totalImages;
+
+    // Add click handlers to cards
+    cards.forEach((card, index) => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => openModal(index));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(index);
+        }
+      });
+    });
+  }
+
+  function openModal(index) {
+    currentImageIndex = index;
+    updateImage();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateImage() {
+    if (!images || images.length === 0) return;
+    const image = images[currentImageIndex];
+    viewerImage.src = image.src;
+    viewerImage.alt = image.alt;
+    currentImageSpan.textContent = currentImageIndex + 1;
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % totalImages;
+    updateImage();
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+    updateImage();
+  }
+
+  // Event listeners
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (nextBtn) nextBtn.addEventListener('click', nextImage);
+  if (prevBtn) prevBtn.addEventListener('click', prevImage);
+
+  // Close on modal background click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Keyboard controls
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+
+    switch (e.key) {
+      case 'ArrowRight':
+        e.preventDefault();
+        nextImage();
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        prevImage();
+        break;
+      case 'Escape':
+        closeModal();
+        break;
+    }
+  });
+
+  // Initialize on page load
+  window.addEventListener('load', initGallery);
+  
+  // Also try to initialize immediately in case DOM is already ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGallery);
+  } else {
+    initGallery();
+  }
 })();
 
         

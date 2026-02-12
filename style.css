@@ -95,8 +95,9 @@ color:var(--dark);
 }
 
 .brand-logo img { 
-  width: 50px; 
-  height: 50px; 
+  max-width: 60px;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 8px;
   background: var(--accent);
   padding: 4px;
@@ -3316,8 +3317,7 @@ overflow: hidden;
   }
   
   .brand-logo img {
-    width: 50px;
-    height: 35px;
+    max-width: 50px;
   }
   
   .brand-text h1 {
@@ -3348,6 +3348,10 @@ overflow: hidden;
   
   .container {
     padding: 16px;
+  }
+  
+  .brand-logo img {
+    max-width: 45px;
   }
   
   .brand-text h1 {
@@ -3922,7 +3926,7 @@ img {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             position: fixed;
             bottom: 30px;
-            left: 15px;
+            right: 30px;
             z-index: 999;
         }
         
@@ -3991,11 +3995,11 @@ img {
         .chatbot-window {
             position: absolute;
             bottom: 80px;
-            left: 0;
-            width:100%;
-            max-width:100%;
-            height: 100px;
-            max-height: 60vh;
+            right: 0;
+            width: 380px;
+            max-width: 95vw;
+            height: 600px;
+            max-height: 70vh;
             background: white;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -4381,17 +4385,54 @@ img {
             color: var(--primary);
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Large Screen Optimization (Desktop - 1200px+) */
+        @media (min-width: 1200px) {
+            .duntech-chatbot {
+                bottom: 40px;
+                right: 40px;
+            }
+            
+            .chatbot-window {
+                width: 400px;
+                height: 650px;
+            }
+            
+            .chatbot-toggle {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .chatbot-toggle i {
+                font-size: 28px;
+            }
+        }
+        
+        /* Tablet Optimization (768px - 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .duntech-chatbot {
+                bottom: 25px;
+                right: 25px;
+            }
+            
+            .chatbot-window {
+                width: 360px;
+                height: 580px;
+            }
+        }
+        
+        /* Mobile Optimization (below 767px) */
+        @media (max-width: 767px) {
             .duntech-chatbot {
                 bottom: 20px;
                 right: 20px;
+                left: auto;
             }
             
             .chatbot-window {
                 width: calc(100vw - 40px);
                 height: 500px;
                 right: 0;
+                bottom: 85px;
             }
             
             .service-cards {

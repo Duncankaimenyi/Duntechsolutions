@@ -206,55 +206,36 @@
     <h1>Logo Design Portfolio</h1>
     <p>Professional logo designs that define your brand identity</p>
     <div class="graphiccontainer">
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 10px;
-}
-
-.card {
-  background: #fff;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.card img {
-  width: 100%;
-  height: 400px ;
-  object-fit: cover;
-  display: block;
-}
-@media (max-width: 758px) {
-  .card img {
-    width: 100%;
-  height: auto ;
-  object-fit: cover;
-  display: block;
-  }
-    
-}
-</style>
-<body>
-    <h1>Logo Design</h1>
-    <p>Welcome to the duntech Logo Design page..</p>
-    <main class="graphiccontainer">
-  <div class="card"><img src="graphicimages/BIOSTRENGTH.png" alt="Background"></div>
-  <div class="card"><img src="graphicimages/EAGLE.png" alt="Headphones"></div>
-  <div class="card"><img src="graphicimages/HR.png" alt="Ad Design"></div>
-  <div class="card"><img src="graphicimages/logo design.png" alt="Instagram Post"></div>
-  <div class="card"><img src="graphicimages/1.png" alt="Portrait"></div>
-  <div class="card"><img src="graphicimages/Black White Minimalist Professional Initial Logo.png" alt="Portrait"></div>
-  <div class="card"><img src="graphicimages/4.png" alt="Portrait"></div>
+  <div class="card" data-index="0"><img src="graphicimages/BIOSTRENGTH.png" alt="Biostrength Logo"></div>
+  <div class="card" data-index="1"><img src="graphicimages/EAGLE.png" alt="Eagle Logo"></div>
+  <div class="card" data-index="2"><img src="graphicimages/HR.png" alt="HR Logo"></div>
+  <div class="card" data-index="3"><img src="graphicimages/logo design.png" alt="Logo Design"></div>
+  <div class="card" data-index="4"><img src="graphicimages/1.png" alt="Logo 1"></div>
+  <div class="card" data-index="5"><img src="graphicimages/Black White Minimalist Professional Initial Logo.png" alt="Minimalist Logo"></div>
+  <div class="card" data-index="6"><img src="graphicimages/4.png" alt="Logo 4"></div>
     </div>
   </main>
+
+  <!-- Image Viewer Modal -->
+  <div class="image-viewer-modal" id="imageViewerModal">
+    <button class="image-viewer-close" id="closeImageViewer" aria-label="Close viewer">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="image-viewer-container">
+      <img class="image-viewer-image" id="viewerImage" src="" alt="">
+      <div class="image-viewer-controls">
+        <button class="image-viewer-nav" id="prevImage" aria-label="Previous image">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <span class="image-viewer-counter">
+          <span id="currentImage">1</span> / <span id="totalImages">7</span>
+        </span>
+        <button class="image-viewer-nav" id="nextImage" aria-label="Next image">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- WhatsApp Button -->
   <a href="https://wa.me/0713723639" target="_blank" class="whatsapp-btn" title="Contact us on WhatsApp">
