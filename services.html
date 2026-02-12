@@ -2,77 +2,171 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Essential Meta Tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-  <meta name="description" content="Our Premium Services - Web Development, Graphic Design, Logo Design, Cybersecurity, and Digital Support Solutions." />
-  <meta name="keywords" content="web development services, graphic design, logo design, cybersecurity services, digital solutions, custom web development" />
-  <meta name="author" content="Duntech Solutions" />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Premium Services by Duncan Kaimenyi at Duntech Solutions - Web Development, Graphic Design, Logo Design, Cybersecurity, and Digital Support. Expert solutions for businesses." />
+  <meta name="keywords" content="web development services, graphic design services, logo design, cybersecurity services, digital solutions, online cyber services, document services, Duncan Kaimenyi" />
+  <meta name="author" content="Duncan Kaimenyi, Duntech Solutions" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://duntech-solutions.vercel.app/services.html" />
+  
+  <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Services — DUNTECH Solutions" />
-  <meta property="og:description" content="Comprehensive digital solutions designed to elevate your business." />
-  <title>Services — DUNTECH Solutions | Web Development, Design & Cybersecurity</title>
+  <meta property="og:site_name" content="Duntech Solutions" />
+  <meta property="og:title" content="Professional Services - Web Development, Design & Cybersecurity | Duntech Solutions" />
+  <meta property="og:description" content="Expert services in web development, graphic design, logo creation, cybersecurity, and digital support by Duncan Kaimenyi." />
+  <meta property="og:url" content="https://duntech-solutions.vercel.app/services.html" />
+  <meta property="og:image" content="https://duntech-solutions.vercel.app/webimages/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services by Duntech Solutions - Duncan Kaimenyi" />
+  <meta name="twitter:description" content="Professional web development, design, and cybersecurity services." />
+  <meta name="twitter:image" content="https://duntech-solutions.vercel.app/webimages/logo.png" />
+  
+  <!-- Theme & Branding -->
+  <meta name="theme-color" content="#4f46e5" />
+  
+  <!-- Preconnect to External Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <title>Services | Duntech Solutions - Web Development, Design & Cybersecurity Services</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/96da3af5ba.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Professional Digital Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Duntech Solutions",
+      "founder": "Duncan Kaimenyi"
+    },
+    "description": "Complete digital solutions including web development, graphic design, logo design, cybersecurity, and digital support services"
+  }
+  </script>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="container">
-      <nav>
+    <div class="containerheader">
+      <nav class="navbar">
         <div class="brand">
-          <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"></a></div>
-          <div>
-            <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Digital • Design • Development • Graphics</p></div>
-           
+          <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"></div>
+          <div class="brand-text">
+            <h1>Duntech <span>Solutions</span></h1>
+            <p>Digital • Design • Development • Graphics</p>
           </div>
-        </div><button id="menu-btn" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-  <span class="hamburger-icon"></span>
-  <span class="hamburger-icon"></span>
-  <span class="hamburger-icon"></span>
-  <span class="hamburger-text">Menu</span>
-</button>
-    <ul>
-      <a href="index.html">Home</a>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">Why  Us</a></li>
-      <li class="headportfolio"><a href="">portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
-         <ul class="dropdown">
-          <li><a href="Portfolio.html">Website Projects</a></li>
-          <li><a href="Graphic.html">Graphic Designs</a></li>
-          <li><a href="logodesign.html">logos Design</a></li>
-         </ul>
-        </li>
-        <li><a href="blog.html" >News & Blogs</a></li>
-      <li><a href="index.html#quick-order" >Contact</a></li>
-    </ul>
-    </ul>
-  </nav>
-  
-  <div id="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">Why Us</a>
-  <a href="#" class="headportfolio">Portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
-  <ul class="dropdown">
-    <li><a href="Portfolio.html">Website Projects</a></li>
-    <li><a href="Graphic.html">Graphic Designs</a></li>
-    <li><a href="logodesign.html">Logo Designs</a></li>
-  </ul>
-  <a href="blog.html" >News & Blogs</a>
-  <a href="#quick-order">Contact</a>
-  
-</div>
-<!-- overlay for off-canvas mobile menu -->
-<div id="mobile-overlay" class="mobile-overlay" hidden></div>
-
-  
-    </div>
+          <button class="hamburger-menu" onclick="showMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li>
+            <a href="#" class="nav-link dropdown-toggle" onclick="event.preventDefault(); toggleDropdown(event)">
+              Portfolio
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown">
+              <li><a href="Portfolio.html">Website Projects</a></li>
+              <li><a href="Graphic.html">Graphic Designs</a></li>
+              <li><a href="logodesign.html">Logo Designs</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">News & Blogs</a></li>
+          <li><a href="index.html#quick-order" class="nav-link nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-overlay" class="mobile-overlay hidden"></div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="index.html" class="menu-icon-link">
+                <i class="fas fa-home"></i>
+                <span class="menu-text">Home</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#why-us" class="menu-icon-link">
+                <i class="fas fa-star"></i>
+                <span class="menu-text">Why Us</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="services.html" class="menu-icon-link">
+                <i class="fas fa-cogs"></i>
+                <span class="menu-text">Services</span>
+              </a>
+            </li>
+            
+            <!-- Portfolio Dropdown -->
+            <li class="menu-item">
+              <a href="#" class="menu-icon-link dropdown-toggle" onclick="toggleDropdown(event)">
+                <i class="fas fa-briefcase"></i>
+                <span class="menu-text">Portfolio</span>
+                <i class="fas fa-chevron-down"></i>
+              </a>
+              <ul class="dropdown">
+                <li><a href="Portfolio.html">Website Projects</a></li>
+                <li><a href="Graphic.html">Graphic Designs</a></li>
+                <li><a href="logodesign.html">Logo Designs</a></li>
+              </ul>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#pricing" class="menu-icon-link">
+                <i class="fas fa-tag"></i>
+                <span class="menu-text">Pricing</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="blog.html" class="menu-icon-link">
+                <i class="fas fa-newspaper"></i>
+                <span class="menu-text">News & Blogs</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#quick-order" class="menu-icon-link">
+                <i class="fas fa-envelope"></i>
+                <span class="menu-text">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
   </header>
  <main>
     <section class="services-hero">
@@ -448,7 +542,116 @@
     </section>
   </main>
 
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/0713723639" target="_blank" class="whatsapp-btn" title="Contact us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+  </a>
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+      <i class="fas fa-chevron-up"></i>
+  </div>
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <div class="footer-container">
+              <div class="footer-column">
+                  <div class="brand">
+                    <div class="brand-logo"><img src="webimages/logo.png" alt="">
+                      <a href="mainindex.html"></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                  <h3>Duntech <span>solutions</span></h3>
+                  <ul>
+                      <li><i class="fas fa-map-marker-alt"></i> Narok , Kenya</li>
+                      <li><i class="fas fa-phone"></i> phone : +254713723639</li>
+                      <li><i class="fas fa-envelope"></i> Email:duncamkaimenyi501@gmail.com</li>
+                  </ul>
+              </div><h4>Follow Us <i class="fa-solid fa-circle-chevron-down"></i></h4>
+
+                  <div class="social-icons">
+                      
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-github"></i></a>
+                  </div>
+              </div>
+              <div class="footer-column">
+                  <h3>Quick Links</h3>
+                  <ul class="quicklinks">
+                      <li><a href="index.html#home">Home</a></li>
+                      <li><a href="index.html#why-us">why Us</a></li>
+                      <li><a href="services.html">services</a></li>
+                      <li class="menu-item">
+                        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">
+                            Portfolio
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="Portfolio.html">Website Projects</a></li>
+                            <li><a href="Graphic.html">Graphic Designs</a></li>
+                            <li><a href="logodesign.html">Logo Designs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="blog.html">News and Blogs</a></li>
+                      <li><a href="index.html#contact">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Services</h3>
+                  <ul>
+                      <li><a href="#">Web Development</a></li>
+                      <li><a href="#">Graphics,logo Designs </a></li>
+                      <li><a href="#">online Cyber Services</a></li>
+                      <li><a href="#">Digital Solutions</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3>why choose us</h3>
+                  <ul>
+                      <li><p>Experienced Team</p></li>
+                      <li><p>creative solutions</p></li>
+                      <li><p>Affordable pricing </p></li>
+                      <li><p>Timely Delivering</p></li>
+                      <li><p>Client Satisfaction</p></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Support</h3>
+                  <ul>
+                      <li><a href="#">Help Center</a></li>
+                      <li><a href="index.html#faq-section">FAQs</a></li>
+                      <li><a href="#">Terms of Service</a></li>
+                      <li><a href="#">Privacy policy</a></li>
+                      <li><a href="#">Contact Support</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to get updates on our latest projects and construction tips.</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="btn" >
+                                <i class="fas fa-paper-plane" ></i> Subscribe
+                            </button>
+                            <div id="newsletter-status" role="status" style="margin-top:8px; font-size:0.95rem; color:var(--gray);"></div>
+                        </form>
+                        <p class="mt-3" style="font-size: 0.85rem; opacity: 0.8;">
+                            We respect your privacy. Unsubscribe at any time.
+                        </p>
+                    </div>
+          </div>
           
+          <div class="copyright">
+              <p>&copy; 2025 Duntech Solutions. All rights reserved.</p>
+          </div>
+      </div>
+  </footer>
 
   <script  src="service.js"> </script>
   <script src="script.js"></script>

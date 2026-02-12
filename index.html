@@ -1,135 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Essential Meta Tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-  <meta name="description" content="Duntech Solutions - Expert web development, graphic design, logo design, and cyberservices services. Transform your digital presence today." />
-  <meta name="keywords" content="web development, graphic design, logo design, online cyber, digital solutions, web design agency" />
-  <meta name="author" content="Duntech Solutions" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Duntech Solutions — Home" />
-  <meta property="og:description" content="Expert web development, graphic design, and cyber services." />
-  <meta property="og:url" content="https://duntech-solutions.vercel app" />
-  <meta name="theme-color" content="#4f46e5" />
-  <title>Duntech Solutions — Web Development, Graphic Design & Cyber Services</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Duntech Solutions by Duncan Kaimenyi - Premium web development, graphic design, logo creation, and cybersecurity services. Expert digital solutions for your business needs." />
+  <meta name="keywords" content="web development, graphic design, logo design, cybersecurity services, digital solutions, web design agency, online cyber services, Duncan Kaimenyi, Duntech Solutions" />
+  <meta name="author" content="Duncan Kaimenyi, Duntech Solutions" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
   
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://duntech-solutions.vercel.app/" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Duntech Solutions" />
+  <meta property="og:title" content="Duntech Solutions - Web Development, Graphic Design & Cybersecurity Services" />
+  <meta property="og:description" content="Premium digital solutions including web development, graphic design, logo creation, and cybersecurity services by Duncan Kaimenyi." />
+  <meta property="og:url" content="https://duntech-solutions.vercel.app/" />
+  <meta property="og:image" content="https://duntech-solutions.vercel.app/webimages/logo.png" />
+  <meta property="og:image:alt" content="Duntech Solutions Logo" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Duntech Solutions - Digital Services by Duncan Kaimenyi" />
+  <meta name="twitter:description" content="Expert web development, graphic design, logo design, and cybersecurity services." />
+  <meta name="twitter:image" content="https://duntech-solutions.vercel.app/webimages/logo.png" />
+  <meta name="twitter:creator" content="@duntech_solutions" />
+  
+  <!-- Theme & Branding -->
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="msapplication-TileColor" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <!-- Preconnect to External Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://kit.fontawesome.com">
+  
+  <!-- Page Title -->
+  <title>Duntech Solutions - Web Development, Graphic Design & Cybersecurity Services by Duncan Kaimenyi</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/96da3af5ba.js" crossorigin="anonymous"></script>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "Duntech Solutions",
+    "description": "Professional web development, graphic design, and cybersecurity services",
+    "url": "https://duntech-solutions.vercel.app",
+    "logo": "https://duntech-solutions.vercel.app/webimages/logo.png",
+    "founder": "Duncan Kaimenyi",
+    "foundingDate": "2024",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Narok",
+      "addressLocality": "Narok",
+      "addressCountry": "KE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254-713-723-639",
+      "contactType": "Customer Service",
+      "email": "duncamkaimenyi501@gmail.com"
+    },
+    "sameAs": [
+      "https://facebook.com/duntech.solutions",
+      "https://twitter.com/duntech_solutions",
+      "https://instagram.com/duntech.solutions",
+      "https://linkedin.com/company/duntech-solutions",
+      "https://github.com/duntech-solutions"
+    ]
+  }
+  </script>
 </head>
 <body>
  
   <header class="site-header">
     <div class="containerheader">
-      <nav>
+      <nav class="navbar">
         <div class="brand">
-          <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"><a href="mainindex.html"></a></div>
+          <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"></div>
+          <div class="brand-text">
+            <h1>Duntech <span>Solutions</span></h1>
+            <p>Digital • Design • Development • Graphics</p>
+          </div>
+          <button class="hamburger-menu" onclick="showMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         
-            <div  class="brand-text" ><h1>Duntech <span>Solutions</span></h1><p>Digital • Design • Development • Graphics</p></div>
-          <button class="demo-button" onclick="showMobileMenu()">
-        <i class="fas fa-bars" style="margin-right: 8px;"></i>
-       <p>menu</p> 
-       </button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li>
+            <a href="#" class="nav-link dropdown-toggle" onclick="event.preventDefault(); toggleDropdown(event)">
+              Portfolio
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown">
+              <li><a href="Portfolio.html">Website Projects</a></li>
+              <li><a href="Graphic.html">Graphic Designs</a></li>
+              <li><a href="logodesign.html">Logo Designs</a></li>
+            </ul>
+          </li>
           
-        </div>
-        
-       
-    <ul>
-      <a href="index.html">Home</a>
-      <li><a href="index.html#why-us">Why  Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li class="menu-item">
-                        <a href="#" class="headportfolio" onclick="toggleDropdown(event)">
-                            <div class="menu-text">Portfolio</div>
-                            <i class="fa-solid fa-circle-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown">
-                            <li><a href="Portfolio.html">Website Projects</a></li>
-                            <li><a href="Graphic.html">Graphic Designs</a></li>
-                            <li><a href="logodesign.html">Logo Designs</a></li>
-                        </ul>
-                    </li>
-        <li><a href="index.html#pricing"></a>pricing</li>
-        <li><a href="blog.html" >News & Blogs</a></li>
-      <li><a href="index.html#quick-order" >Contact</a></li>
-    </ul>
-  </nav>
-  
- 
-    
-    <!-- Overlay for off-canvas mobile menu -->
-    <div id="mobile-overlay" class="mobile-overlay hidden">
-        <!-- Your Mobile Menu - Now with Modern Styling -->
-        <div id="mobile-menu">
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">News & Blogs</a></li>
+          <li><a href="index.html#quick-order" class="nav-link nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-overlay" class="mobile-overlay hidden"></div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="index.html" class="menu-icon-link">
+                <i class="fas fa-home"></i>
+                <span class="menu-text">Home</span>
+              </a>
+            </li>
             
-            <div class="menu-content">
-              
-                <ul class="menu-list">
-                  <div class="menumobile-header">
-               
-                <button class="close-btn" onclick="hideMobileMenu()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-                    <li class="menu-item">
-                        <a href="index.html" class="active">
-                            <div class="menu-icon"><i class="fas fa-home"></i></div>
-                            <div class="menu-text">Home</div>
-                        </a>
-                    </li>
-                    
-                    <li class="menu-item">
-                        <a href="index.html#why-us">
-                            <div class="menu-icon"><i class="fas fa-star"></i></div>
-                            <div class="menu-text">Why Us</div>
-                        </a>
-                    </li>
-                    
-                    <li class="menu-item">
-                        <a href="services.html">
-                            <div class="menu-icon"><i class="fas fa-cogs"></i></div>
-                            <div class="menu-text">Services</div>
-                        </a>
-                    </li>
-                    
-                    <!-- Portfolio with Dropdown -->
-                    <li class="menu-item">
-                        <a href="#" class="headportfolio" onclick="toggleDropdown(event)">
-                            <div class="menu-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="menu-text">Portfolio</div>
-                            <i class="fa-solid fa-circle-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown">
-                            <li><a href="Portfolio.html">Website Projects</a></li>
-                            <li><a href="Graphic.html">Graphic Designs</a></li>
-                            <li><a href="logodesign.html">Logo Designs</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"> 
-                      <a href="index.html#pricing">pricing</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="blog.html">
-                            <div class="menu-icon"><i class="fas fa-newspaper"></i></div>
-                            <div class="menu-text">News & Blogs</div>
-                        </a>
-                    </li>
-                    
-                    <!-- Contact Button -->
-                    <li class="menu-item">
-                        <a href="#quick-order">
-                            <div class="menu-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="menu-text">Contact</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <li class="menu-item">
+              <a href="index.html#why-us" class="menu-icon-link">
+                <i class="fas fa-star"></i>
+                <span class="menu-text">Why Us</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="services.html" class="menu-icon-link">
+                <i class="fas fa-cogs"></i>
+                <span class="menu-text">Services</span>
+              </a>
+            </li>
+            
+            <!-- Portfolio Dropdown -->
+            <li class="menu-item">
+              <a href="#" class="menu-icon-link dropdown-toggle" onclick="toggleDropdown(event)">
+                <i class="fas fa-briefcase"></i>
+                <span class="menu-text">Portfolio</span>
+                <i class="fas fa-chevron-down"></i>
+              </a>
+              <ul class="dropdown">
+                <li><a href="Portfolio.html">Website Projects</a></li>
+                <li><a href="Graphic.html">Graphic Designs</a></li>
+                <li><a href="logodesign.html">Logo Designs</a></li>
+              </ul>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#pricing" class="menu-icon-link">
+                <i class="fas fa-tag"></i>
+                <span class="menu-text">Pricing</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="blog.html" class="menu-icon-link">
+                <i class="fas fa-newspaper"></i>
+                <span class="menu-text">News & Blogs</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#quick-order" class="menu-icon-link">
+                <i class="fas fa-envelope"></i>
+                <span class="menu-text">Contact</span>
+              </a>
+            </li>
+          </ul>
         </div>
-    </div>
-  
-    </div>
+      </div>
   </header>
   <main>
     
@@ -679,9 +741,8 @@
   </script>
  <section class="pricing" id="pricing">
 <div class="pricingcontainer">
-            <div class="section-title">
-                <span class="subtitle">our Pricing</span>
-                <h2><span>choose one of our affordable pricing plans</span></h2>
+            <div class="section-title">OUR PRICING
+              
             </div>
             
             <div class="pricing-plans">
@@ -746,8 +807,10 @@
             </div>
         </div>
  </section> 
+
 <section class="faq-section" aria-labelledby="faq-title" id="faq-section">
-    <h1 id="faq-title" class="faq-title">Frequently Asked Questions</h1>
+     
+    <h1 id="faq-title" class="section-title">Frequently Asked Questions</h1>
     <p class="faq-subtitle">Get answers to common questions about Duntech Solutions and our services</p>
 
     <div class="faq-container" role="list">
@@ -982,7 +1045,7 @@
     <section class="quick-order" id="quick-order">
         <div class="container">
             <div class="section-title">
-                <span class="subtitle">Contact Us</span>
+                Contact Us
             </div>
             
             <div class="order-container">
@@ -1072,7 +1135,7 @@
             </div>
         </div>
     </section>
-
+   
     <!-- Success Popup -->
     <!-- Rating Section -->
     <section class="rating-section" id="rating-section" aria-labelledby="rating-title">
@@ -1133,10 +1196,77 @@
         </div>
       </div>
     </div>
+<!-- chatbot -->
+  <section class="chatbot">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Professional Chatbot Container -->
+    <div class="duntech-chatbot" id="duntechChatbot">
+        <!-- Chat Window -->
+        <div class="chatbot-window" id="chatWindow">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-info">
+                        <h3>Duntech AI Assistant</h3>
+                        <p>Professional <span class="pulse"></span> Online Now</p>
+                    </div>
+                </div>
+                <div class="chatbot-actions">
+                    <button class="chatbot-btn" id="minimizeBtn" title="Minimize">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="chatbot-btn" id="closeBtn" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Messages Container -->
+            <div class="chatbot-messages" id="messagesContainer">
+                <!-- Messages will be added here -->
+            </div>
+            
+            <!-- Input Area -->
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatInput" 
+                       placeholder="Type your message here..." 
+                       maxlength="500"
+                       aria-label="Chat input">
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <!-- Footer -->
+            <div class="chatbot-footer">
+                <span><i class="fas fa-shield-alt"></i> Secure Connection</span>
+                <span>Powered by Duntech AI</span>
+                <span><i class="fas fa-clock"></i> 24/7</span>
+            </div>
+        </div>
+        
+        <!-- Toggle Button -->
+        <div class="chatbot-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+            <div class="notification-badge" id="notificationBadge" style="display: none;">3</div>
+        </div>
+    </div>
 
+</section>
     <!-- Popup Overlay -->
     <div id="popupOverlay" class="popup-overlay" data-close-overlay="true"></div>
-    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/0713723639" target="_blank" class="whatsapp-btn" title="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
    <!-- Footer -->
   <footer>
       <div class="container">
@@ -1172,10 +1302,9 @@
                       <li><a href="index.html#why-us">why Us</a></li>
                       <li><a href="services.html">services</a></li>
                       <li class="menu-item">
-                        <a href="#" class="headportfolio" onclick="toggleDropdown(event)">
-                          
-                            <div class="menu-text">Portfolio</div>
-                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">
+                            Portfolio
+                            <i class="fas fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown">
                             <li><a href="Portfolio.html">Website Projects</a></li>
@@ -1183,7 +1312,7 @@
                             <li><a href="logodesign.html">Logo Designs</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.html#pricing"></a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
                     <li><a href="blog.html">News and Blogs</a></li>
                       <li><a href="index.html#contact">Contact</a></li>
                   </ul>
@@ -1244,6 +1373,7 @@
   
    
 </section>
+
 <script src="Portfolio.js"></script>
 <script src="script.js"></script>
 <script>

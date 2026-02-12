@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential Meta Tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <meta name="description" content="Duntech Solutions Blog by Duncan Kaimenyi - Latest news, tips, and insights about web development, graphic design, cybersecurity, and digital solutions trends." />
+  <meta name="keywords" content="blog, news, articles, web development tips, design trends, cybersecurity tips, digital solutions, Duncan Kaimenyi, Duntech Solutions" />
+  <meta name="author" content="Duncan Kaimenyi, Duntech Solutions" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://duntech-solutions.vercel.app/blog.html" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Duntech Solutions" />
+  <meta property="og:title" content="News & Blog | Duntech Solutions - Digital Solutions & Design Tips by Duncan Kaimenyi" />
+  <meta property="og:description" content="Latest articles, news, and insights about web development, graphic design, and digital solutions." />
+  <meta property="og:url" content="https://duntech-solutions.vercel.app/blog.html" />
+  <meta property="og:image" content="https://duntech-solutions.vercel.app/webimages/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog - Duntech Solutions" />
+  <meta name="twitter:description" content="Latest news and insights about digital solutions, web development, and design." />
+  <meta name="twitter:image" content="https://duntech-solutions.vercel.app/webimages/logo.png" />
+  
+  <!-- Theme & Branding -->
+  <meta name="theme-color" content="#4f46e5" />
+  
+  <!-- Preconnect to External Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <title>Blog | Duntech Solutions - News & Digital Solutions Articles</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/96da3af5ba.js" crossorigin="anonymous"></script>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Duntech Solutions Blog",
+    "description": "Digital solutions news, web development tips, design trends, and cybersecurity insights",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Duntech Solutions",
+      "founder": "Duncan Kaimenyi"
+    }
+  }
+  </script>
+  <style>
+    .blog-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .blog-header h1 {
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .blog-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .blog-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-white);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--accent), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+
+    .blog-card-content {
+      padding: 25px;
+    }
+
+    .blog-card-category {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+
+    .blog-card h3 {
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .blog-card p {
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--gray-light);
+      padding-top: 15px;
+    }
+
+    .blog-card-read-more {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .blog-card-read-more:hover {
+      color: var(--primary-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="containerheader">
+      <nav class="navbar">
+        <div class="brand">
+          <div class="brand-logo"><img src="webimages/logo.png" alt="Duntech Solutions Logo"></div>
+          <div class="brand-text">
+            <h1>Duntech <span>Solutions</span></h1>
+            <p>Digital • Design • Development • Graphics</p>
+          </div>
+          <button class="hamburger-menu" onclick="showMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li>
+            <a href="#" class="nav-link dropdown-toggle" onclick="event.preventDefault(); toggleDropdown(event)">
+              Portfolio
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown">
+              <li><a href="Portfolio.html">Website Projects</a></li>
+              <li><a href="Graphic.html">Graphic Designs</a></li>
+              <li><a href="logodesign.html">Logo Designs</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">News & Blogs</a></li>
+          <li><a href="index.html#quick-order" class="nav-link nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-overlay" class="mobile-overlay hidden"></div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="index.html" class="menu-icon-link">
+                <i class="fas fa-home"></i>
+                <span class="menu-text">Home</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#why-us" class="menu-icon-link">
+                <i class="fas fa-star"></i>
+                <span class="menu-text">Why Us</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="services.html" class="menu-icon-link">
+                <i class="fas fa-cogs"></i>
+                <span class="menu-text">Services</span>
+              </a>
+            </li>
+            
+            <!-- Portfolio Dropdown -->
+            <li class="menu-item">
+              <a href="#" class="menu-icon-link dropdown-toggle" onclick="toggleDropdown(event)">
+                <i class="fas fa-briefcase"></i>
+                <span class="menu-text">Portfolio</span>
+                <i class="fas fa-chevron-down"></i>
+              </a>
+              <ul class="dropdown">
+                <li><a href="Portfolio.html">Website Projects</a></li>
+                <li><a href="Graphic.html">Graphic Designs</a></li>
+                <li><a href="logodesign.html">Logo Designs</a></li>
+              </ul>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#pricing" class="menu-icon-link">
+                <i class="fas fa-tag"></i>
+                <span class="menu-text">Pricing</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="blog.html" class="menu-icon-link">
+                <i class="fas fa-newspaper"></i>
+                <span class="menu-text">News & Blogs</span>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="index.html#quick-order" class="menu-icon-link">
+                <i class="fas fa-envelope"></i>
+                <span class="menu-text">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </header>
+
+  <main>
+    <div class="blog-container">
+      <div class="blog-header">
+        <h1>News & Blogs</h1>
+        <p>Stay updated with the latest news, tips, and insights from Duntech Solutions</p>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Blog Card 1 -->
+        <div class="blog-card">
+          <div class="blog-card-image">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Web Development</span>
+            <h3>Top Web Development Trends 2025</h3>
+            <p>Discover the latest trends in web development that are shaping the digital landscape this year.</p>
+            <div class="blog-card-meta">
+              <span>Feb 12, 2025</span>
+              <a href="#" class="blog-card-read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="blog-card">
+          <div class="blog-card-image">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Design</span>
+            <h3>Modern Logo Design Principles</h3>
+            <p>Learn the essential principles of creating memorable and effective logos for your brand.</p>
+            <div class="blog-card-meta">
+              <span>Feb 10, 2025</span>
+              <a href="#" class="blog-card-read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="blog-card">
+          <div class="blog-card-image">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-category">Cybersecurity</span>
+            <h3>Website Security Best Practices</h3>
+            <p>Essential tips to keep your website secure and protected from cyber threats.</p>
+            <div class="blog-card-meta">
+              <span>Feb 8, 2025</span>
+              <a href="#" class="blog-card-read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/0713723639" target="_blank" class="whatsapp-btn" title="Contact us on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+  </a>
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+      <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <div class="footer-container">
+              <div class="footer-column">
+                  <div class="brand">
+                    <div class="brand-logo"><img src="webimages/logo.png" alt="">
+                      <a href="mainindex.html"></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                  <h3>Duntech <span>solutions</span></h3>
+                  <ul>
+                      <li><i class="fas fa-map-marker-alt"></i> Narok , Kenya</li>
+                      <li><i class="fas fa-phone"></i> phone : +254713723639</li>
+                      <li><i class="fas fa-envelope"></i> Email:duncamkaimenyi501@gmail.com</li>
+                  </ul>
+              </div><h4>Follow Us <i class="fa-solid fa-circle-chevron-down"></i></h4>
+
+                  <div class="social-icons">
+                      
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-github"></i></a>
+                  </div>
+              </div>
+              <div class="footer-column">
+                  <h3>Quick Links</h3>
+                  <ul class="quicklinks">
+                      <li><a href="index.html#home">Home</a></li>
+                      <li><a href="index.html#why-us">why Us</a></li>
+                      <li><a href="services.html">services</a></li>
+                      <li class="menu-item">
+                        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">
+                            Portfolio
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="Portfolio.html">Website Projects</a></li>
+                            <li><a href="Graphic.html">Graphic Designs</a></li>
+                            <li><a href="logodesign.html">Logo Designs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="blog.html">News and Blogs</a></li>
+                      <li><a href="index.html#contact">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Services</h3>
+                  <ul>
+                      <li><a href="#">Web Development</a></li>
+                      <li><a href="#">Graphics,logo Designs </a></li>
+                      <li><a href="#">online Cyber Services</a></li>
+                      <li><a href="#">Digital Solutions</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3>why choose us</h3>
+                  <ul>
+                      <li><p>Experienced Team</p></li>
+                      <li><p>creative solutions</p></li>
+                      <li><p>Affordable pricing </p></li>
+                      <li><p>Timely Delivering</p></li>
+                      <li><p>Client Satisfaction</p></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Support</h3>
+                  <ul>
+                      <li><a href="#">Help Center</a></li>
+                      <li><a href="index.html#faq-section">FAQs</a></li>
+                      <li><a href="#">Terms of Service</a></li>
+                      <li><a href="#">Privacy policy</a></li>
+                      <li><a href="#">Contact Support</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to get updates on our latest projects and construction tips.</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="btn" >
+                                <i class="fas fa-paper-plane" ></i> Subscribe
+                            </button>
+                            <div id="newsletter-status" role="status" style="margin-top:8px; font-size:0.95rem; color:var(--gray);"></div>
+                        </form>
+                        <p class="mt-3" style="font-size: 0.85rem; opacity: 0.8;">
+                            We respect your privacy. Unsubscribe at any time.
+                        </p>
+                    </div>
+          </div>
+          
+          <div class="copyright">
+              <p>&copy; 2025 Duntech Solutions. All rights reserved.</p>
+          </div>
+      </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
