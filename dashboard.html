@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
+  <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <script>// Function to animate numbers
 function animateNumbers(element, start, end, duration) {
@@ -111,5 +113,40 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
 </body>
+
+<!-- Duntech AI Chatbot -->
+<div class="duntech-chatbot" id="duntechChatbot">
+    <div class="chatbot-window" id="chatWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chatbot-info">
+                    <h3>Duntech AI Assistant</h3>
+                    <p>Professional • Online Now</p>
+                </div>
+            </div>
+            <div class="chatbot-actions">
+                <button class="chatbot-btn" id="minimizeBtn" title="Minimize"><i class="fas fa-minus"></i></button>
+                <button class="chatbot-btn" id="closeBtn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="messagesContainer"></div>
+        <div class="chatbot-input-container">
+            <input type="text" class="chatbot-input" id="chatInput" placeholder="Type your message here..." maxlength="500" aria-label="Chat input">
+            <button class="send-btn" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="chatbot-footer">
+            <span><i class="fas fa-shield-alt"></i> Secure Connection</span>
+            <span>Powered by Duntech AI</span>
+            <span><i class="fas fa-clock"></i> 24/7</span>
+        </div>
+    </div>
+    <div class="chatbot-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+        <div class="notification-badge" id="notificationBadge" style="display: none;">3</div>
+    </div>
+</div>
+
+<script src="chatbot.js"></script>
 
 </html>

@@ -10,7 +10,7 @@
                 client: "DriveX Inc.",
                 year: "2024",
                 status: "Completed",
-                link: "#",
+                link: "https://drivex-sand.vercel.app/",
                 github: "#",
                 details: "DriveX is a comprehensive car rental platform that allows users to browse, book, and manage vehicle rentals in real-time. The platform includes admin dashboards for fleet management, customer relationship tools, and analytics."
             },
