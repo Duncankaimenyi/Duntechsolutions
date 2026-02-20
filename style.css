@@ -281,7 +281,7 @@ color:var(--dark);
   display: none;
   flex-direction: column;
   gap: 5px;
-  
+  background:var(--bg-white);
   color: var(--accent);
   border: none;
   cursor: pointer;
@@ -614,7 +614,7 @@ color:var(--dark);
 /* For when you want the subtitle as a separate element */
 .section-header .subtitle {
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--accent);
   opacity: 0.9;
   margin-top: 0.25rem;
@@ -632,7 +632,6 @@ padding: 0 2px;
 font: 1em sans-serif;
 }
 .hero{ 
-  padding: ;
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   position: relative;
   overflow: hidden;
@@ -973,9 +972,9 @@ width: 50%;
   }
 
   .local { background: #052e16; color: #22c55e; }
-  .verified { background: #172554; color: #3b82f6; }
-  .secure { background: #1f2933; color: #facc15; }
-  .support { background: #2e1065; color: #a855f7;}
+  .verified { background: #172554; color:var(--accent); }
+  .secure { background: #1f2933; color: var(--accent); }
+  .support { background: #2e1065; color:var(--accent);}
 
   .badge-text span {
     display: block;
@@ -1227,22 +1226,23 @@ opacity: 0.05;
         
         .service-features {
             list-style: none;
-            padding:12px;
+            padding: 0 1px;
             margin-top: 10px;
-            width: 100%;
+            justify-content: center;
+            
         }
         
         .service-features li {
-      position: relative;
+      position:relative;
       list-style: none;
-      padding: 0 18px;
+      padding:5px 12px;
       color: var(--text-secondary);
     }
 
     .service-features li::before {
       content: '→';
       position: absolute;
-      left: 0;
+      left: -5px;
       color: var(--primary-color);
       font-weight: bold;
     }
@@ -2500,6 +2500,7 @@ opacity: 0.05;
         
         
         .pricing-plans {
+          margin: 50px;
             display: flex;
             justify-content: center;
             gap: 40px;
@@ -2982,7 +2983,14 @@ opacity: 0.05;
             box-shadow: 0 0 0 1px var(--accent
             );
         }
-      
+      #budget option{
+         background-color: var(--accent);
+        color: var(--bg-white);
+      }
+      #budget option:nth-child(1) {
+        background-color: var(--bg-white);
+        color: var(--accent);
+      }
         
         .order-info h3 {
             font-size: 2rem;
@@ -3993,9 +4001,9 @@ img {
         
         /* Professional Chat Window */
         .chatbot-window {
-            position: absolute;
+            position: fixed;
             bottom: 80px;
-            right: 0;
+            left: 30px;
             width: 380px;
             max-width: 95vw;
             height: 600px;
@@ -4384,76 +4392,8 @@ img {
         .chatbot-footer i {
             color: var(--primary);
         }
+       
         
-        /* Large Screen Optimization (Desktop - 1200px+) */
-        @media (min-width: 1200px) {
-            .duntech-chatbot {
-                bottom: 40px;
-                right: 40px;
-            }
-            
-            .chatbot-window {
-                width: 400px;
-                height: 650px;
-            }
-            
-            .chatbot-toggle {
-                width: 70px;
-                height: 70px;
-            }
-            
-            .chatbot-toggle i {
-                font-size: 28px;
-            }
-        }
-        
-        /* Tablet Optimization (768px - 1199px) */
-        @media (min-width: 768px) and (max-width: 1199px) {
-            .duntech-chatbot {
-                bottom: 25px;
-                right: 25px;
-            }
-            
-            .chatbot-window {
-                width: 360px;
-                height: 580px;
-            }
-        }
-        
-        /* Mobile Optimization (below 767px) */
-        @media (max-width: 767px) {
-            .duntech-chatbot {
-                bottom: 20px;
-                right: 20px;
-                left: auto;
-            }
-            
-            .chatbot-window {
-                width: calc(100vw - 40px);
-                height: 500px;
-                right: 0;
-                bottom: 85px;
-            }
-            
-            .service-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .chatbot-toggle {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .chatbot-toggle i {
-                font-size: 24px;
-            }
-        }
-        
-        @media (max-height: 600px) {
-            .chatbot-window {
-                height: 450px;
-            }
-        }
         
         /* Scrollbar Styling */
         .chatbot-messages::-webkit-scrollbar {

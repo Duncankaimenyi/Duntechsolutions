@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /node_modules/
+
+# Sitemaps
+Sitemap: https://duntech-solutions.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

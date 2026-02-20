@@ -17,7 +17,7 @@
             notificationCount: 3,
             welcomeMessages: [
                 "Hello! I'm your Duntech AI Assistant. 👋",
-                "I'm here to help with information about our web development, graphic design, logo design, and cybersecurity services.",
+                "I'm here to help with information about our web development, graphic design, logo design, and online cyber services.",
                 "What would you like to know today?"
             ]
         };
@@ -34,67 +34,67 @@
             
             services: {
                 patterns: ["services", "what you do", "offerings", "help", "service", "what do you offer"],
-                response: "**Duntech Solutions Services**\n\nWe provide comprehensive digital solutions:\n\n💻 **Web Development**\n• Custom website development\n• E-commerce solutions\n• Responsive design\n• Performance optimization\n\n🎨 **Graphic Design**\n• Logo & brand identity\n• UI/UX design\n• Marketing materials\n• Visual branding\n\n📎 **Logo Design**\n• Professional logo creation\n• Brand identity systems\n• Corporate branding\n• Creative illustrations\n\n🔒 **Cybersecurity Services**\n• Security audits\n• Government portal support\n• Online cyber services\n• Digital security solutions\n\nWhich service interests you?",
-                actions: ["Web Development", "Graphic Design", "Logo Design", "Cybersecurity", "Pricing"]
+                response: "**Duntech Solutions Services**\n\nWe provide comprehensive digital solutions:\n\n **Web Development**\n• Custom website development\n• E-commerce solutions\n• Responsive design\n• Performance optimization\n\n🎨 **Graphic Design**\n• Logo & brand identity\n• UI/UX design\n• Marketing materials\n• Visual branding\n\n📎 **Logo Design**\n• Professional logo creation\n• Brand identity systems\n• Corporate branding\n• Creative illustrations\n\n🔒 **Cybersecurity Services**\n• Security audits\n• Government portal support\n• Online cyber services\n• Digital security solutions\n\nWhich service interests you?",
+                actions: ["Web Development", "Graphic Design", "Logo Design", "Cyber services", "Pricing"]
             },
             
             web: {
                 patterns: ["web development", "website", "e-commerce", "web app", "frontend", "backend", "custom website", "web design"],
-                response: "**Web Development Services by Duncan Kaimenyi**\n\n✅ **What We Offer:**\n• Custom website design & development\n• Responsive & mobile-friendly sites\n• E-commerce platforms\n• Web application development\n• Performance optimization\n• Security implementation\n\n🛠️ **Our Approach:**\n• Modern, clean code\n• SEO optimized\n• Fast loading times\n• User-focused design\n• Ongoing support\n\n💰 **Flexible Pricing:**\nContact us for customized quotes based on your project requirements.\n\nReady to discuss your project?",
+                response: "**Web Development Services by Duncan Kaimenyi**\n\n **What We Offer:**\n• Custom website design & development\n• Responsive & mobile-friendly sites\n• E-commerce platforms\n• Web application development\n• Performance optimization\n• Security implementation\n\n🛠️ **Our Approach:**\n• Modern, clean code\n• SEO optimized\n• Fast loading times\n• User-focused design\n• Ongoing support\n\n💰 **Flexible Pricing:**\nContact us for customized quotes based on your project requirements.\n\nReady to discuss your project?",
                 actions: ["Get Web Quote", "View Web Portfolio", "Talk to Duncan", "Back to Services"]
             },
             
             design: {
                 patterns: ["design", "graphics", "graphic design", "ui/ux", "branding", "visual"],
-                response: "**Graphic Design Services**\n\n✅ **What We Offer:**\n• Logo & brand identity design\n• UI/UX design & prototyping\n• Marketing collateral\n• Social media graphics\n• Posters & promotional materials\n• Brand guidelines\n\n🎨 **Our Expertise:**\n• Modern design trends\n• Creative solutions\n• Professional quality\n• Fast turnaround\n• Unlimited revisions\n\n💰 **Custom Pricing:**\nStarting at affordable rates. Contact for detailed quotes.\n\nLet's create something amazing!",
+                response: "**Graphic Design Services**\n\n **What We Offer:**\n• Logo & brand identity design\n• UI/UX design & prototyping\n• Marketing collateral\n• Social media graphics\n• Posters & promotional materials\n• Brand guidelines\n\n🎨 **Our Expertise:**\n• Modern design trends\n• Creative solutions\n• Professional quality\n• Fast turnaround\n• Unlimited revisions\n\n💰 **Custom Pricing:**\nStarting at affordable rates. Contact for detailed quotes.\n\nLet's create something amazing!",
                 actions: ["Get Design Quote", "View Design Portfolio", "Talk to Designer", "Back to Services"]
             },
             
             logo: {
                 patterns: ["logo", "logo design", "branding", "brand identity", "corporate logo"],
-                response: "**Professional Logo Design Services**\n\n✅ **What We Offer:**\n• Custom logo creation\n• Brand identity systems\n• Logo variations\n• File formats (AI, EPS, PNG, SVG)\n• Brand guidelines document\n• Unlimited revisions\n\n🎯 **Our Process:**\n1. Consultation & brief\n2. Concept development\n3. Design refinement\n4. Final delivery\n5. Brand guidelines\n\n💰 **Affordable Pricing:**\nContact us for quotes tailored to your needs.\n\nMake your brand unforgettable!",
+                response: "**Professional Logo Design Services**\n\n **What We Offer:**\n• Custom logo creation\n• Brand identity systems\n• Logo variations\n• File formats (AI, EPS, PNG, SVG)\n• Brand guidelines document\n• Unlimited revisions\n\n🎯 **Our Process:**\n1. Consultation & brief\n2. Concept development\n3. Design refinement\n4. Final delivery\n5. Brand guidelines\n\n💰 **Affordable Pricing:**\nContact us for quotes tailored to your needs.\n\nMake your brand unforgettable!",
                 actions: ["Get Logo Quote", "View Logo Portfolio", "See Gallery", "Back to Services"]
             },
             
             security: {
-                patterns: ["security", "cyber", "cybersecurity", "protection", "audit", "government portal"],
-                response: "**Cybersecurity & Online Services**\n\n✅ **What We Offer:**\n• Government portal support\n• Online security solutions\n• Security assessments\n• Data protection\n• Digital services support\n• Government document services\n\n🛡️ **Our Expertise:**\n• Government platforms\n• Official portal navigation\n• Document processing\n• Data security\n• Compliance support\n\n📞 **Contact Information:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\n\nHow can we secure your digital presence?",
-                actions: ["Security Assessment", "Portal Support", "Contact Support", "Back to Services"]
+                patterns: ["security", "cyber", "cybersservices", "design", "kra", "government portal"],
+                response: "**Cybers & Online Services**\n\n **What We Offer:**\n• Government portal support\n• Online security solutions\n• Security assessments\n• Data protection\n• Digital services support\n• Government document services\n\n🛡️ **Our Expertise:**\n• Government platforms\n• Official portal navigation\n• Document processing\n• Data security\n• Compliance support\n\n📞 **Contact Information:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\n\nHow can we secure your digital presence?",
+                actions: ["online support", "Portal Support", "Contact Support", "Back to Services"]
             },
             
             pricing: {
                 patterns: ["price", "cost", "how much", "pricing", "budget", "rates", "quote", "estimate"],
-                response: "**Pricing Overview**\n\n💰 **Our Services - Custom Pricing:**\n\n• **Web Development**\n  Flexible pricing based on scope\n  \n• **Graphic Design**\n  Affordable rates for all budgets\n  \n• **Logo Design**\n  Professional designs within reach\n  \n• **Cybersecurity Services**\n  Custom quotes\n\n📞 **Best Way to Get Quote:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\nLocation: Narok, Kenya\n\n*Contact us for a detailed, customized quote based on your specific project needs. We offer flexible payment options!*",
+                response: "**Pricing Overview**\n\n **Our Services - Custom Pricing:**\n\n• **Web Development**\n  Flexible pricing based on scope\n  \n• **Graphic Design**\n  Affordable rates for all budgets\n  \n• **Logo Design**\n  Professional designs within reach\n  \n• **Cybersecurity Services**\n  Custom quotes\n\n📞 **Best Way to Get Quote:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\nLocation: Narok, Kenya\n\n*Contact us for a detailed, customized quote based on your specific project needs. We offer flexible payment options!*",
                 actions: ["Web Quote", "Design Quote", "Logo Quote", "Contact Sales"]
             },
             
             portfolio: {
                 patterns: ["portfolio", "projects", "work", "examples", "case studies", "showcase", "previous work"],
-                response: "**Our Portfolio**\n\n🏆 **Duntech Solutions Work:**\n\nWe've completed numerous projects including:\n\n✓ **Website Projects**\n  Professional, modern websites\n  Responsive design\n  \n✓ **Graphic Designs**\n  Creative visual solutions\n  Brand identity systems\n  \n✓ **Logo Designs**\n  Unique, memorable logos\n  Professional branding\n  \n✓ **Digital Solutions**\n  Custom web applications\n  Security implementations\n\n📸 **View Full Portfolio:**\nVisit our Portfolio page to see detailed project showcases\n\nWould you like to see specific projects?",
+                response: "**Our Portfolio**\n\n  **Duntech Solutions Work:**\n\nWe've completed numerous projects including:\n\n✓ **Website Projects**\n  Professional, modern websites\n  Responsive design\n  \n✓ **Graphic Designs**\n  Creative visual solutions\n  Brand identity systems\n  \n✓ **Logo Designs**\n  Unique, memorable logos\n  Professional branding\n  \n✓ **Digital Solutions**\n  Custom web applications\n  Security implementations\n\n📸 **View Full Portfolio:**\nVisit our Portfolio page to see detailed project showcases\n\nWould you like to see specific projects?",
                 actions: ["View Web Projects", "View Design Work", "View Logos", "Contact for Portfolio"]
             },
             
             contact: {
                 patterns: ["contact", "call", "email", "meeting", "sales", "support", "talk", "reach", "phone", "address", "where", "location"],
-                response: "**Contact Duntech Solutions & Duncan Kaimenyi**\n\n📞 **Phone:**\n+254 713 723 639\n\n📧 **Email:**\nduncamkaimenyi501@gmail.com\n\n📍 **Location:**\nNarok, Kenya\n\n🕐 **Availability:**\nAvailable for consultations\nResponsive digital support\nFlex scheduling\n\n💬 **How to Connect:**\n• WhatsApp: +254 713 723 639\n• Email for detailed inquiries\n• Direct call for urgent matters\n• Schedule a consultation call\n\n🔗 **Connect on Social Media:**\nFind us on your favorite platforms!\n\nWhat's the best way for us to help you?",
+                response: "**Contact Duntech Solutions & Duncan Kaimenyi**\n\n **Phone:**\n+254 713 723 639\n\n **Email:**\nduncankaimenyi501@gmail.com\n\n  **Location:**\nNarok, Kenya\n\n **Availability:**\nAvailable for consultations\nResponsive digital support\nFlex scheduling\n\n💬 **How to Connect:**\n• WhatsApp: +254 713 723 639\n• Email for detailed inquiries\n• Direct call for urgent matters\n• Schedule a consultation call\n\n🔗 **Connect on Social Media:**\nFind us on your favorite platforms!\n\nWhat's the best way for us to help you?",
                 actions: ["Schedule Call", "Send Email", "WhatsApp", "Live Chat", "More Info"]
             },
             
             about: {
                 patterns: ["about", "company", "who are you", "duntech", "team", "experience", "story", "mission", "duncan"],
-                response: "**About Duntech Solutions**\n\n👨‍💼 **Founder & Lead Developer:**\nDuncan Kaimenyi\n\n🚀 **Our Mission:**\nProviding expert digital solutions including web development, graphic design, logo design, and cybersecurity services to transform your business.\n\n📊 **What We Specialize In:**\n• Web Development\n• Graphic Design\n• Logo & Brand Design\n• Online Security Services\n• Government Portal Support\n• Digital Solutions\n\n🎯 **Why Choose Us:**\n✓ Expert craftsmanship\n✓ Professional quality\n✓ Affordable pricing\n✓ Timely delivery\n✓ Excellent support\n✓ Client satisfaction\n\n📍 **Based In:** Narok, Kenya\n\n🔗 **Contact:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\n\nReady to work together?",
+                response: "**About Duntech Solutions**\n\n  **Founder & Lead Developer:**\nDuncan Kaimenyi\n\n **Our Mission:**\nProviding expert digital solutions including web development, graphic design, logo design, and cybersecurity services to transform your business.\n\n📊 **What We Specialize In:**\n• Web Development\n• Graphic Design\n• Logo & Brand Design\n• Online Security Services\n• Government Portal Support\n• Digital Solutions\n\n🎯 **Why Choose Us:**\n✓ Expert craftsmanship\n✓ Professional quality\n✓ Affordable pricing\n✓ Timely delivery\n✓ Excellent support\n✓ Client satisfaction\n\n📍 **Based In:** Narok, Kenya\n\n🔗 **Contact:**\nPhone: +254 713 723 639\nEmail: duncamkaimenyi501@gmail.com\n\nReady to work together?",
                 actions: ["Our Services", "Our Process", "View Portfolio", "Contact Us"]
             },
             
             thanks: {
                 patterns: ["thanks", "thank you", "thankyou", "appreciate", "grateful", "helpful"],
-                response: "You're very welcome! 😊 I'm happy to help. Is there anything else I can assist you with today?",
+                response: "You're very welcome!  I'm happy to help. Is there anything else I can assist you with today?",
                 actions: ["More Questions", "Contact Team", "All Done"]
             },
             
             goodbye: {
                 patterns: ["bye", "goodbye", "see you", "farewell", "exit", "quit", "later"],
-                response: "Goodbye! Thank you for chatting with me. We look forward to working with you! 👋\n\nContact Duncan at +254 713 723 639",
+                response: "Goodbye! Thank you for chatting with me. We look forward to working with you! \n\nContact Duncan at +254 713 723 639",
                 actions: []
             },
             
@@ -455,13 +455,13 @@
                     'Contact Team': 'contact',
                     'Web Development': 'web',
                     'Graphics Design': 'design',
-                    'Cyber Security': 'security',
+                    'Cyber services': 'services',
                     'Digital Solutions': 'digital',
                     'Pricing': 'pricing',
                     'Back to Services': 'services',
                     'Get Web Quote': 'web',
                     'Get Design Quote': 'design',
-                    'Get Security Quote': 'security',
+                    'Get Services Quote': 'services',
                     'Get Digital Quote': 'digital',
                     'View Web Portfolio': 'portfolio',
                     'View Design Portfolio': 'portfolio',

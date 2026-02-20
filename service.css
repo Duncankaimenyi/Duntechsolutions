@@ -203,13 +203,16 @@
       .service-category#cyber .service-card .cta-button { width: 100%; }
     }
 
-    .service-img {
-      width: 72px;
-      height: 72px;
+    .service-card img{
+     width: 100%;
+     height: 100%;
+     
       object-fit: contain;
-      margin: 0 auto 14px;
-      border-radius: 12px;
-      padding: 10px;
+      
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      padding: 1px;
       background: linear-gradient(135deg, #f8f9fa, #e9ecef);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       display: block;
@@ -292,7 +295,7 @@
       text-align: center;
       padding: 40px;
       background: white;
-      border-radius: 20px;
+      border-radius: 6px;
       margin: 60px auto 40px;
       max-width: 800px;
       box-shadow: var(--shadow);
@@ -315,7 +318,7 @@
       background: linear-gradient(135deg, var(--primary), #4f46e5);
       color: white;
       padding: 60px 40px;
-      border-radius: 30px;
+      border-radius: 6px;
       text-align: center;
       margin: 80px auto;
       max-width: 900px;
@@ -506,6 +509,7 @@
     /* Small visual tweaks */
     .service-features li {
       padding-left: 28px;
+     
     }
 
     .service-features li::before {
