@@ -844,7 +844,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${p.technologies.length > 3 ? `<span class="tech-tag">+${p.technologies.length - 3}</span>` : ''}
               </div>
               <div class="project-actions" style="margin-top:12px;display:flex;gap:10px;align-items:center;">
-                ${p.link && p.link !== '#' ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn btn-quote btn-sm">Live Demo</a>` : `<span style="color:var(--muted);font-size:0.9rem;">Demo coming</span>`}
+                ${p.link && p.link !== '#' ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Live Demo</a>` : `<span style="color:var(--muted);font-size:0.9rem;">Demo coming</span>`}
                 ${p.github && p.github !== '#' ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">View Code</a>` : ''}
                 <a href="portfolio.html" class="btn btn-sm">See more</a>
               </div>

@@ -30,17 +30,17 @@
             },
             {
                 id: 3,
-                title: "FinTrack Mobile App",
+                title: "MMU MARKETPLACE",
                 category: "mobile",
-                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                description: "Personal finance tracking application with budgeting tools, expense categorization, and financial insights.",
-                technologies: ["React Native", "Firebase", "Redux", "Chart.js", "iOS & Android"],
-                client: "FinTech Solutions",
-                year: "2023",
-                status: "Completed",
+                image: "webimages/mmu.png",
+                description: "we buy and sell second hand items, electronics ,furnitures, books etc.",
+                technologies: ["React .JS", "Firebase", "NODE .JS", "EMAIL.JS"],
+                client: "DUNTech Solutions",
+                year: "2026",
+                status: "in development",
                 link: "#",
                 github: "#",
-                details: "FinTrack helps users manage their personal finances with features like expense tracking, budget planning, bill reminders, and visual financial reports through interactive charts."
+                details: "we buy and sell second hand items, electronics ,furnitures, books etc.."
             },
             {
                 id: 4,
@@ -600,13 +600,13 @@
         // ===== ANIMATE STATISTICS =====
         function animateStatistics() {
             const counters = document.querySelectorAll('.stat-number');
-            const targets = [50, 30, 5, 15];
-            const durations = [2000, 2000, 1500, 2000];
+            const targets = [100, 80, 3, 15];
+            const durations = [4000, 4000, 3000, 4000];
             
             counters.forEach((counter, index) => {
                 const target = targets[index];
                 const duration = durations[index];
-                const step = target / (duration / 16); // 60fps
+                const step = target / (duration / 5); // 60fps
                 let current = 0;
                 
                 const updateCounter = () => {

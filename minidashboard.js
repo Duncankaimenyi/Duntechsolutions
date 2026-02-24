@@ -2,7 +2,7 @@
 function animateNumbers(element, start, end, duration) {
     let range = end - start;
     let current = start;
-    let increment = range / (duration / 0.5);
+    let increment = range / (duration / 5);
     
     let timer = setInterval(() => {
         current += increment;
@@ -25,8 +25,8 @@ function startCounting() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateNumbers(stats[0], 0, 3, 1500);
-                animateNumbers(stats[1], 0, 500, 2000);
-                animateNumbers(stats[2], 0, 300, 1800);
+                animateNumbers(stats[1], 0, 100, 2000);
+                animateNumbers(stats[2], 0, 80, 1800);
                 observer.disconnect();
             }
         });

@@ -91,8 +91,8 @@
     position: absolute;
     bottom: 80px;
     right: 0;
-    width: 380px;
-    max-width: 90vw;
+    width: 380PX;
+    max-width: 80VW;
     height: 550px;
     max-height: 80vh;
     background: white;
