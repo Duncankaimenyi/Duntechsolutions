@@ -98,7 +98,7 @@
           
           <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
           <li><a href="blog.html" class="nav-link">News & Blogs</a></li>
-          <li><a href="index.html#quick-order" class="nav-link nav-contact">Contact</a></li>
+          <li><a href="#contact" class="nav-link nav-contact">Contact</a></li>
         </ul>
       </nav>
       
@@ -159,7 +159,7 @@
             </li>
             
             <li class="menu-item">
-              <a href="index.html#quick-order" class="menu-icon-link">
+              <a href="#contact" class="menu-icon-link">
                 <i class="fas fa-envelope"></i>
                 <span class="menu-text">Contact</span>
               </a>
@@ -168,31 +168,7 @@
         </div>
       </div>
   </header>
-  </nav>
-  
-  <div id="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">Why Us</a>
-  <a href="#" class="headportfolio">Portfolio <i class="fa-solid fa-circle-chevron-down"></i></a>
-  <ul class="dropdown">
-    <li><a href="Portfolio.html">Website Projects</a></li>
-    <li><a href="graphic.html">Graphic Designs</a></li>
-    <li><a href="logodesign.html">Logo Designs</a></li>
-  </ul>
-  <a href="blog.html" >News & Blogs</a>
-  <a href="index.html#quick-order">Contact</a>
-  
-</div>
-<!-- overlay for off-canvas mobile menu -->
-<div id="mobile-overlay" class="mobile-overlay" hidden></div>
-
-  
-    
-  
-    </div>
-  </header>
-<body>
+<body> <!-- header correctly closed, duplicate markup removed -->
  
 
     <!-- Hero Section -->
@@ -307,9 +283,108 @@
                     <span>Get 15% Off Your First Project</span>
                 </div>
                 
-                <a href="mailto:contact@duntech.com" class="btn btn-primary btn-lg">
+                <a href="#quick-order" class="btn btn-primary btn-lg">
                     <i class="fas fa-envelope"></i> Contact Us Now
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Order / Contact Form -->
+    <section class="quick-order" id="quick-order">
+        <div class="container">
+            <div class="section-title">
+                Contact Us
+            </div>
+            
+            <div class="order-container">
+                <div class="order-form-container">
+                    <div class="order-form">
+                        <form id="quickOrderForm" action="https://formspree.io/f/xojlgybe" method="POST" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <select name="service" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="Graphics & Logo Design">Graphics & Logo Design</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="Online Cyber Services">Online Cyber Services</option>
+                                    <option value="Complete Package">Complete Package</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget"></label>
+                                <select name="budget" class="form-control" required id="budget">
+                                    <option value="">Select project budget range</option>
+                                    <option value="ksh 500 - ksh 1,000">graphics design - poster or flyer kshs 250-300</option>
+                                    <option value="$5,000+">logo design from kshs 300 </option>
+                                    <option value="$3,000 - $5,000">online cyber services from kshs 300</option>
+                                    <option value="kshs19000">website development from kshs 19999</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Project Details </label>
+                                <textarea name="message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" >
+                                <i class="fas fa-paper-plane"></i> Submit Project Request
+                            </button>
+                            <button type="submit" class="btn" >
+                                
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="order-info-container">
+                    <div class="order-info">
+                        <h3>Why Choose Duntech Solutions?</h3>
+                        <p>We combine creativity with technology to deliver exceptional results for every client.</p>
+                        
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>Expert Team:</strong> Skilled professionals with years of experience </li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Fast Delivery:</strong>  Quick turnaround without compromising quality</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Transparent Pricing:</strong> No hidden fees or surprises</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Dedicated Support:</strong> 24/7 customer support for all clients</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Satisfaction Guarantee:</strong> We ensure you're happy with the results</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Modern Solutions:</strong> Latest technologies and design trends</li>
+                        </ul>
+                        
+                        <div class="contact-info">
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Call Us Now</strong><br>
+                                    <span>+254713723639</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email Us</strong><br>
+                                    <span>hello@duntechsolutions.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Business Hours</strong><br>
+                                    <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                                    <span>sat & sun: 2:00 AM - 6:00 PM</span>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

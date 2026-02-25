@@ -1045,5 +1045,213 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 })();
 
+
+// ====== PRICING CLICK HANDLER ======
+function setupPricingLinks(){
+    const buttons = document.querySelectorAll('.btn-pricing');
+    buttons.forEach(btn=>{
+        btn.addEventListener('click', function(e){
+            const pkg = this.dataset.package || '';
+            const price = this.dataset.price || '';
+            const form = document.getElementById('quickOrderForm');
+            if(form){
+                const serviceSelect = form.querySelector('select[name="service"]');
+                const budgetSelect = form.querySelector('select[name="budget"]');
+                if(serviceSelect && pkg){
+                    let opt = Array.from(serviceSelect.options).find(o=> o.value===pkg);
+                    if(!opt){
+                        opt = new Option(pkg, pkg);
+                        serviceSelect.add(opt);
+                    }
+                    serviceSelect.value = pkg;
+                }
+                if(budgetSelect && price){
+                    let opt2 = Array.from(budgetSelect.options).find(o=> o.value===price);
+                    if(!opt2){
+                        opt2 = new Option(price, price);
+                        budgetSelect.add(opt2);
+                    }
+                    budgetSelect.value = price;
+                }
+            }
+        });
+    });
+}
+
+// ====== FORM & NEWSLETTER HANDLING ======
+async function handleFormSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const endpoint = form.action;
+
+    const data = {};
+    Array.from(new FormData(form)).forEach(([key, value]) => { data[key] = value; });
+
+    try {
+        const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+            if (typeof showSuccessPopup === 'function') {
+                showSuccessPopup('Thank you!', 'Your project request has been sent successfully. We will contact you soon.');
+            }
+            form.reset();
+        } else {
+            const errorData = await res.json().catch(() => ({}));
+            console.error('Formspree error', errorData);
+            if (typeof showSuccessPopup === 'function') {
+                showSuccessPopup('Oops!', 'Submission failed. Please try again later.', 'error');
+            }
+        }
+    } catch (err) {
+        console.error('Network error submitting form', err);
+        if (typeof showSuccessPopup === 'function') {
+            showSuccessPopup('Oops!', 'Network error. Please try again later.', 'error');
+        }
+    }
+}
+
+// Handle newsletter form via AJAX (prevent Formspree redirect)
+document.addEventListener('DOMContentLoaded', function(){
+    setupPricingLinks();
+    const news = document.getElementById('newsletterForm');
+    if (news) {
+        news.addEventListener('submit', async function(e){
+            e.preventDefault();
+            const email = news.querySelector('input[name="email"]').value;
+            const statusEl = document.getElementById('newsletter-status');
+            
+            if (!email) {
+                if (statusEl) { statusEl.textContent = '✗ Please enter a valid email.'; statusEl.style.color = 'var(--error)'; }
+                return;
+            }
+
+            try {
+                // Send to Google Sheets via Apps Script (same logic used in index)
+                const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxiyy7g1QlATkMeDiJfC-4jOWKQ4ejpDQJUAy461qvt6RnrTwtOz5R67ImETEUDlEeL/exec';
+                const params = new URLSearchParams();
+                params.append('email', email);
+
+                const res = await fetch(googleScriptUrl, { 
+                    method: 'POST', 
+                    mode: 'no-cors',
+                    body: params
+                });
+                const result = { success: true }; // no-cors mode can't read response
+
+                if (result.success || res) {
+                    if (statusEl) { statusEl.textContent = '✓ Successfully subscribed!'; statusEl.style.color = 'var(--success)'; }
+                    news.reset();
+                    showSuccessPopup('Welcome!', 'Thank you for subscribing! Join our WhatsApp community.', 'success', true, 'https://chat.whatsapp.com/CXAaPUFLBPgEhggsMBFmON');
+                    setTimeout(()=>{ if (statusEl) statusEl.textContent=''; }, 5000);
+                } else {
+                    if (statusEl) { statusEl.textContent = '✗ Subscription failed. Please try again.'; statusEl.style.color = 'var(--error)'; }
+                }
+            } catch (err) {
+                console.error('Newsletter submission error', err);
+                if (statusEl) { statusEl.textContent = '✗ Subscription failed. Please try again.'; statusEl.style.color = 'var(--error)'; }
+            }
+        });
+    }
+});
+
+// Popup functions with accessibility and focus-trap
+let _lastFocusedEl = null;
+let _autoCloseTimer = null;
+let _keydownHandler = null;
+
+function _getFocusableElements(container) {
+  return Array.from(container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'))
+    .filter(el => el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+}
+
+function showSuccessPopup(title, message, type = 'success', autoClose = true, whatsappLink = null) {
+  const popup = document.getElementById('successPopup');
+  const overlay = document.getElementById('popupOverlay');
+  const popupTitle = document.getElementById('popupTitle');
+  const popupMessage = document.getElementById('popupMessage');
+  const popupIcon = popup ? popup.querySelector('.popup-icon i') : null;
+  const whatsappBtn = document.getElementById('whatsappLink');
+  
+  if (!(popup && overlay && popupTitle && popupMessage)) return;
+
+  // set text
+  popupTitle.textContent = title;
+  popupMessage.textContent = message;
+
+  // show/hide WhatsApp link
+  if (whatsappBtn) {
+    if (whatsappLink && type === 'success') {
+      whatsappBtn.href = whatsappLink;
+      whatsappBtn.style.display = 'inline-block';
+    } else {
+      whatsappBtn.style.display = 'none';
+    }
+  }
+
+  // set icon and styles
+  if (popupIcon) {
+    popupIcon.className = 'fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle');
+  }
+  popup.className = 'popup ' + type;
+  overlay.classList.add('active');
+  popup.classList.add('active');
+
+  // trap focus
+  const focusable = _getFocusableElements(popup);
+  if (focusable.length) focusable[0].focus();
+
+  _lastFocusedEl = document.activeElement;
+
+  if (autoClose) {
+    clearTimeout(_autoCloseTimer);
+    _autoCloseTimer = setTimeout(closeSuccessPopup, 4000);
+  }
+}
+
+function closeSuccessPopup() {
+  const popup = document.getElementById('successPopup');
+  const overlay = document.getElementById('popupOverlay');
+  if (popup) popup.classList.remove('active');
+  if (overlay) overlay.classList.remove('active');
+  if (_lastFocusedEl) _lastFocusedEl.focus();
+}
+
+// rating form handling (if exists)
+const ratingForm = document.getElementById('ratingForm');
+if (ratingForm) {
+  ratingForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const ratingStatus = document.getElementById('rating-status');
+    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxiyy7g1QlATkMeDiJfC-4jOWKQ4ejpDQJUAy461qvt6RnrTwtOz5R67ImETEUDlEeL/exec';
+    const formData = new FormData(ratingForm);
+    formData.append('timestamp', new Date().toLocaleString());
+    const params = new URLSearchParams();
+    for (let [k,v] of formData.entries()) params.append(k,v);
+
+    try {
+      const res = await fetch(googleScriptUrl, { 
+        method: 'POST', 
+        mode: 'no-cors',
+        body: params
+      });
+      const result = { success: true };
+      if (result.success || res) {
+        if (ratingStatus) { ratingStatus.textContent = '✓ Thank you for your feedback!'; ratingStatus.style.color = 'var(--success)'; }
+        ratingForm.reset();
+        showSuccessPopup('Thank You!', 'Your feedback has been received and will help us improve.', 'success', true);
+        setTimeout(()=> { if (ratingStatus) ratingStatus.textContent = ''; }, 3500);
+      } else {
+        if (ratingStatus) { ratingStatus.textContent = 'Submission failed. Please try again.'; ratingStatus.style.color = 'var(--error)'; }
+      }
+    } catch (err) {
+      console.error('Rating submission error', err);
+      if (ratingStatus) { ratingStatus.textContent = 'Network error. Please try later.'; ratingStatus.style.color = 'var(--error)'; }
+    }
+  });
+}
         
         
