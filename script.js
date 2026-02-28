@@ -1192,32 +1192,88 @@ function showSuccessPopup(title, message, type = 'success', autoClose = true, wh
     }
   }
 
-  // set icon and styles
+  // set style / icon
   if (popupIcon) {
-    popupIcon.className = 'fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle');
+    popupIcon.classList.remove('fa-check-circle','fa-exclamation-circle');
+    if (type === 'error') {
+      popupIcon.classList.add('fa-exclamation-circle');
+      popup.classList.add('error-popup');
+      popup.classList.remove('success-popup');
+    } else {
+      popupIcon.classList.add('fa-check-circle');
+      popup.classList.add('success-popup');
+      popup.classList.remove('error-popup');
+    }
   }
-  popup.className = 'popup ' + type;
-  overlay.classList.add('active');
-  popup.classList.add('active');
 
-  // trap focus
+  // show
+  popup.classList.add('open');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // save focus and move focus to first focusable inside popup
+  _lastFocusedEl = document.activeElement;
   const focusable = _getFocusableElements(popup);
   if (focusable.length) focusable[0].focus();
 
-  _lastFocusedEl = document.activeElement;
+  // key handling: ESC to close, TAB trap
+  _keydownHandler = function(e){
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeSuccessPopup();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const focusableEls = _getFocusableElements(popup);
+      if (!focusableEls.length) return;
+      const first = focusableEls[0];
+      const last = focusableEls[focusableEls.length -1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
+  };
+  document.addEventListener('keydown', _keydownHandler);
 
-  if (autoClose) {
-    clearTimeout(_autoCloseTimer);
-    _autoCloseTimer = setTimeout(closeSuccessPopup, 4000);
+  // attach click handlers for close controls (ensure idempotent)
+  popup.querySelectorAll('.popup-close, .popup-action').forEach(btn => {
+    btn.addEventListener('click', closeSuccessPopup);
+  });
+
+  // overlay click
+  overlay.addEventListener('click', function overlayClick(e){
+    if (overlay.dataset.closeOverlay !== undefined || overlay.getAttribute('data-close-overlay') === 'true') {
+      closeSuccessPopup();
+    }
+  }, { once: true });
+
+  // auto-close
+  if (autoClose && popup.dataset.autoClose) {
+    const ms = parseInt(popup.dataset.autoClose,10);
+    if (!isNaN(ms) && ms > 0) {
+      _autoCloseTimer = setTimeout(()=> closeSuccessPopup(), ms);
+    }
   }
 }
 
 function closeSuccessPopup() {
   const popup = document.getElementById('successPopup');
   const overlay = document.getElementById('popupOverlay');
-  if (popup) popup.classList.remove('active');
-  if (overlay) overlay.classList.remove('active');
-  if (_lastFocusedEl) _lastFocusedEl.focus();
+  if (!(popup && overlay)) return;
+
+  popup.classList.remove('open');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+
+  // clear timers and handlers
+  if (_autoCloseTimer) { clearTimeout(_autoCloseTimer); _autoCloseTimer = null; }
+  if (_keydownHandler) { document.removeEventListener('keydown', _keydownHandler); _keydownHandler = null; }
+
+  // return focus
+  try { if (_lastFocusedEl && typeof _lastFocusedEl.focus === 'function') _lastFocusedEl.focus(); } catch(e){}
+  _lastFocusedEl = null;
 }
 
 // rating form handling (if exists)

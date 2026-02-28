@@ -1085,7 +1085,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <select name="service" class="form-control" required>
+                                <select name="service" class="form-control" required id="service">
                                     <option value="">Select a service</option>
                                     <option value="Graphics & Logo Design">Graphics & Logo Design</option>
                                     <option value="Website Development">Website Development</option>
@@ -1113,9 +1113,7 @@
                             <button type="submit" class="btn" >
                                 <i class="fas fa-paper-plane"></i> Submit Project Request
                             </button>
-                            <button type="submit" class="btn" >
-                                
-                            </button>
+                           
                         </form>
                     </div>
                 </div>
@@ -1291,6 +1289,7 @@
     <a href="https://wa.me/+254713723639" target="_blank" class="whatsapp-btn" title="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
@@ -1393,7 +1392,7 @@
           </div>
           
           <div class="copyright">
-              <p>&copy; 2025 Duntech Solutions. All rights reserved.</p>
+              <p>&copy; 2026 Duntech Solutions. All rights reserved.</p>
           </div>
       </div>
   </footer>
@@ -1404,8 +1403,9 @@
 
 <script src="Portfolio.js"></script>
 <script src="script.js"></script>
+<!--
+// Handle contact form submission via AJAX to Formspree to prevent redirect-->
 <script>
-// Handle contact form submission via AJAX to Formspree to prevent redirect
 async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
