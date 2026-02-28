@@ -1409,29 +1409,58 @@
 async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
-  const endpoint = form.action; // Formspree endpoint
+  const endpoint = form.action || 'https://formspree.io/f/xojlgybe';
 
-  const data = {};
-  Array.from(new FormData(form)).forEach(([key, value]) => { data[key] = value; });
+  // basic client-side validation
+  const fd = new FormData(form);
+  if (!fd.get('name') || !fd.get('email') || !fd.get('message')) {
+    showSuccessPopup('Oops!', 'Please complete all required fields.', 'error');
+    return;
+  }
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtn = submitBtn ? submitBtn.innerHTML : null;
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending...'; }
+
+  // status element
+  let statusEl = form.querySelector('.form-status');
+  if (!statusEl) {
+    statusEl = document.createElement('div');
+    statusEl.className = 'form-status';
+    statusEl.style.marginTop = '8px';
+    form.appendChild(statusEl);
+  }
+  statusEl.textContent = '';
 
   try {
+    const payload = Object.fromEntries(fd.entries());
+
     const res = await fetch(endpoint, {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: JSON.stringify(data)
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
 
     if (res.ok) {
       showSuccessPopup('Thank you!', 'Your project request has been sent successfully. We will contact you soon.');
       form.reset();
+      statusEl.textContent = '✓ Request submitted';
+      statusEl.style.color = 'var(--success)';
     } else {
-      const errorData = await res.json().catch(() => ({}));
-      console.error('Formspree error', errorData);
+      let errJson = {};
+      try { errJson = await res.json(); } catch (e) {}
+      console.error('Form submission error', errJson);
+      statusEl.textContent = '✗ Submission failed. Please try again later.';
+      statusEl.style.color = 'var(--error)';
       showSuccessPopup('Oops!', 'Submission failed. Please try again later.', 'error');
     }
   } catch (err) {
     console.error('Network error submitting form', err);
+    statusEl.textContent = '✗ Network error. Please try again later.';
+    statusEl.style.color = 'var(--error)';
     showSuccessPopup('Oops!', 'Network error. Please try again later.', 'error');
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalBtn; }
   }
 }
 
