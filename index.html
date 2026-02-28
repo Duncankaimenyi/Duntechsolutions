@@ -1085,32 +1085,35 @@
                             </div>
                             
                             <div class="form-group">
-                                <select name="service" class="form-control" required id="service">
+                                <select name="service" class="form-control service-select" required id="service" onchange="updateBudgetOptions()">
                                     <option value="">Select a service</option>
                                     <option value="Graphics & Logo Design">Graphics & Logo Design</option>
                                     <option value="Website Development">Website Development</option>
-                                    <option value="Online Cyber Services">Online Cyber Services</option>
+                                    <option value="Online Cyber Services">Cyber Security Services</option>
                                     <option value="Complete Package">Complete Package</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="budget"></label>
-                                <select name="budget" class="form-control" required id="budget">
-                                    <option value="">Select project budget range</option>
-                                    <option value="ksh 500 - ksh 1,000">graphics design - poster or flyer kshs 250-300</option>
-                                    <option value="$5,000+">logo design from kshs 300 </option>
-                                    <option value="$3,000 - $5,000">online cyber services from kshs 300</option>
-                                    <option value="kshs19000">website development from kshs 19999</option>
+                                <select name="budget" class="form-control budget-select" required id="budget">
+                                    <option value="">Select project budget</option>
+                                    <option value="KES 250-500" data-service="Graphics & Logo Design">KES 250-500 - Basic graphics/logo</option>
+                                    <option value="KES 500-1,500" data-service="Graphics & Logo Design">KES 500-1,500 - Full branding package</option>
+                                    <option value="KES 1,500+" data-service="Graphics & Logo Design">KES 1,500+ - Advanced design work</option>
+                                    <option value="KES 19,999-30,000" data-service="Website Development">KES 19,999-30,000 - Basic website</option>
+                                    <option value="KES 30,000-60,000" data-service="Website Development">KES 30,000-60,000 - Feature-rich site</option>
+                                    <option value="KES 60,000+" data-service="Website Development">KES 60,000+ - Full e-commerce/web app</option>
+                                    <option value="KES 20,000-50,000" data-service="Online Cyber Services">KES 20,000-50,000 - Security audit</option>
+                                    <option value="KES 50,000+" data-service="Online Cyber Services">KES 50,000+ - Complete protection</option>
+                                    <option value="KES 80,000+" data-service="Complete Package">KES 80,000+ - Everything included</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="message">Project Details </label>
                                 <textarea name="message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
                             </div>
                             
-                            <button type="submit" class="btn" >
+                            <button type="submit" class="btn" style="width: 100%; padding: 12px; font-size: 1.05rem; font-weight: 600;">
                                 <i class="fas fa-paper-plane"></i> Submit Project Request
                             </button>
                            
@@ -1403,6 +1406,55 @@
 
 <script src="Portfolio.js"></script>
 <script src="script.js"></script>
+<!--
+// Smart budget filtering based on service selection
+-->
+<script>
+// Filter budget options based on selected service
+function updateBudgetOptions() {
+  const serviceSelect = document.getElementById('service');
+  const budgetSelect = document.getElementById('budget');
+  const selectedService = serviceSelect.value;
+
+  if (!budgetSelect) return;
+
+  // Get all budget options
+  const budgetOptions = Array.from(budgetSelect.querySelectorAll('option'));
+  
+  // Track current selection
+  const currentSelection = budgetSelect.value;
+
+  // Show/hide budget options based on service
+  budgetOptions.forEach(option => {
+    if (option.value === '') {
+      option.style.display = 'block'; // Always show placeholder
+      return;
+    }
+
+    const serviceMatch = option.getAttribute('data-service');
+    if (selectedService === '' || serviceMatch === selectedService) {
+      option.style.display = 'block';
+    } else {
+      option.style.display = 'none';
+    }
+  });
+
+  // Reset budget selection if current choice is hidden
+  if (currentSelection !== '' && currentSelection !== 'undefined') {
+    const currentOption = budgetSelect.querySelector(`option[value="${currentSelection}"]`);
+    if (currentOption && currentOption.style.display === 'none') {
+      budgetSelect.value = '';
+    }
+  } else {
+    budgetSelect.value = '';
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateBudgetOptions();
+});
+</script>
 <!--
 // Handle contact form submission via AJAX to Formspree to prevent redirect-->
 <script>
